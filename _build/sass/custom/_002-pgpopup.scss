@@ -1,0 +1,133 @@
+.pgpopup {
+	@include fixed(0, $L:0);
+	z-index: 9999;
+	@include wh(100vw, 100vh);
+
+	opacity: 0;
+	z-index: -1;
+
+	transition: $transition-base;
+
+	&.js-show {
+		opacity: 1;
+		z-index: 999;
+	}
+	&-bg {
+		@include wh;
+		background-color: rgba(#000, 0.5);
+	}
+
+	&-wrap {
+		@include absolute(50%, $L:50%);
+		transform: translate(-50%, -50%);
+		transform-origin: 0 0;
+		width: 560px;
+		// max-height: 90%;
+		// overflow: hidden;
+
+		opacity: 0;
+		transition: $transition-base;
+
+		.js-show & {
+			opacity: 1;
+			animation-name: fadeIn;
+			animation-duration: 0.5s;
+		}
+
+		// .discount_send_confirm & {
+		// 	width: 600px;
+
+		// 	@include media-breakpoint-down(sm){
+		// 		width: 500px;
+		// 	}
+		// 	@include media-breakpoint-down(xs){
+		// 		width: 315px;
+		// 	}
+		// }
+	}
+
+	&-container {
+		position: relative;
+		max-height: 90vh;
+
+		.simplebar-mask {
+			border-radius: 15px;
+			background-color: #fff;
+		}
+
+	}
+
+	&-close {
+		@include absolute(0, 0);
+		z-index: 10;
+		transform: translate(50%, -50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include circle(40);
+		background-color: #fff;
+		border: 1px solid color("BLUE");
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+		transition: $transition-base;
+
+		cursor: pointer;
+
+		.svg_icon {
+			@include wh(25);
+			fill: color("BLUE");
+			transition: $transition-base;
+		}
+
+		&:hover {
+			background-color: color("BLUE");
+
+			.svg_icon {
+				fill: #fff;
+			}
+		}
+	}
+
+	&-hd {
+		padding: 30px 60px;
+		color: color("BLACK");
+		text-align: center;
+		letter-spacing: 1px;
+
+		border-bottom: 1px solid #BDBDBD;
+		// .svg_icon {
+		// 	display: inline-block;
+		// 	vertical-align: -0.3ex;
+		// 	@include wh(24, 16);
+		// 	margin-left: 3px;
+		// 	fill: #fff;
+		// }
+
+	}
+
+	&-bd {
+		padding-top: 20px;
+
+	}
+
+	&-title {
+		margin-bottom: 20px;
+		color: color("BLACK");
+		@include remCalc(font-size, 20);
+		text-align: center;
+	}
+}
+
+
+
+
+@keyframes elongate {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+

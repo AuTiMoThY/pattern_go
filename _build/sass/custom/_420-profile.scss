@@ -1,0 +1,60 @@
+.mbr_profile {
+
+}
+
+.profile_block {
+	padding: 60px;
+
+	&-photo {
+		@include circle(180);
+		margin: 0 auto 40px;
+	}
+
+	&-change {
+
+	}
+}
+
+.profile-main {}
+
+
+.profile_tabs {
+	&-item {
+		float: left;
+		position: relative;
+		width: 50%;
+		padding: 10px;
+		@include remCalc(font-size, 20);
+		text-align: center;
+
+		cursor: pointer;
+
+		&:after {
+			@include psudoClass;
+			@include absolute($B:0, $L:0);
+			@include wh(100%, 1);
+			background-color: #E0E0E0;
+
+			transition: all 0.3s ease-in-out;
+		}
+
+		&.js-active {
+			&:after {
+				height: 4px;
+				background-color: color("BLUE");
+			}
+		}
+	}
+}
+.profile_tabs_container {
+	.tab_content {
+		padding: 45px 60px;
+	}
+	> .inner {
+		position: relative;
+		width: 100%;
+	}
+}
+
+
+

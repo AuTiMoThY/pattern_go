@@ -1,0 +1,46 @@
+.mobile_nav {
+	@include absolute(0, -230px);
+	z-index: 99;
+	width: $m_menu-w * 1px;
+	height: 100vh;
+	padding-top: 75px;
+	background-color: #fff;
+	box-shadow: $boxShadowHover1;
+
+	transition: $transition-base;
+	opacity: 0;
+
+	&.js-show {
+		display: block;
+		right: 0;
+		opacity: 1;
+	}
+
+	&-hd {
+		display: flex;
+		padding: 30px 15px 40px;
+		border-bottom: 1px solid #E0E0E0;
+
+		.user-pic {
+			@include circle(45);
+		}
+		.user-id {
+			padding-left: 15px;
+		}
+
+		.user-identity {
+			@include remCalc(font-size, 14);
+		}
+	}
+	&-bd {
+		padding: 30px 15px;
+	}
+
+	&-item {
+		.inner {
+			display: block;
+			padding: 15px;
+			color: color("BLACK");
+		}
+	}
+}

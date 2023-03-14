@@ -1,0 +1,69 @@
+.pgpopup_give_list {
+	.pgpopup-wrap {
+		width: 1080px;
+	}
+
+	.pgpopup-bd {
+		position: relative;
+		padding: 30px;
+	}
+
+	.pgbtn-goback {
+		@include absolute(30px, $L:30px);
+	}
+
+	.give_list {
+		width: 100%;
+		padding: 45px 0 30px;
+
+		&-title {
+
+			color: color("GRAY1");
+
+			.title-item {
+				border-bottom: 1px solid color("BLACK");
+				padding-left: 1rem;
+				padding-right: 1rem;
+				padding-bottom: 1rem;
+
+				&.status {
+					width: 110px;
+				}
+			}
+		}
+	}
+
+	.give_item {
+
+		.inner-tablecell {
+			padding: 15px;
+			border-bottom: 1px solid #E0E0E0;
+		}
+
+		&-target {
+			> .inner {
+				display: flex;
+				align-items: center;
+			}
+
+			.pic {
+				@include circle(40);
+				margin-right: 10px;
+				overflow: hidden;
+			}
+		}
+
+		&-money {
+
+		}
+		&-date {
+
+		}
+		&-status {
+			width: 110px;
+		}
+
+
+
+	}
+}

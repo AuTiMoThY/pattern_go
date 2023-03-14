@@ -1,0 +1,568 @@
+extends _layout.pug
+block vars
+	//- - var login = 1;
+	- var page_class = "mbr_page mbr_admin";
+	- var page_title = "管理员后台";
+	- var mbr_header = 1;
+	- var mbr_header_title = "管理员后台";
+
+
+block pluginStyle
+	//- link(rel="stylesheet", href="dist/plugin/swiper/swiper.min.css")
+
+block popup
+	// =========================================================================
+	// 燈箱 - 成員新增/編輯  START
+	#popupDelectSuccess.pgpopup.pgpopup_delect_success.js-show
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						p 确认删除?
+						button.pgbtn.pgbtn-red.pgbtn-confirm(type="button") 确认
+
+	// 燈箱 - 成員新增/編輯  END  !!
+	// =========================================================================
+
+	// =========================================================================
+	// 燈箱 - 成員新增/編輯  START
+	#popupAccountAdd.pgpopup.pgpopup_account_add
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						#AccountAddFrm.pgfrm.account_add_frm
+							form(action="")
+								.form-group.row
+									.col-6.account_add_frm-name
+										label.pgfrm-label(for="AAF-Name") 使用者名称
+										.pgfrm-field
+											input#AAF-Name.pgfrm-input(type="text", name="AAF-Name", placeholder="輸入使用者名稱" value="")
+									.col-6.account_add_frm-identity
+										label.pgfrm-label(for="AAF-Identity") 身分别
+										.pgfrm-field
+											select#AAF-Identity.pgfrm-select(name="AAF-Identity")
+												option(value="0") 请选择
+												option(value="1") 设计总监
+												option(value="2") 服装设计师
+												option(value="3") 设计助理
+												option(value="4") 打版师
+												option(value="5") 样品师
+												option(value="6") 学生 (服装设计科系)
+												option(value="7") 学生 (非服装设计科系)
+												option(value="8") 其他
+								.form-group.row
+									.col-6.account_add_frm-email
+										label.pgfrm-label(for="AAF-Email") E-mail
+										.pgfrm-field
+											input#AAF-Email.pgfrm-input(type="email", name="AAF-Email", placeholder="service@ai-pattern.com", value="")
+									.col-6.account_add_frm-department
+										label.pgfrm-label(for="AAF-Department") 所属部门
+										.pgfrm-field
+											select#AAF-Department.pgfrm-select(name="AAF-Department")
+												option(value="0") 請選擇
+												option(value="1") 部门1
+												option(value="2") 部门2
+												option(value="3") 部门3
+								.form-group.account_add_frm-phone
+									label.pgfrm-label(for="AAF-Phone") 手机号码
+									.pgfrm-field.input-group
+										select.pgfrm-select.nationality_code.input-group-prepend#nationalityCode(name="nationalityCode")
+											option(value="0") 国籍码
+											option(value="1") 国籍1
+											option(value="2") 国籍2
+											option(value="3") 国籍3
+											option(value="4") 国籍4
+											option(value="5") 国籍5
+										input#AAF-Phone.pgfrm-input(type="phone", name="AAF-Phone", placeholder="手机号码", value="")
+								.form-group.account_add_frm-activation
+									.title 帐号激活方式
+									.method-1.au_radiocheckbox.style2
+										label.au_radiocheckbox-label(for="Method-1")
+											input#AAF-Method-1.au_radiocheckbox-input(type="radio", name="activationMethod" checked)
+											.choicemark
+												.choicemark-bg
+											.txt 寄送手机连结与验证码
+									.method-2.au_radiocheckbox.style2
+										label.au_radiocheckbox-label(for="Method-2")
+											input#AAF-Method-2.au_radiocheckbox-input(type="radio", name="activationMethod")
+											.choicemark
+												.choicemark-bg
+											.txt 寄送 Email 连结与验证码
+								.form-group.account_add_frm-btns.mb-0
+									button.pgbtn.pgbtn-s6.pgbtn-cancel(type="button") 取消
+									button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 储存
+									button.pgbtn.pgbtn-s7.pgbtn-continue(type="button") 保存并继续新增
+
+
+	// 燈箱 - 成員新增/編輯  END  !!
+	// =========================================================================
+
+	// =========================================================================
+	// 燈箱 - 成員編輯  START
+	#popupAccountEditor.pgpopup.pgpopup_account_editor
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						#AccountEditorFrm.pgfrm.account_editor_frm
+							form(action="")
+								.form-group.row
+									.col-6.account_editor_frm-name
+										label.pgfrm-label(for="AEF-Name") 使用者名称
+										.pgfrm-field
+											input#AEF-Name.pgfrm-input(type="text", name="AEF-Name", placeholder="輸入使用者名稱" value="")
+									.col-6.account_editor_frm-identity
+										label.pgfrm-label(for="AEF-Identity") 身分别
+										.pgfrm-field
+											select#AEF-Identity.pgfrm-select(name="AEF-Identity")
+												option(value="0") 请选择
+												option(value="1") 设计总监
+												option(value="2") 服装设计师
+												option(value="3") 设计助理
+												option(value="4") 打版师
+												option(value="5") 样品师
+												option(value="6") 学生 (服装设计科系)
+												option(value="7") 学生 (非服装设计科系)
+												option(value="8") 其他
+								.form-group.row
+									.col-6.account_editor_frm-email
+										label.pgfrm-label(for="AEF-Email") E-mail
+										.pgfrm-field
+											input#AEF-Email.pgfrm-input(type="email", name="AEF-Email", placeholder="service@ai-pattern.com", value="")
+									.col-6.account_editor_frm-department
+										label.pgfrm-label(for="AEF-Department") 所属部门
+										.pgfrm-field
+											select#AEF-Department.pgfrm-select(name="AEF-Department")
+												option(value="0") 請選擇
+												option(value="1") 部门1
+												option(value="2") 部门2
+												option(value="3") 部门3
+								.form-group.account_editor_frm-phone
+									label.pgfrm-label(for="AEF-Phone") 手机号码
+									.pgfrm-field.input-group
+										select.pgfrm-select.nationality_code.input-group-prepend#nationalityCode(name="nationalityCode")
+											option(value="0") 国籍码
+											option(value="1") 国籍1
+											option(value="2") 国籍2
+											option(value="3") 国籍3
+											option(value="4") 国籍4
+											option(value="5") 国籍5
+										input#AEF-Phone.pgfrm-input(type="phone", name="AEF-Phone", placeholder="手机号码", value="")
+								.form-group.account_editor_frm-activation
+									.title 帐号激活方式
+									.method-1.au_radiocheckbox.style2
+										label.au_radiocheckbox-label(for="Method-1")
+											input#AEF-Method-1.au_radiocheckbox-input(type="radio", name="activationMethod" checked)
+											.choicemark
+												.choicemark-bg
+											.txt 寄送手机连结与验证码
+									.method-2.au_radiocheckbox.style2
+										label.au_radiocheckbox-label(for="Method-2")
+											input#AEF-Method-2.au_radiocheckbox-input(type="radio", name="activationMethod")
+											.choicemark
+												.choicemark-bg
+											.txt 寄送 Email 连结与验证码
+								.form-group.account_editor_frm-btns.mb-0
+									button.pgbtn.pgbtn-s6.pgbtn-cancel(type="button") 取消
+									button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 储存
+
+
+	// 燈箱 - 成員編輯  END  !!
+	// =========================================================================
+
+	// =========================================================================
+	// 燈箱 - 编辑部门  START
+	#popupDepEditor.pgpopup.pgpopup_dep_editor
+		.pgpopup-bg
+		.pgpopup-wrap
+			.dep_member_select
+				.inner
+					.dep_member_select-hd
+						.title 请勾选成员
+						.ctrl
+							svg.svg_icon.icon-svg-close
+								use(xlink:href="#svg-close")
+					.dep_member_select-bd
+						.dep_member_select-search
+							.pgsearch-s1
+								input.input_search(type="search" placeholder="搜寻成员")
+						.dep_member_select-list(data-simplebar data-simplebar-auto-hide="false")
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-1")
+										input#member-1.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-2")
+										input#member-2.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-3")
+										input#member-3.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-4")
+										input#member-4.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-5")
+										input#member-5.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						h2.pgpopup_dep_editor-title 编辑部门
+						#DepEditorFrm.pgfrm.dep_editor_frm
+							form(action="")
+								.form-group.dep_editor_frm-name
+									label.pgfrm-label(for="DEF-DepName") 部门名称
+									.pgfrm-field
+										input#DEF-DepName.pgfrm-input(type="text", name="DEF-DepName", placeholder="输入部门名称" value="Pattern Go")
+								.form-group.dep_editor_frm-director
+									label.pgfrm-label(for="DEF-Director") 设计总监
+									.pgfrm-field
+										select#DEF-Director.pgfrm-select(name="DEF-Director")
+											option(value="0") 請選擇
+											option(value="1") ElaineChen (预设为管理员)
+											option(value="2") people2
+											option(value="3") people3
+								.form-group.dep_editor_frm-DepMember
+									.pgfrm-label 部门成员
+									.dep_member_list
+										.dep_member_item
+											.pic
+												img(src="public/images/dep_member-1.png", alt="")
+										.dep_member_item.add_member
+											.inner
+
+								.form-group.dep_editor_frm-btns.mb-0
+									button.pgbtn.pgbtn-s6.pgbtn-cancel(type="button") 取消
+									button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 更新
+
+	// 燈箱 - 编辑部门  END  !!
+	// =========================================================================
+
+
+	// =========================================================================
+	// 燈箱 - 建立部门  START
+	#popupAddEditor.pgpopup.pgpopup_dep_editor
+		.pgpopup-bg
+		.pgpopup-wrap
+			.dep_member_select
+				.inner
+					.dep_member_select-hd
+						.title 请勾选成员
+						.ctrl
+							svg.svg_icon.icon-svg-close
+								use(xlink:href="#svg-close")
+					.dep_member_select-bd
+						.dep_member_select-search
+							.pgsearch-s1
+								input.input_search(type="search" placeholder="搜寻成员")
+						.dep_member_select-list(data-simplebar data-simplebar-auto-hide="false")
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-1")
+										input#member-1.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-2")
+										input#member-2.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-3")
+										input#member-3.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-4")
+										input#member-4.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+							.dep_member_select-item
+								.is_select.au_radiocheckbox.style2
+									label.au_radiocheckbox-label(for="member-5")
+										input#member-5.au_radiocheckbox-input(type="checkbox", name="DepMember")
+										.choicemark
+											.choicemark-bg
+										.txt JamesHuang
+
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						h2.pgpopup_dep_editor-title 建立部门
+						#DepAddEditorFrm.pgfrm.dep_editor_frm
+							form(action="")
+								.form-group.dep_editor_frm-name
+									label.pgfrm-label(for="DEF-DepName") 部门名称
+									.pgfrm-field
+										input#DEF-DepName.pgfrm-input(type="text", name="DEF-DepName", placeholder="输入部门名称" value="")
+								.form-group.dep_editor_frm-director
+									label.pgfrm-label(for="DEF-Director") 设计总监
+									.pgfrm-field
+										select#DEF-Director.pgfrm-select(name="DEF-Director")
+											option(value="0") 請選擇
+											option(value="1") ElaineChen (预设为管理员)
+											option(value="2") people2
+											option(value="3") people3
+								.form-group.dep_editor_frm-DepMember
+									.pgfrm-label 部门成员
+									.dep_member_list
+										.dep_member_item
+											.member_pic.pic
+												img(src="public/images/dep_member-1.png", alt="成員名字")
+										.dep_member_item.add_member
+											.inner
+
+								.form-group.dep_editor_frm-btns.mb-0
+									button.pgbtn.pgbtn-s6.pgbtn-cancel(type="button") 取消
+									button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 建立
+
+	// 燈箱 - 建立部门  END  !!
+	// =========================================================================
+block content
+	.page_main(class=page_class)
+
+		main.main_content
+			.content_wrap.container
+				// ----------  .mbr_admin-block  START --------------------------------------------------------------
+				article.mbr_admin-block.pgpannel
+					// 頁籤
+					.mbr_admin_tabs
+						ul.cf.lis-n
+							li.profile_tabs-item.tabs_item(data-showcnt="AccountMgmt") 帐号管理
+							li.profile_tabs-item.tabs_item(data-showcnt="DepartmentMgmt") 部门设定
+					// 頁籤內容
+					.mbr_admin_tabs_container.tabs_container
+						.inner
+							// ----------  帳號管理 #AccountMgmt.tab_content  START --------------------------------------------------------------
+							section#AccountMgmt.account_mgmt.tab_content
+								.account_mgmt_block
+									.account_mgmt_block-hd
+										button.pgbtn.pgbtn-s8.pgbtn-add(data-popup="popupAccountAdd")
+											.icon
+											.txt 新增成员
+										button.pgbtn.pgbtn-s8.pgbtn-del
+											.icon
+											.txt 删除帐号
+									.account_mgmt_block-bd
+										article.account_mgmt_list.inner-table
+											section.account_mgmt_list-title.inner-tablerow
+												.title-item.inner-tablecell.name
+													.check_member.au_radiocheckbox.style2
+														// label for 要對應 input id
+														label.au_radiocheckbox-label(for="checkMember-all")
+															input#checkMember-all.au_radiocheckbox-input(type="checkbox", name="checkMember")
+															.choicemark
+																.choicemark-bg
+															.txt 姓名
+												.title-item.inner-tablecell.job 职务
+												.title-item.inner-tablecell.department 所属部门
+												.title-item.inner-tablecell.phone 手机号
+												.title-item.inner-tablecell.email Email
+												.title-item.inner-tablecell.editor &nbsp;
+
+											section.account_mgmt_item.inner-tablerow#AccountIndex-1
+												.title-item.inner-tablecell.name
+													.check_member.au_radiocheckbox.style2
+														// label for 要對應 input id
+														label.au_radiocheckbox-label(for="checkMember-1")
+															input#checkMember-1.au_radiocheckbox-input(type="checkbox", name="checkMember")
+															.choicemark
+																.choicemark-bg
+															.txt AmyLin
+												.title-item.inner-tablecell.job
+													.select_block
+														select.pgselect.pgselect-s1.select-job
+															option(value="0") 請選擇
+															option(value="1") 职务1
+															option(value="2") 职务2
+															option(value="3") 职务3
+												.title-item.inner-tablecell.department
+													.select_block
+														select.pgselect.pgselect-s1.select-department
+															option(value="0") 請選擇
+															option(value="1") 部门1
+															option(value="2") 部门2
+															option(value="3") 部门3
+												.title-item.inner-tablecell.phone 0912345678
+												.title-item.inner-tablecell.email service@ai-pattern.com
+												.title-item.inner-tablecell.editor
+													button.pgbtn.pgbtn-s2.pgbtn-editor(type="button" data-popup="popupAccountEditor") 编辑
+											// ----------  .account_mgmt_item  END!! --------------------------------------------------------------
+
+											section.account_mgmt_item.inner-tablerow#AccountIndex-2
+												.title-item.inner-tablecell.name
+													.check_member.au_radiocheckbox.style2
+														// label for 要對應 input id
+														label.au_radiocheckbox-label(for="checkMember-2")
+															input#checkMember-2.au_radiocheckbox-input(type="checkbox", name="checkMember")
+															.choicemark
+																.choicemark-bg
+															.txt AmyLin
+												.title-item.inner-tablecell.job
+													.select_block
+														select.pgselect.pgselect-s1.select-job
+															option(value="0") 請選擇
+															option(value="1") 职务1
+															option(value="2") 职务2
+															option(value="3") 职务3
+												.title-item.inner-tablecell.department
+													.select_block
+														select.pgselect.pgselect-s1.select-department
+															option(value="0") 請選擇
+															option(value="1") 部门1
+															option(value="2") 部门2
+															option(value="3") 部门3
+												.title-item.inner-tablecell.phone 0912345678
+												.title-item.inner-tablecell.email service@ai-pattern.com
+												.title-item.inner-tablecell.editor
+													button.pgbtn.pgbtn-s2.pgbtn-editor(type="button" data-popup="popupAccountEditor") 编辑
+											// ----------  .account_mgmt_item  END!! --------------------------------------------------------------
+
+							// ----------  帳號管理 #AccountMgmt.tab_content  END!! --------------------------------------------------------------
+							// =========================================================================
+							// ----------  部門設定 #DepartmentMgmt.tab_content  START --------------------------------------------------------------
+							section#DepartmentMgmt.department_mgmt.tab_content
+								.department_mgmt_block.block1
+									h2.title 部门管理
+									.department_mgmt_list.row
+										.department_mgmt_item.col-3#DepID-1
+											.inner
+												.department_mgmt_item-bd
+													p 部门：<span class="dep_name">Pattern Go-A</span>
+													p 设计总监：<span class="director_name">AmyLin</span>
+												.department_mgmt_item-ft
+													button.pgbtn.pgbtn-dep-editor.js-open_popup(type="button" data-popup="popupDepEditor") 编辑部门
+													button.pgbtn.pgbtn-dep-delete(type="button") 删除部门
+										.department_mgmt_item.add_department.col-3
+											.inner.js-open_popup(data-popup="popupAddEditor")
+												.add_department-block
+													.icon
+													.txt 建立新部门
+								.department_mgmt_block.block2
+									h2.title 人员编制
+									.staffing_list
+										section.staffing_item
+											.inner
+												.staffing_item-hd
+													.name 设计总监
+													.ctrl
+														.toggle_edit_mode 编辑成员
+														.accordion-ctrl 查看
+												.staffing_item-bd
+													.member_list
+														.member_item
+															.member_item-delect
+															.member_item-pic
+																img(src="public/images/dep_member-A.png", alt="AmyLin")
+															.member_item-name AmyLin
+										// ----------  staffing_item  END!! --------------------------------------------------------------
+										section.staffing_item
+											.inner
+												.staffing_item-hd
+													.name 设计师
+													.ctrl
+														.toggle_edit_mode 编辑成员
+														.accordion-ctrl 查看
+												.staffing_item-bd
+													.member_list
+														.member_item
+															.member_item-delect
+															.member_item-pic
+																img(src="public/images/dep_member-A.png", alt="AmyLin")
+															.member_item-name AmyLin
+										// ----------  staffing_item  END!! --------------------------------------------------------------
+										section.staffing_item
+											.inner
+												.staffing_item-hd
+													.name 设计助理
+													.ctrl
+														.toggle_edit_mode 编辑成员
+														.accordion-ctrl 查看
+												.staffing_item-bd
+													.member_list
+														.member_item
+															.member_item-delect
+															.member_item-pic
+																img(src="public/images/dep_member-A.png", alt="AmyLin")
+															.member_item-name AmyLin
+										// ----------  staffing_item  END!! --------------------------------------------------------------
+										section.staffing_item
+											.inner
+												.staffing_item-hd
+													.name 打版师
+													.ctrl
+														.toggle_edit_mode 编辑成员
+														.accordion-ctrl 查看
+												.staffing_item-bd
+													.member_list
+														.member_item
+															.member_item-delect
+															.member_item-pic
+																img(src="public/images/dep_member-A.png", alt="AmyLin")
+															.member_item-name AmyLin
+										// ----------  staffing_item  END!! --------------------------------------------------------------
+										section.staffing_item
+											.inner
+												.staffing_item-hd
+													.name 样品师 
+													.ctrl
+														.toggle_edit_mode 编辑成员
+														.accordion-ctrl 查看
+												.staffing_item-bd
+													.member_list
+														.member_item
+															.member_item-delect
+															.member_item-pic
+																img(src="public/images/dep_member-A.png", alt="AmyLin")
+															.member_item-name AmyLin
+										// ----------  staffing_item  END!! --------------------------------------------------------------
+							// ----------  部門設定 #DepartmentMgmt.tab_content  END!! --------------------------------------------------------------
+				// ----------  .mbr_admin-block  END!! --------------------------------------------------------------
+
+
+	.mbr_page_footer
+		p.copyright Copyright © 2020 Pattern Go All Rights Reserved | Designed by LOHAS IT
+		.lang
+			| 语言
+			.pgselect-wrap.select_block
+				select.pgselect.pgselect-s2
+					option(value="0") 简体中文
+					option(value="1") 繁體中文
+					option(value="2") English
+
+
+		// main.main_content  END  !!
+		// =========================================================================
+
+block page_script
+	script(src="public/plugins/multiple-select.js")
+	script(src="public/js/page/mbr_admin.js")

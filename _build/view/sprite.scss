@@ -1,0 +1,144 @@
+%svg-common {
+	background: url("svg/sprite.view.svg") no-repeat;
+}
+
+.svg-bookmark {
+	@extend %svg-common;
+	background-position: 72.09612817089452% 56.1622464898596%;
+}
+
+.svg-bookmark-dims {
+	width: 9.1px;
+	height: 13.9px;
+}
+
+.svg-btn_more {
+	@extend %svg-common;
+	background-position: 59.01639344262295% 32.87671232876713%;
+}
+
+.svg-btn_more-dims {
+	width: 23px;
+	height: 5px;
+}
+
+.svg-cleaner {
+	@extend %svg-common;
+	background-position: 45.12022630834512% 98.72611464968153%;
+}
+
+.svg-cleaner-dims {
+	width: 13.3px;
+	height: 15.2px;
+}
+
+.svg-file {
+	@extend %svg-common;
+	background-position: 88.88888888888889% 61.29032258064516%;
+}
+
+.svg-file-dims {
+	width: 12px;
+	height: 16px;
+}
+
+.svg-hidden {
+	@extend %svg-common;
+	background-position: 64.28571428571429% 0;
+}
+
+.svg-hidden-dims {
+	width: 28px;
+	height: 24px;
+}
+
+.svg-layout_default {
+	@extend %svg-common;
+	background-position: 48.275862068965516% 69.23076923076923%;
+}
+
+.svg-layout_default-dims {
+	width: 26px;
+	height: 26px;
+}
+
+.svg-layout_list {
+	@extend %svg-common;
+	background-position: 0 69.23076923076923%;
+}
+
+.svg-layout_list-dims {
+	width: 28px;
+	height: 26px;
+}
+
+.svg-library {
+	@extend %svg-common;
+	background-position: 85.9598853868195% 95.67901234567901%;
+}
+
+.svg-library-dims {
+	width: 14.2px;
+	height: 13.2px;
+}
+
+.svg-logout {
+	@extend %svg-common;
+	background-position: 95.80838323353294% 33.333333333333336%;
+}
+
+.svg-logout-dims {
+	width: 17.2px;
+	height: 18px;
+}
+
+.svg-love {
+	@extend %svg-common;
+	background-position: 65.3179190751445% 95.82689335394126%;
+}
+
+.svg-love-dims {
+	width: 14.8px;
+	height: 13.3px;
+}
+
+.svg-pencil {
+	@extend %svg-common;
+	background-position: 23.494860499265787% 99.35897435897436%;
+}
+
+.svg-pencil-dims {
+	width: 15.9px;
+	height: 15.6px;
+}
+
+.svg-recent {
+	@extend %svg-common;
+	background-position: 0 100%;
+}
+
+.svg-recent-dims {
+	width: 16px;
+	height: 16px;
+}
+
+.svg-search {
+	@extend %svg-common;
+	background-position: 100% 0;
+}
+
+.svg-search-dims {
+	width: 20px;
+	height: 20px;
+}
+
+.svg-svg-close {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-svg-close-dims {
+	width: 36px;
+	height: 36px;
+}
+

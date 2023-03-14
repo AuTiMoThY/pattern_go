@@ -1,0 +1,157 @@
+.mbr_page {
+	padding-top: 60px;
+	padding-bottom: 50px;
+	min-height: 100vh;
+
+	// background-color: #E0E0E0;
+
+	&:not(.mbr_mgmt) {
+
+	}
+
+	&.mbr_wallet {
+		@include bg("bg-mbr_wallet.jpg", 50%, 50%);
+
+		display: table;
+		width: 100%;
+		.main_content {
+			display: table-cell;
+			vertical-align: middle;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		.content_wrap {
+			@extend %content_wrap;
+		}
+	}
+
+	&.mbr_profile {
+		@include bg("bg-mbr_profile.jpg", 50%, 50%);
+
+		width: 100%;
+		.main_content {
+			padding: 60px 0;
+
+		}
+
+		.content_wrap {
+			@extend %content_wrap;
+		}
+	}
+
+	&.mbr_plan {
+		@include bg("bg-mbr_plan.jpg", 50%, 50%);
+		background-attachment: fixed;
+
+		display: table;
+		width: 100%;
+		.main_content {
+			display: table-cell;
+			vertical-align: middle;
+
+		}
+
+		.content_wrap {
+			padding: 60px 0;
+			// @extend %content_wrap;
+		}
+
+		&.plan_upgrade {
+			.content_wrap {
+				@extend %content_wrap;
+				padding: 60px 0;
+			}
+		}
+
+		&.plan_checkout {
+			.content_wrap {
+				padding: 60px 0;
+			}
+		}
+
+	}
+
+	&.mbr_admin {
+		@include bg("bg-mbr_admin.jpg", 50%, 50%);
+		background-attachment: fixed;
+
+		width: 100%;
+		.main_content {
+			padding: 60px 0;
+
+		}
+	}
+
+
+	.main_content {
+		// @include absolute();
+		// display: flex;
+		@include wh();
+	}
+}
+
+%content_wrap {
+	display: grid;
+	grid-template-columns: percentage(373 / 1200) percentage((1200 - 373) / 1200);
+	width: 100%;
+
+	[class*="-aside"] {
+		padding-right: 20px;
+	}
+	[class*="-main"] {
+		padding-left: 20px;
+	}
+}
+
+
+.mbr_page_footer {
+	@include fixed($B:0, $L:0);
+	z-index: 9999;
+	@include wh(100%, 50);
+	border-top: 1px solid color("GRAY1");
+	background-color: color("GRAY2");
+	padding-left: 1rem;
+	padding-right: 1rem;
+
+	display: flex;
+	align-items: center;
+	// justify-content: center;
+
+	@include remCalc(font-size, 14);
+	color: color("BLACK");
+	.copyright {
+		margin-bottom: 0;
+	}
+
+	.lang {
+		@include absolute($R:1rem);
+		display: flex;
+		align-items: center;
+
+		.select_block {
+			width: 140px;
+			margin-left: 10px;
+
+			border-radius: 85px;
+			border: 1px solid color("BLACK");
+
+			&:after {
+				@include psudoClass;
+				@include absolute(50%, 1rem);
+				z-index: 1;
+				transform: translateY(-50%) rotate(45deg);
+				@include wh(6);
+				border-left: 2px solid color("BLACK");
+				border-top: 2px solid color("BLACK");
+			}
+		}
+
+		.pgselect {
+			position: relative;
+			z-index: 5;
+			width: 100%;
+			padding: 6px 1rem;
+		}
+	}
+}

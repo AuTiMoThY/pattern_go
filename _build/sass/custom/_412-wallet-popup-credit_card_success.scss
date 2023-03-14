@@ -1,0 +1,23 @@
+.pgpopup_credit_card_success {
+
+	text-align: center;
+	.container-inner {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 700px;
+		padding: 0 85px;
+	}
+	.pgpopup-bd {
+		width: 100%;
+	}
+	.icon-success {
+		margin-bottom: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.txt {
+		margin-bottom: 80px;
+		@include remCalc(font-size, 28);
+	}
+}

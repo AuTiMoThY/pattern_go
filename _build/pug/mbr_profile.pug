@@ -1,0 +1,243 @@
+extends _layout.pug
+block vars
+	//- - var login = 1;
+	- var page_class = "mbr_page mbr_profile";
+	- var page_title = "帐户设定";
+	- var mbr_header = 1;
+	- var mbr_header_title = "帐户设定";
+
+
+block pluginStyle
+	//- link(rel="stylesheet", href="dist/plugin/swiper/swiper.min.css")
+
+block popup
+
+	// =========================================================================
+	// 燈箱 - 更改頭像  START
+	#popupChangePhoto.pgpopup.pgpopup_change_photo
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						.pgfrm.pgpopup_change_photo_frm
+							form(action="")
+								.form-group.pgpopup_change_photo_frm-pic
+									.pic
+										img(src="public/images/user-pic2.png", alt="")
+									.txt 上传图片注意事项：说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明
+								.form-group.pgpopup_change_photo_frm-btns
+									label.pgbtn.pgbtn-s6.pgbtn-cancel.update_pic(for="ChangePhoto")
+										.txt 上传图片
+										input#ChangePhoto(type="file", name="ChangePhoto")
+									button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 确认
+	// 燈箱 - 更改頭像  END  !!
+	// =========================================================================
+
+	// =========================================================================
+	// 燈箱 - 變更電子信箱  START
+	#popupChangeEmail.pgpopup.pgpopup_change_email
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-close
+				svg.svg_icon.icon-svg-close
+					use(xlink:href="#svg-close")
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						h1.pgpopup-title 变更电子信箱
+						.pgfrm.pgpopup_change_email_frm
+							form(action="")
+								.form-group.pgpopup_change_email_frm-email
+									label.pgfrm-label(for="ChangeEmail") Email
+									.pgfrm-field
+										input#ChangeEmail.pgfrm-input(type="email", name="ChangeEmail", placeholder="請輸入新的電子信箱")
+								.form-group.pgpopup_change_email_frm-btns
+									button.pgfrm-btn.pgbtn.pgbtn-s3.pgpopup_change_email-submit(type="button") 发送认证信
+	// 燈箱 - 變更電子信箱  END  !!
+	// =========================================================================
+
+	// =========================================================================
+	// 燈箱 - 請輸入驗證碼  START
+	#popupCheckCode.pgpopup.pgpopup_check_code.pgdialog.dialog-verification_code
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					form(action="")
+						p.pgdialog-msg 请输入验证码
+						.verification_code
+							.time_left 剩余时间<span id="countdownTime">04：59</span>
+							input.pgfrm-input.pginput(type="text", placeholder="01234567")
+						button.pgbtn.pgbtn-s2.pgpopup_check_code-submit(type="button") 确认
+						a.other-link.text-center.txt-b01.sendToEmail-re(href="javascript:;") 没有收到验证码? 重新发送
+	// 燈箱 - 請輸入驗證碼  END  !!
+	// =========================================================================
+
+block content
+	.page_main(class=page_class)
+
+		main.main_content
+			.content_wrap.container
+				aside.profile-aside
+					.pgpannel.profile_block
+						.profile_block-photo.pic
+							img(src="public/images/user-pic.png", alt="")
+						button.pgbtn.pgbtn-s2.profile_block-change.js-open_popup(type="button", data-popup="popupChangePhoto") 更改头像
+				// ----------  .profile-main  START --------------------------------------------------------------
+				.profile-main
+					.pgpannel
+						// 頁籤
+						.profile_tabs
+							ul.cf.lis-n
+								li.profile_tabs-item.tabs_item(data-showcnt="AccountInfo") 帐号资讯
+								li.profile_tabs-item.tabs_item(data-showcnt="PersonalInfo") 个人资讯
+						// 頁籤內容
+						.profile_tabs_container.tabs_container
+							.inner
+								// ----------  帳號資訊 #AccountInfo.tab_content  START --------------------------------------------------------------
+								section#AccountInfo.tab_content
+									#AccountInfoFrm.accountInfo_frm
+										form(action="")
+											.form-group.row
+												.col-6.accountInfo_frm-userName
+													label.pgfrm-label(for="AIF-UserName") 使用者名称
+													.pgfrm-field
+														input#AIF-UserName.pgfrm-input(type="text", name="AIF-UserName", placeholder="输入使用者名称", value="ElaineChen")
+												.col-6.accountInfo_frm-userId
+													label.pgfrm-label(for="AIF-userId") 使用者ID
+													.pgfrm-field
+														input#AIF-userId.pgfrm-input(type="text", name="AIF-userId", placeholder="长度不超过20个字元", maxlength="20")
+											.form-group.accountInfo_frm-phone
+												label.pgfrm-label(for="AIF-Phone") 手机号码
+												.pgfrm-field.input-group
+													select.pgfrm-select.nationality_code.input-group-prepend#nationalityCode(name="nationalityCode")
+														option(value="0") 国籍码
+														option(value="1") 国籍1
+														option(value="2") 国籍2
+														option(value="3") 国籍3
+														option(value="4") 国籍4
+														option(value="5") 国籍5
+													input#AIF-Phone.pgfrm-input(type="phone", name="AIF-Phone", placeholder="手机号码", value="0912345678")
+													span.accountInfo_frm-check.input-group-append.check-phone.js-open_popup(data-popup="popupCheckCode") 验证
+											.form-group.accountInfo_frm-email
+												label.pgfrm-label(for="AIF-Email") Email
+												.pgfrm-field
+													input#AIF-Email.pgfrm-input(type="email", name="AIF-Email", placeholder="service@ai-pattern.com", value="service@ai-pattern.com")
+												.more_link.text-right
+													a.change_email.js-open_popup(href="javascript:;", data-popup="popupChangeEmail") 变更电子信箱
+											.form-group.row
+												.col-6.accountInfo_frm-pw
+													label.pgfrm-label(for="AIF-PW1") 密码
+													.pgfrm-field
+														.is_hidden
+															svg.svg_icon.icon-hidden
+																use(xlink:href="#hidden")
+														input#AIF-PW1.pgfrm-input(type="password", name="AIF-PW1", placeholder="输入密码")
+												.col-6.accountInfo_frm-pw
+													label.pgfrm-label(for="AIF-PW2") 确认密码
+													.pgfrm-field
+														.is_hidden
+															svg.svg_icon.icon-hidden
+																use(xlink:href="#hidden")
+														input#AIF-PW2.pgfrm-input(type="password", name="AIF-PW2", placeholder="再次确认新密码")
+											.form-group.row.mb-0
+												.accountInfo_frm-btns.col-6.offset-6
+													button.pgbtn.pgbtn-s6.pgbtn-cancel(type="button") 取消
+													button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 确认
+								// ----------  帳號資訊 #AccountInfo.tab_content  END!! --------------------------------------------------------------
+								// =========================================================================
+								// ----------  個人資訊 #PersonalInfo.tab_content  START --------------------------------------------------------------
+								section#PersonalInfo.tab_content
+									#PersonalInfoFrm.personalInfo_frm
+										form(action="")
+											.form-group.personalInfo_frm-status
+												.is_public.au_radiocheckbox.style2
+													label.au_radiocheckbox-label(for="isPublic")
+														input#isPublic.au_radiocheckbox-input(type="checkbox", name="isPublic")
+														.choicemark
+															.choicemark-bg
+														.txt 公开
+												label.pgfrm-label(for="PIF-Status") 就职/学 状态
+												.pgfrm-field
+													select#PIF-Status.pgfrm-select(name="PIF-Status")
+														option(value="0") 请选择
+														option(value="1", data-def="status-work") 就职
+														option(value="2", data-def="status-school") 就学
+														option(value="3", data-def="status-none") 无
+
+											.form-group.personalInfo_frm-status-work.personalInfo_frm-comp
+												label.pgfrm-label(for="PIF-Comp") 任职公司
+												.pgfrm-field
+													input#PIF-Comp.pgfrm-input(type="text", name="PIF-Comp", placeholder="任职公司名称")
+											.form-group.personalInfo_frm-status-work.personalInfo_frm-identity
+												label.pgfrm-label(for="PIF-Identity") 身分
+												.pgfrm-field
+													select#PIF-Identity.pgfrm-select(name="PIF-Identity")
+														option(value="0") 请选择
+														option(value="1") 设计总监
+														option(value="2") 服装设计师
+														option(value="3") 设计助理
+														option(value="4") 打版师
+														option(value="5") 样品师
+														option(value="6") 学生 (服装设计科系)
+														option(value="7") 学生 (非服装设计科系)
+														option(value="8") 其他
+
+											.form-group.personalInfo_frm-status-school.personalInfo_frm-education
+												label.pgfrm-label(for="PIF-Education") 学历
+												.pgfrm-field
+													select#PIF-Education.pgfrm-select(name="PIF-Education")
+														option(value="0") 请选择
+														option(value="1") 博士
+														option(value="2") 硕士
+														option(value="3") 学士
+														option(value="4") 高中
+														option(value="5") 国中
+											.form-group.personalInfo_frm-status-school.personalInfo_frm-school
+												label.pgfrm-label(for="PIF-School") 学校
+												.pgfrm-field
+													input#PIF-School.pgfrm-input(type="text", name="PIF-School", placeholder="學校名稱")
+
+											.form-group.personalInfo_frm-expert
+												label.pgfrm-label(for="PIF-Expert") 擅长项目
+												.pgfrm-field
+													select#PIF-Expert.pgfrm-select(multiple="multiple", name="PIF-Expert")
+														//- input(type="hidden", name="PIF-expert")
+														option(value="1") 女装设计
+														option(value="2") 男装设计
+														option(value="3") 童装设计
+														option(value="4") 女装打版
+														option(value="5") 男装打版
+														option(value="6") 童装打版
+														option(value="7") 女装打样
+														option(value="8") 男装打样
+														option(value="9") 童装打样
+														option(value="10") 户外休闲
+											.form-group.personalInfo_frm-selfIntro
+												label.pgfrm-label(for="PIF-SelfIntro") 自我介绍
+												.pgfrm-field
+													textarea#PIF-SelfIntro.pgfrm-textarea(name="PIF-SelfIntro")
+											.form-group.row.mb-0
+												.personalInfo_frm-btns.col-6.offset-6
+													button.pgbtn.pgbtn-s6.pgbtn-cancel(type="button") 取消
+													button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 确认
+								// ----------  個人資訊 #PersonalInfo.tab_content  END!! --------------------------------------------------------------
+				// ----------  .profile-main  END!! --------------------------------------------------------------
+	.mbr_page_footer
+		p.copyright Copyright © 2020 Pattern Go All Rights Reserved | Designed by LOHAS IT
+		.lang
+			| 语言
+			.pgselect-wrap.select_block
+				select.pgselect.pgselect-s2
+					option(value="0") 简体中文
+					option(value="1") 繁體中文
+					option(value="2") English
+
+
+		// main.main_content  END  !!
+		// =========================================================================
+
+block page_script
+	script(src="public/plugins/multiple-select.js")
+	script(src="public/js/page/mbr_profile.js")

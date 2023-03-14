@@ -1,0 +1,75 @@
+.mgmt_topbar {
+	position: relative;
+	> .inner {
+		display: flex;
+		align-items: center;
+
+		height: 70px;
+		padding-left: 30px;
+		padding-right: 30px;
+		border-bottom: 1px solid color("GRAY1");
+	}
+}
+
+%tool {
+	.txt {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+	.pgdropdown-s1 {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.pgsort {
+	@extend %tool;
+}
+.pgfilter {
+	@extend %tool;
+	margin-left: 40px;
+}
+
+.pgsearch {
+	margin-left: 40px;
+}
+
+
+.layout-toggle-picker {
+	@include absolute(50%, 30px);
+	transform: translateY(-50%);
+
+	display: flex;
+
+
+	.btn_picker {
+		position: relative;
+		@include wh(32);
+		cursor: pointer;
+	}
+
+	.svg_icon {
+		@include absolute(50%, $L:50%);
+		transform: translate(-50%, -50%);
+		fill: color("GRAY1");
+		transition: $transition-base;
+
+		&:hover {
+			fill: color("BLACK");
+		}
+	}
+
+	.js-active {
+		.svg_icon {
+			fill: color("BLACK");
+		}
+	}
+}
+
+.layout-toggle-default {
+	margin-right: 20px;
+}
+.layout-toggle-list {
+
+}

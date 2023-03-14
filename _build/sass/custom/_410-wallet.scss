@@ -1,0 +1,223 @@
+.wallet-aside {
+
+	
+}
+
+.current_project {
+	padding: 50px 40px 25px;
+	text-align: center;
+
+	.pgpannel-title {
+		margin-bottom: 30px;
+	}
+
+	&-expiry_date {
+		@include remCalc(font-size, 14);
+	}
+}
+
+.project_block {
+	margin-bottom: 20px;
+	border: 1px solid #9C9FA4;
+	border-radius: 15px;
+	overflow-y: hidden;
+	&-hd {
+		background-color: #E0E0E0;
+		border-bottom: 1px solid #BDBDBD;
+
+		.title {
+			margin-bottom: 0;
+			padding: 20px;
+			@include remCalc(font-size, 20);
+			font-weight: bolder;
+		}
+	}
+	&-rmb {
+		padding: 20px 0;
+		color: color("A");
+
+		.num {
+			@include remCalc(font-size, 48);
+		}
+
+		.txt {
+			@include remCalc(font-size, 18);
+			font-weight: bolder;
+		}
+	}
+	&-bd {
+		padding: 45px 30px 30px;
+		background-color: #F8F8F8;
+		border-top: 1px solid #BDBDBD;
+
+		.strong {
+			margin-right: 0.5rem;
+			@include remCalc(font-size, 48);
+		}
+
+		.pgbtn-status {
+			margin-top: 30px;
+		}
+
+		.txt {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	.highlight_block {
+		position: relative;
+		display: inline-block;
+		color: #fff;
+
+		&:after {
+			@include absolute(-5%, $L:-5%);
+			z-index: -1;
+			@include psudoClass;
+			@include wh(110%);
+			background-color: color("RED");
+			transform: rotate(-2deg);
+		}
+	}
+}
+
+.account_info {
+	margin-bottom: 30px;
+	padding: 30px 40px;
+	text-align: center;
+
+	.pgpannel-title {
+		margin-bottom: 30px;
+	}
+
+	&-balance {
+		padding: 30px 0;
+		border-right: 1px solid #E0E0E0;
+
+		.rmb {
+			margin-bottom: 40px;
+			&-num {
+				display: inline-block;
+				@include remCalc(font-size, 48);
+				font-weight: bolder;
+			}
+			&-txt {
+				margin-left: 0.5rem;
+				display: inline-block;
+				@include remCalc(font-size, 24);
+			}
+		}
+
+		.pgbtn-deposit {
+			max-width: 135px;
+			margin: auto;
+		}
+	}
+	&-bonus {
+		padding: 30px 0;
+
+		.more_link {
+			margin-left: 20px;
+			color: color("GRAY1");
+
+			@include hover_line(2, color("GRAY1"));
+		}
+
+		.point {
+			margin-bottom: 40px;
+			&-num {
+				display: inline-block;
+				@include remCalc(font-size, 48);
+				font-weight: bolder;
+			}
+			&-txt {
+				margin-left: 0.5rem;
+				display: inline-block;
+				@include remCalc(font-size, 24);
+			}
+		}
+
+		.bonus-btns {
+			.pgbtn {
+				width: 100px;
+				&:first-of-type {
+					margin-right: 30px;
+				}
+			}
+		}
+	}
+}
+
+.credit_card_setting {
+	padding: 40px;
+}
+
+.credit_card_list {
+	> .title {
+		border-bottom: 1px solid #E0E0E0;
+		padding-bottom: 15px;
+		font-weight: normal;
+		font-size: 1rem;
+
+		.add_credit_card {
+			float: right;
+		}
+	}
+
+	ul {
+		// display: table;
+		width: 100%;
+		margin-bottom: 30px;
+	}
+}
+
+.credit_card_item {
+	> .inner {
+		display: flex;
+		align-items: center;
+	}
+
+	.inner-tablecell {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	.pic {
+		width: 42px;
+		// @include wh(42, 30);
+	}
+	// .pic, .txt {
+	// 	display: inline-block;
+	// 	vertical-align: middle;
+	// }
+
+	.name, .num {
+		padding: 0 1rem;
+	}
+
+	.name {
+		width: percentage(309 / 707);
+	}
+
+	.num {
+		span {
+			&:not(:first-of-type) {
+				padding-left: 0.8rem;
+			}
+		}
+	}
+
+	.pgbtn-delete {
+		@include hover_line(2, color("BLACK"));
+	}
+}
+
+.pgbtn-receive_red_env {
+	position: relative;
+	.highlight {
+		@include absolute(-10px, -10px);
+		@include circle(20);
+		@include bg("exclamation_mark.svg");
+		background-color: #fff;
+	}
+}

@@ -1,0 +1,75 @@
+
+footer.page_footer
+	.page_footer-top
+		// 手機板
+		.container.d-md-none.
+			<div class="copyright__list">
+			    <div class="copyright__link">
+			        <a href="javascript:;">關於我們</a>
+			    </div>
+			    <div class="copyright__link">
+			        <a href="javascript:;">隱私權條款</a>
+			    </div>
+			    <div class="copyright__link">
+			        <a href="javascript:;">新手上路</a>
+			    </div>
+			</div>
+		// 電腦版
+		.container.d-none.d-md-show
+			.sitemap
+				//- .sitemap-list
+				//- 	h3.sitemap-title 關於iWalk8
+				//- 	ul.lis-n
+				//- 		li.sitemap-item
+				//- 			a(href="javascript:;") 關於我們
+				//- 		li.sitemap-item
+				//- 			a(href="javascript:;") 聯絡客服
+				.sitemap-list
+					h3.sitemap-title 會員專區
+					ul.lis-n
+						li.sitemap-item
+							a(href="javascript:;") 會員登入
+						li.sitemap-item
+							a(href="javascript:;") 註冊會員
+						li.sitemap-item
+							a(href="./") 回到首頁
+				.sitemap-list
+					h3.sitemap-title 政策 / 須知
+					ul.lis-n
+						li.sitemap-item
+							a(href="javascript:;") 購物須知
+						li.sitemap-item
+							a(href="javascript:;") 隱私權政策
+						li.sitemap-item
+							a(href="javascript:;") 退換貨須知
+				.sitemap-list.social
+					h3.sitemap-title 關注我們
+					ul.lis-n
+						li.sitemap-item.social-item
+							a(href="https://www.facebook.com/iwalk8", target="_blank").facebook
+								span.icon_block
+									svg.icon.icon-facebook
+										use(xlink:href="#facebook")
+								| Facebook
+						li.sitemap-item.social-item
+							a(href="https://line.me/R/ti/p/%40613zkxjf", target="_blank").line
+								span.icon_block
+									svg.icon.icon-line
+										use(xlink:href="#line")
+								| Line
+
+	.page_footer-bottom
+		.container
+			a.logo.d-none.d-md-show(href="./", title="回首頁")
+				img(src="src/img/logo/iwalk8-logo-base.svg", alt="iWALK8")
+			.right
+				//- a(href="javascript:;").change_device
+					.icon_block
+						svg.icon.icon-device
+							use(xlink:href="#device")
+					| 切換手機版網站
+				p.page_footer-copyright
+					| Copyright © 2020 iwalk8 All Rights Reserved | Designed by 
+					a(href="")
+						| LOHAS IT
+// footer.page_footer  END  !! -------------------------------------------------------------------------

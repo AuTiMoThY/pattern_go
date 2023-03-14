@@ -1,0 +1,175 @@
+.pgpopup_dep_editor {
+	.container-inner {
+		padding: 40px;
+	}
+
+
+	.pgpopup-bd {
+		padding: 0;
+	}
+	&-title {
+		@include remCalc(font-size, 28);
+		text-align: center;
+	}
+}
+
+.dep_editor_frm {
+
+	.form-group {
+		margin-bottom: 30px;
+	}
+	.pgfrm-label {
+		margin-bottom: 10px;
+	}
+	.pgfrm-select {
+		position: relative;
+		width: 100%;
+		height: 50px;
+		padding: 0 15px;
+		border: 1px solid #e0e0e0;
+
+		&:after {
+			@include psudoClass;
+			@include absolute(0, 1rem, 0);
+			z-index: 10;
+			margin: auto;
+			@include triangle(bottom, color("BLACK"), 6px);
+		}
+
+		.ms-choice {
+			position: relative;
+			z-index: 11;
+			line-height: 50px;
+		}
+	}
+
+	&-btns {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 40px;
+	}
+
+	&-DepMember {
+
+	}
+}
+
+.dep_member_list {
+	display: flex;
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.dep_member_item {
+	padding-left: 5px;
+	padding-right: 5px;
+	.pic {
+		position: relative;
+		@include circle(40);
+		overflow-y: hidden;
+
+		img {
+			@include absolute(50%, $L:50%);
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&.add_member {
+		> .inner {
+			cursor: pointer;
+			position: relative;
+			@include circle(40);
+			background-color: #BDBDBD;
+
+			&:before, &:after {
+				@include psudoClass;
+				@include absolute(50%, $L:50%);
+				@include wh(20, 2);
+				background-color: #fff;
+			}
+
+			&:before {
+				transform: translate(-50%, -50%);
+			}
+			&:after {
+				transform: translate(-50%, -50%) rotate(-90deg);
+			}
+		}
+	}
+}
+
+
+.dep_member_select {
+
+	display: none;
+	@include absolute();
+	z-index: 10;
+	width: 480px;
+	background-color: #fff;
+	border: 1px solid #E0E0E0;
+
+	&.js-show {
+		display: block;
+	}
+
+	&-hd {
+		position: relative;
+		padding: 15px;
+		border-bottom: 1px solid #E0E0E0;
+
+		.title {
+
+		}
+
+		.ctrl {
+			@include absolute(0, 10px, 0);
+			margin: auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@include wh(30);
+			cursor: pointer;
+		}
+
+		.svg_icon {
+			@include wh(20);
+		}
+	}
+	&-bd {
+		padding: 20px 30px 30px;
+	}
+
+	&-search {
+		margin-bottom: 20px;
+		.input_search {
+			width: 100%;
+		}
+	}
+
+	&-list {
+		max-height: 280px;
+
+		.simplebar-track {
+			right: -15px;
+		}
+	}
+
+	&-item {
+		border-bottom: 1px solid #E0E0E0;
+	}
+	.au_radiocheckbox-label {
+		position: relative;
+		width: 100%;
+		border-radius: 0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		.choicemark {
+			@include absolute(0, 0, 0);
+			margin: auto;
+		}
+	}
+}
+
+.pgpopup-container .dep_member_select .simplebar-mask {
+	border-radius: 0;
+}

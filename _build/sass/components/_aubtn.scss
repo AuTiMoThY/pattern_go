@@ -1,0 +1,101 @@
+.aubtn2 {
+	border: none;
+	background-color: transparent;
+}
+.aubtn {
+	display: block;
+	border: none;
+	background-color: transparent;
+	padding: 0.6rem 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: $z-depth-1;
+
+	transition: all 0.3s ease-in-out;
+
+	&:active {
+		transform: translate(1px, 1px);
+	}
+
+
+	&-submit {
+		@include linear-gradient(to top right, #329D9C  , #7BE495 );
+		// @include linear-gradient(to top right, darken(#00FFA1, 10)  , darken(#00FFFF, 10) );
+		color: lighten(#00FFA1, 50);
+
+		&.js-checking {
+			@include linear-gradient(to top right, #fdfcfb   , #e2d1c3 );
+			color: #595757;
+		}
+	}
+
+
+	&-nextstage, &-prevstage {
+		@include absolute();
+		box-shadow: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	&-prevstage {
+		left: 1rem;
+	}
+
+	&-nextstage {
+		right: 1rem;
+	}
+
+	&-link {
+		@include linear-gradient(to top right, theme-color('primary-dark'), theme-color('primary') );
+		// color: darken(#a6c1ee, 40);
+		color: #fff;
+
+		&:hover {
+			@include linear-gradient(to top right, lighten(theme-color('primary-dark'), 10), lighten(theme-color('primary'), 10) );
+			color: #fff;
+		}
+	}
+
+	&-smlink {
+		display: table;
+		padding: 0.4rem 0.6rem;
+		font-size: 0.85rem;
+		@include linear-gradient(to top right, theme-color('primary-dark'), theme-color('primary') );
+		// color: darken(#a6c1ee, 40);
+		color: #fff;
+
+		&:hover {
+			@include linear-gradient(to top right, lighten(theme-color('primary-dark'), 10), lighten(theme-color('primary'), 10) );
+			color: #fff;
+		}
+	}
+
+	&-add {
+		padding: 0.4rem 0.6rem;
+		font-size: 0.85rem;
+		@include linear-gradient(to right, #36D1DC, #5B86E5);
+		color: #fff;
+
+		&:hover {
+			@include linear-gradient(to right, draken(#36D1DC, 10), draken(#5B86E5, 10) );
+			color: #fff;
+		}
+	}
+
+	&-remove {
+		display: table;
+		margin: auto;
+		padding: 0.4rem 0.6rem;
+		font-size: 0.85rem;
+		background-color: $grey-darken-1;
+		// @include linear-gradient(to right, #CB356B, #BD3F32);
+		color: #fff;
+
+		&:hover {
+			background-color: $grey-darken-2;
+			// @include linear-gradient(to right, draken(#CB356B, 10), draken(#BD3F32, 10) );
+			color: #fff;
+		}
+	}
+
+
+}

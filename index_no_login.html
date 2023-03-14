@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>首頁 | Pattern Go</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <!-- 讓手機不判斷它是電話號碼變顏色-->
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="https://csshake.surge.sh/csshake.min.css">
+    <link rel="stylesheet" href="public/plugins/slick/slick.css">
+    <link rel="stylesheet" href="public/plugins/fullpage/fullpage.css">
+    <link rel="stylesheet" href="public/plugins/simplebar/simplebar.css">
+    <link rel="stylesheet" href="public/css/animate.css">
+    <link rel="stylesheet" href="public/css/style.css?v=20200615">
+    <!-- js-->
+    <script src="public/js/libs/modernizr-custom.min.js"></script>
+    <script src="public/js/ModernizrAu.js"></script>
+  </head>
+  <body>
+    <!-- =========================================================================-->
+    <!-- SVG sprites  START-->
+    <div class="symbols_svg d-none">
+      <!----><?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 9.1 13.9" id="bookmark" xmlns="http://www.w3.org/2000/svg"><path d="M7.7 0H1.4C1 0 .7.1.4.4.1.7 0 1 0 1.4v11.7c0 .1 0 .3.1.4l.3.3c.1.1.2.1.4.1.1 0 .3 0 .4-.1L4.6 12 8 13.8c.1.1.3.1.4.1.1 0 .3 0 .4-.1l.3-.3c.1-.1.1-.3.1-.4V1.4c0-.4-.1-.7-.4-1C8.4.1 8 0 7.7 0zm.4 12.8l-3.2-1.7c-.1-.1-.2-.1-.4-.1-.1 0-.3 0-.4.1L.9 12.8V1.4c0-.1 0-.2.1-.3.2-.1.3-.2.4-.2h6.3c.1 0 .2 0 .3.1.1.1.1.2.1.3v11.5z"/></symbol><symbol viewBox="0 0 23 5" id="btn_more" xmlns="http://www.w3.org/2000/svg"><circle cx="2.5" cy="2.5" r="2.5"/><circle cx="11.5" cy="2.5" r="2.5"/><circle cx="20.5" cy="2.5" r="2.5"/></symbol><symbol viewBox="0 0 13.3 15.2" id="cleaner" xmlns="http://www.w3.org/2000/svg"><path d="M13.2 1.9c-.1-.1-.2-.1-.3-.1H9.5V.9c0-.2-.1-.5-.3-.7-.1-.1-.4-.2-.6-.2H4.9c-.2 0-.5.1-.6.3-.2.2-.3.4-.3.6v.8H.5c-.1 0-.2 0-.3.1-.2.2-.2.3-.2.4s0 .2.1.3c.1.1.2.1.3.1h1l.7 11.2c0 .4.2.7.4.9s.6.4 1 .4h6c.4 0 .7-.1 1-.4.3-.2.4-.6.4-.9l.7-11.2H13c.1 0 .1-.1.2-.1 0 0 .1-.1.1-.2v-.2s0-.1-.1-.2zM4.9.9h3.6v.8H4.9V.9zm5.2 12.9c0 .1-.1.2-.1.3-.1.1-.2.1-.3.1h-6c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3L2.4 2.7H10.7l-.6 11.1z"/></symbol><symbol viewBox="0 0 12 16" id="file" xmlns="http://www.w3.org/2000/svg"><path d="M11.8 4.7c0-.1-.1-.1-.1-.1-.1-.1-.1-.2-.2-.3L8.1.5C8 .4 7.9.4 7.8.3c0 0-.1-.1-.2-.1C7.4.1 7.2 0 7 0H1.5C1.1 0 .8.1.5.4s-.4.6-.4 1v13.1c0 .4.1.7.4 1 .3.3.6.4 1 .4h9.1c.4 0 .7-.1 1-.4.3-.3.4-.6.4-1V5.2c-.1-.1-.1-.3-.2-.5zm-1.4-.3h-2c-.1 0-.2 0-.3-.1-.1-.1-.2-.2-.2-.4V1.7l2.5 2.7zm.5 10.5c-.1.1-.2.1-.4.1h-9c-.1 0-.2 0-.3-.1-.2-.1-.2-.2-.2-.3V1.4c0-.1 0-.2.1-.3.1-.1.2-.1.4-.1H7v3c0 .4.1.7.4 1 .3.3.6.4 1 .4H11v9.2c0 .1 0 .2-.1.3z"/></symbol><symbol viewBox="0 0 28 24" id="hidden" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.2 4.5L1.3 1.6 2.9 0l22.6 22.4-1.7 1.6-3.7-3.7-.5-.5c-1.7.7-3.6 1.1-5.6 1.1-6.4 0-11.8-3.9-14-9.5 1-2.5 2.7-4.7 4.8-6.3l-.6-.6zm6.1 6l-2-2c-.4.8-.7 1.8-.7 2.8 0 3.5 2.9 6.3 6.4 6.3 1 0 1.9-.3 2.8-.7l-2-2c-.3.1-.5.1-.8.1-2.1 0-3.8-1.7-3.8-3.8 0-.1 0-.4.1-.7zM14 5.1c3.5 0 6.4 2.8 6.4 6.3 0 .8-.2 1.6-.5 2.3l3.7 3.7c1.9-1.6 3.4-3.7 4.4-6-2.2-5.5-7.6-9.5-14-9.5-1.8 0-3.5.3-5.1.9l2.7 2.7c.8-.3 1.6-.4 2.4-.4zm-.2 2.5l4 4v-.2c0-2.1-1.7-3.8-3.8-3.8h-.2z"/></symbol><symbol viewBox="0 0 26 26" id="layout_default" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h10v10H0zM0 16h10v10H0zM16 0h10v10H16zM16 16h10v10H16z"/></symbol><symbol viewBox="0 0 28 26" id="layout_list" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h6v6H0zM9 1h19v4H9zM0 10h6v6H0zM9 11h19v4H9zM0 20h6v6H0zM9 21h19v4H9z"/></symbol><symbol viewBox="0 0 14.2 13.2" id="library" xmlns="http://www.w3.org/2000/svg"><path d="M12.8 2.3H7.7c-.1 0-.2 0-.3-.1-.1 0-.1-.1-.2-.2L6.5.7C6.4.5 6.2.3 6 .2 5.7.1 5.5 0 5.2 0H1.5C1.1 0 .7.2.5.4.2.7 0 1.1 0 1.5v10.3c0 .4.2.8.4 1 .3.3.6.4 1 .4h11.3c.4 0 .8-.2 1-.4.3-.3.4-.6.4-1v-8c0-.4-.2-.8-.4-1-.2-.4-.5-.5-.9-.5zm.5 9.5v.2c0 .1-.1.1-.1.2 0 0-.1.1-.2.1H1.2c-.1 0-.1-.1-.2-.1s0-.2 0-.2V1.5c0-.1.1-.3.2-.4s.2-.2.4-.2h3.8c.1 0 .2 0 .3.1.1 0 .1.1.2.2l.8 1.3c-.2.2 0 .4.2.5.2.1.5.2.7.2h5.1c.1 0 .3.1.4.2.1.1.2.2.2.4v8z"/></symbol><symbol viewBox="0 0 17.2 18" id="logout" xmlns="http://www.w3.org/2000/svg"><path d="M16.7 11.7c-.4-.2-1 0-1.2.4-.6 1.2-1.5 2.2-2.6 3-1.2.7-2.5 1.1-3.9 1.1-4 0-7.2-3.2-7.2-7.2S5 1.8 9 1.8c1.4 0 2.7.4 3.9 1.1 1.1.7 2 1.8 2.6 3 .2.4.7.6 1.2.4.4-.2.6-.7.4-1.2-.7-1.5-1.8-2.8-3.3-3.7C12.4.5 10.7 0 9 0 6.6 0 4.3.9 2.6 2.6S0 6.6 0 9s.9 4.7 2.6 6.4S6.6 18 9 18c1.7 0 3.4-.5 4.9-1.4 1.4-.9 2.5-2.2 3.3-3.7.1-.5-.1-1-.5-1.2z"/><path d="M9.5 12.4c.2.2.4.3.6.3.2 0 .4-.1.6-.3l2.2-2.2c.3-.3.5-.8.5-1.2 0-.5-.2-.9-.5-1.2l-2.2-2.2c-.3-.3-.9-.3-1.2 0s-.3.9 0 1.2l1.3 1.3h-5c-.5 0-.9.4-.9.9s.4.9.9.9h5l-1.3 1.3c-.4.3-.4.9 0 1.2z"/></symbol><symbol viewBox="0 0 14.8 13.3" id="love" xmlns="http://www.w3.org/2000/svg"><path d="M10.4 0c-1.1 0-2.2.4-3 1.1C6.7.5 5.9.2 5.1 0S3.4 0 2.6.4 1.2 1.3.7 2C.2 2.8 0 3.6 0 4.5 0 8 5 12 6.6 13.1c.2.2.5.3.8.3.3 0 .6-.1.8-.3C9.8 12 14.8 8 14.8 4.5c0-1.2-.5-2.3-1.3-3.1-.8-.9-2-1.4-3.1-1.4zM7.7 12.3c-.1.1-.2.1-.3.1-.1 0-.2 0-.3-.1-1-.8-6.2-4.7-6.2-7.9 0-.9.4-1.8 1-2.5.7-.7 1.6-1 2.5-1 .5 0 1 .1 1.4.3.5.2.9.5 1.2.9l.3.4.3-.4c.3-.4.7-.6 1.2-.8.6-.3 1.1-.4 1.6-.4.9 0 1.8.4 2.5 1 .7.7 1 1.5 1 2.5 0 3.3-5.2 7.2-6.2 7.9z"/></symbol><symbol viewBox="0 0 15.9 15.6" id="pencil" xmlns="http://www.w3.org/2000/svg"><path d="M15.4 1.7L14.2.5c-.2-.2-.4-.3-.6-.4-.2 0-.4-.1-.7-.1-.2 0-.5 0-.7.1s-.4.2-.6.4l-1.3 1.3-9 9c-.2.2-.4.5-.5.8L0 15v.3c0 .1.1.2.1.2s.1.1.2.1h.3l3.5-.8c.3-.1.6-.2.9-.5l10.4-10c.3-.4.5-.8.5-1.3s-.2-.9-.5-1.3zm-1.7 2.7l-2.1-2.1.9-.9c.1-.1.3-.2.5-.2s.4.1.5.2l1.2 1.1c.1.1.1.1.1.2s.1.2.1.3 0 .2-.1.3c0 .1-.1.2-.1.2l-.3.3-.7.6zm-9.4 9.4c-.1.1-.2.2-.4.2l-2.6.6.6-2.6c0-.1.1-.2.2-.3l8.6-8.6 2.2 2.1-8.6 8.6z"/></symbol><symbol viewBox="0 0 16 16" id="recent" xmlns="http://www.w3.org/2000/svg"><path d="M12.1 8.5H8c-.1 0-.3-.1-.4-.2-.1 0-.1-.2-.1-.3V4.6c0-.1.1-.3.2-.4s.2-.1.3-.1c.1 0 .3.1.4.2s.2.2.2.4v2.9h3.6c.1 0 .3.1.4.2.1.1.2.2.2.4 0 .1-.1.3-.2.4-.2-.1-.4-.1-.5-.1z"/><path d="M8 16c-1.6 0-3.1-.5-4.4-1.3-1.3-.9-2.3-2.1-2.9-3.6C0 9.6-.2 8 .2 6.4c.3-1.6 1.1-3 2.2-4.1C3.5 1.2 4.9.4 6.5.1 8-.2 9.6 0 11.1.6c1.5.6 2.7 1.6 3.6 2.9C15.5 4.9 16 6.4 16 8c0 2.1-.8 4.2-2.3 5.7S10.1 16 8 16zM8 1c-1.4 0-2.7.4-3.9 1.2-1.1.8-2 1.9-2.5 3.1C1 6.6.9 8 1.2 9.4c.3 1.4.9 2.6 1.9 3.6 1 1 2.2 1.6 3.6 1.9 1.4.3 2.8.1 4-.4 1.3-.5 2.4-1.4 3.1-2.6S15 9.4 15 8c0-1.8-.7-3.6-2-4.9C11.6 1.8 9.8 1 8 1z"/></symbol><symbol viewBox="0 0 20 20" id="search" xmlns="http://www.w3.org/2000/svg"><path d="M19.7 18.1L16 14.7c1.2-1.5 1.9-3.5 1.9-5.6 0-5-4-9.1-9-9.1C4 0 0 4.1 0 9.1s4 9.1 9 9.1c2.1 0 4-.7 5.5-1.9l3.7 3.5c.2.2.5.3.8.3s.6-.1.8-.3c.3-.5.3-1.2-.1-1.7zm-17.5-9c0-3.8 3.1-6.9 6.8-6.9 3.8 0 6.8 3.1 6.8 6.9 0 3.8-3.1 6.9-6.8 6.9-3.8 0-6.8-3.1-6.8-6.9z"/></symbol><symbol viewBox="0 0 36 36" id="svg-close" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M26.75 11.445A1.375 1.375 0 1024.806 9.5L18 16.305 11.195 9.5a1.375 1.375 0 10-1.945 1.944l6.806 6.806-6.806 6.806a1.375 1.375 0 001.944 1.945L18 20.195 24.806 27a1.375 1.375 0 001.945-1.944l-6.806-6.806 6.805-6.805z"/></symbol></svg>
+    </div>
+    <!-- SVG sprites  END  !!-->
+    <!-- =========================================================================-->
+    <div id="top"></div>
+    <!-- =========================================================================-->
+    <!-- .body_wrap  START-->
+    <div class="body_wrap">
+      <header class="page_header">
+        <div class="container-fluid"><a class="logo_block" href="./">
+            <div class="logo"><img src="public/images/LOGO.svg" alt="Pattern Go 版騰信息科技有限公司"></div>
+            <div class="txt"><img src="public/images/Pattern_Go.svg" alt="Pattern Go 版騰信息科技有限公司"></div></a>
+          <nav class="user_menu"><a class="pgbtn pgbtn-s1 pgbtn-free_try" href="javascript:;">免费试用</a>
+            <ul class="cf lis-n">
+              <li class="user_menu-item"><a class="inner" id="openLogin" href="javascript: void 0;" data-popup="login">登入</a></li>
+              <li class="user_menu-item"><a class="inner" id="openSignup" href="javascript:;" data-popup="signup">注册</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- header.page_header  END  !! --------------------------------------------------------------------------->
+      <!-- =========================================================================-->
+      <!-- 頁面內容  START-->
+      <!-- =========================================================================-->
+      <div class="mobile_main d-sm-none"></div>
+      <div class="page_main d-none d-sm-block index_page">
+        <main class="main_content">
+          <div class="home_menu">
+            <ul class="cf lis-n home_menu-list" id="menu">
+              <li class="home_menu-item" data-menuanchor="banner"><a class="inner" href="#banner"></a></li>
+              <li class="home_menu-item" data-menuanchor="how_to_use"><a class="inner" href="#how_to_use"></a></li>
+              <li class="home_menu-item" data-menuanchor="why"><a class="inner" href="#why"></a></li>
+              <li class="home_menu-item" data-menuanchor="story"><a class="inner" href="#story"></a></li>
+            </ul>
+          </div>
+          <div class="content_wrap home_wrap" id="fullpage">
+            <section class="section home_section-banner" data-anchor="banner">
+              <div class="home_section-banner-bg" id="homeBanner">
+                <svg id="cloud0"></svg>
+                <svg id="cloud1"></svg>
+                <svg id="cloud4"></svg>
+                <svg id="cloud5"></svg>
+                <svg id="cloud7"></svg>
+                <main class="banner_main">
+                  <svg id="cloud2"></svg>
+                  <svg id="cloud3"></svg>
+                  <svg id="cloud6"></svg>
+                  <svg id="cloud8"></svg>
+                  <div class="structure-shadow"></div>
+                  <div class="structure"></div>
+                  <div class="decoration decoration-drawer"></div>
+                  <div class="decoration decoration-material"></div>
+                  <div class="decoration decoration-bucket"></div>
+                  <div class="decoration decoration-armrest"></div>
+                  <div class="decoration decoration-light" id="light"></div>
+                  <div class="paper">
+                    <svg class="painting" id="painting"></svg>
+                  </div>
+                  <div class="controll controll-top" id="controllTop"></div>
+                  <div class="controll controll-bottom" id="controllBottom"></div>
+                  <div class="smoke" id="smoke"></div>
+                  <div class="planet" id="planet"></div>
+                  <div class="decoration unknow" id="unknow"></div>
+                  <div class="anibtn anibtn-import" id="anibtnImport"></div>
+                  <div class="anibtn anibtn-export" id="anibtnExport"></div>
+                  <div class="drawing drawing-in" id="drawingIn"></div>
+                  <div class="drawing drawing-out" id="drawingOut"></div>
+                </main>
+              </div>
+              <div class="container">
+                <hgroup class="home_section-banner-slogan">
+                  <h1 class="title">工作效率提高十倍<br>一秒取得打版纸样</h1>
+                  <h2 class="subtitle">Pattern Go 是一个线上自动打版系统，可将您的设计图透过系统，自动演算制版，用超过10倍的速度，低于 1/10 的价格，完成您的打版工作</h2>
+                </hgroup>
+                <div class="scroll"></div>
+              </div>
+            </section>
+            <section class="section home_section-how_to_use" data-anchor="how_to_use">
+              <div class="container">
+                <h1 class="title">如何使用？</h1>
+                <div class="home_section-how_to_use-block">
+                  <div class="inner"><img src="public/images/how_to_use.jpg" alt=""></div>
+                </div>
+              </div>
+            </section>
+            <section class="section home_section-why" data-anchor="why">
+              <div class="container">
+                <h1 class="title">为何选择 Pattern Go？</h1>
+                <div class="home_section-why-content">
+                  <div class="why_list">
+                    <ul class="cf lis-n">
+                      <li class="why_item">
+                        <div class="pic"><img src="public/images/why1.png" alt="价格实惠"></div>
+                        <div class="cnt">
+                          <h2 class="why_item-title">价格实惠</h2>
+                          <p class="why_item-txt">用 1/10 的价格<br>让您取得优质的打版纸样</p>
+                        </div>
+                      </li>
+                      <li class="why_item">
+                        <div class="pic"><img src="public/images/why2.png" alt="版型更优"></div>
+                        <div class="cnt">
+                          <h2 class="why_item-title">版型更优</h2>
+                          <p class="why_item-txt">汇总高端版型演算技术<br>加上个人化参数调整<br>版型品质稳定又符合所需</p>
+                        </div>
+                      </li>
+                      <li class="why_item">
+                        <div class="pic"><img src="public/images/why3.png" alt="高效工作"></div>
+                        <div class="cnt">
+                          <h2 class="why_item-title">高效工作</h2>
+                          <p class="why_item-txt">只需一秒的时间<br>快速取得版型加速工作流程</p>
+                        </div>
+                      </li>
+                      <li class="why_item">
+                        <div class="pic"><img src="public/images/why4.png" alt="自由设计"></div>
+                        <div class="cnt">
+                          <h2 class="why_item-title">自由设计</h2>
+                          <p class="why_item-txt">各种设计工具<br>自由创作服装款式</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="Lima_shi_shi"><a class="pgbtn pgbtn-s1 pgbtn-link" href="javascript:;">马上试试</a></div>
+                </div>
+              </div>
+            </section>
+            <section class="section home_section-story" data-anchor="story">
+              <h1 class="title">產品故事</h1>
+              <div class="home_section-story-content">
+                <div class="story-content-slick">
+                  <div class="slick-item" data-anchor="slide1">
+                    <div class="container">
+                      <div class="story-slide slide1">
+                        <div class="story-pic story1">
+                          <div class="story-pic-bg1"></div>
+                          <svg class="svg_ani" id="svgStory1"></svg><svg class="svg_ani bg" viewBox="0 0 627 627" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint0_linear)">
+                          <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M24.1138 187.257C63.8302 105.912 155.098 72.5405 242.806 50.1388C331.135 27.5786 426.901 13.909 502.325 65.1166C582.123 119.294 631.969 214.279 626.394 310.57C621.22 399.937 549.079 465 476.167 516.935C411.558 562.956 335.583 585.613 257.18 573.558C172.871 560.594 91.1729 523.998 47.1078 450.962C-0.848128 371.476 -16.6152 270.677 24.1138 187.257Z;
+                          M17.2,137c39.7-81.3,149.3-57.6,237-80C342.5,34.5,411.5-24.7,487,26.5c79.8,54.2,144.2,157.8,138.6,254.1 C620.4,370,547.1,391.1,474.2,443c-64.6,46-139.4,112.6-217.8,100.6c-84.3-13-129.1-72.5-173.2-145.6 C35.2,318.6-23.5,220.5,17.2,137z;
+                          M24.1138 187.257C63.8302 105.912 155.098 72.5405 242.806 50.1388C331.135 27.5786 426.901 13.909 502.325 65.1166C582.123 119.294 631.969 214.279 626.394 310.57C621.22 399.937 549.079 465 476.167 516.935C411.558 562.956 335.583 585.613 257.18 573.558C172.871 560.594 91.1729 523.998 47.1078 450.962C-0.848128 371.476 -16.6152 270.677 24.1138 187.257Z;" />
+                          </path>
+                          <defs>
+                          	<linearGradient id="paint0_linear" x1="131.665" y1="103.589" x2="490.206" y2="505.6" gradientUnits="userSpaceOnUse">
+                          		<stop stop-color="#334AC0"/>
+                          		<stop offset="1" stop-color="#24B6AD"/>
+                          	</linearGradient>
+                          </defs>
+                          </svg>
+                          <div class="inner"><img src="public/images/story1.png" alt=""></div>
+                        </div>
+                        <div class="story-content">
+                          <hgroup>
+                            <h2 class="story-title">背景</h2>
+                            <h3 class="story-subtitle">在服装快时尚的发展以及讲求个人独特性的风潮下，人们都希望能穿上最流行，却又具有个人特色的款式。</h3>
+                          </hgroup>
+                          <p class="story-txt">因此服装产业势必得用更快的速度来推出新款，但目前服装产业已面临版师稀缺及断层的状态。我们不断思考如何借助科技的力量来减少版师重复劳动的工作，进而解决人手不足的问题，因此诞生了Pattern Go！</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slick-item" data-anchor="slide2">
+                    <div class="container">
+                      <div class="story-slide slide2">
+                        <div class="story-pic story2">
+                          <div class="story-pic-bg2"></div>
+                          <svg class="svg_ani" id="svgStory2"></svg><svg class="svg_ani bg" viewBox="0 0 627 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint1_linear)">
+                          <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M626.615 299.114C621.262 388.737 547.393 453.373 473.378 504.105C407.395 549.331 330.383 568.755 251.382 556.308C163.735 542.499 72.6845 511.913 29.7403 434.208C-15.5583 352.243 -5.69929 250.888 36.3398 167.201C77.4839 85.2963 154.422 28.7433 243.707 8.26735C333.093 -12.2318 426.803 5.41851 499.849 60.9031C575.183 118.124 632.258 204.633 626.615 299.114Z;
+                          M621,234c15,81-30,258.6-104,309.3c-66,45.2-163-49.9-242-62.3c-87.6-13.8-210.1-13.3-253-91 c-45.3-82,12-141.3,54-225c41.1-81.9,41.7-130.5,131-151c89.4-20.5,195,11.5,268,67C550.3,138.2,606,153,621,234z;
+                          M626.615 299.114C621.262 388.737 547.393 453.373 473.378 504.105C407.395 549.331 330.383 568.755 251.382 556.308C163.735 542.499 72.6845 511.913 29.7403 434.208C-15.5583 352.243 -5.69929 250.888 36.3398 167.201C77.4839 85.2963 154.422 28.7433 243.707 8.26735C333.093 -12.2318 426.803 5.41851 499.849 60.9031C575.183 118.124 632.258 204.633 626.615 299.114Z;" />
+                          </path>
+                          <defs>
+                          	<linearGradient id="paint1_linear" x1="358.699" y1="57.6104" x2="249.03" y2="566.641" gradientUnits="userSpaceOnUse">
+                          		<stop stop-color="#334AC0"/>
+                          		<stop offset="1" stop-color="#F9694A"/>
+                          	</linearGradient>
+                          </defs>
+                          </svg>
+                          <div class="inner"><img src="public/images/story2.png" alt=""></div>
+                        </div>
+                        <div class="story-content">
+                          <hgroup>
+                            <h2 class="story-title">功能</h2>
+                            <h3 class="story-subtitle">Pattern Go提供一个操作简易的服装设计线上打版系统，以往服装设计师须透过版师才能取得版型。但现在，Pattern Go系统让服装设计师可以更快速直觉的使用服装绘图工具。</h3>
+                          </hgroup>
+                          <p class="story-txt">从绘制服装设计稿到取得系统自动计算的版型，只需1秒的时间，大幅度的缩短打版的时间，真正改善人手不足及时程的问题。并且Pattern Go还能根据客户反馈，修改系统的打版数据，为服装公司或客户自动订制一套专属的演算参数，就像是一位为您服务了20年的老版师在您身边24小时待命。我们期待Pattern Go能为合作伙伴带来更快速的打版体验及更全面的版型管理！</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slick-item" data-anchor="slide3">
+                    <div class="container">
+                      <div class="story-slide slide3">
+                        <div class="story-pic story3">
+                          <div class="story-pic-bg3"></div>
+                          <svg class="svg_ani" id="svgStory3"></svg><svg class="svg_ani bg" viewBox="0 0 625.6 554.7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint2_linear)">
+                          <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M13.8,194.5c31.1-85,118.3-127.6,203.2-159c85.5-31.6,179.3-55.1,259.6-12c85,45.6,144.4,134.9,148.8,231.2 c4.1,89.4-60.9,161.6-128,220.7c-59.5,52.5-132.7,82.9-211.9,79c-85.2-4.2-170.2-32.1-221.6-100.1C8,380.2-18.1,281.7,13.8,194.5z;
+                          M14,113c31.1-85,167.1-3.6,252-35c85.5-31.6,195.7-96.1,276-53c85,45.6,42.6,121.7,47,218 c4.1,89.4,27.1,205.9-40,265c-59.5,52.5-184.3,50.3-263.5,46.4C200.3,550.2,148.4,498,97,430C41.1,355.9-17.9,200.2,14,113z;
+                          M13.8,194.5c31.1-85,118.3-127.6,203.2-159c85.5-31.6,179.3-55.1,259.6-12c85,45.6,144.4,134.9,148.8,231.2 c4.1,89.4-60.9,161.6-128,220.7c-59.5,52.5-132.7,82.9-211.9,79c-85.2-4.2-170.2-32.1-221.6-100.1C8,380.2-18.1,281.7,13.8,194.5z;" />
+                          </path>
+                          <defs>
+                          <linearGradient id="paint2_linear" gradientUnits="userSpaceOnUse" x1="116.309" y1="448.1866" x2="514.451" y2="85.6506" gradientTransform="matrix(1 0 0 -1 0 543.6592)">
+                          	<stop  offset="0" style="stop-color:#334AC0"/>
+                          	<stop  offset="1" style="stop-color:#B9378D"/>
+                          </linearGradient>
+                          </defs>
+                          </svg>
+                          <div class="inner"><img src="public/images/story3.png" alt=""></div>
+                        </div>
+                        <div class="story-content">
+                          <hgroup>
+                            <h2 class="story-title">技术</h2>
+                            <h3 class="story-subtitle">PatternGo的打版演算系统，是由百余名专家及业界资深版师，通过上万种款式及上千余种面料的打版测试运算。经过长达两年的努力，归纳整理出制版逻辑及条件运算的程式。</h3>
+                          </hgroup>
+                          <p class="story-txt">除此之外，PatternGo简易图像式的绘制工具，将3D体型尺寸经由人体曲线计算，以2D平面线条绘出，在不改变服装设计师的使用习惯下，帮助设计师快速的绘制出比例正确的标准平面机械图，提高设计师的工作效率！</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slick-item" data-anchor="slide4">
+                    <div class="container">
+                      <div class="story-slide slide4">
+                        <div class="story-pic story4">
+                          <div class="story-pic-bg4"></div>
+                          <svg class="svg_ani" id="svgStory4"></svg><svg class="svg_ani bg" width="627" height="559" viewBox="0 0 627 559" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint3_linear)">
+                          <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M0.4,260.4c5.4-89.5,79.2-154,153.2-204.6c66-45.1,143-64.5,222-52.1C463.3,17.5,554.3,48,597.3,125.6c45.3,81.8,35.4,183-6.6,266.5c-41.1,81.8-118.1,138.2-207.4,158.7c-89.4,20.5-183.1,2.8-256.1-52.5C51.8,441.1-5.3,354.7,0.4,260.4z;
+                          M28,255C33.4,165.5,7,98.6,81,48C147,2.9,296,9.6,375,22 c87.6,13.8,164.1,33.4,207,111c45.3,81.8,58,215.5,16,299c-41.1,81.8-155.7,86.6-245,107c-89.4,20.5-180,30.4-253-25 C24.7,456.9,22.4,349.3,28,255z;
+                          M0.4,260.4c5.4-89.5,79.2-154,153.2-204.6c66-45.1,143-64.5,222-52.1C463.3,17.5,554.3,48,597.3,125.6c45.3,81.8,35.4,183-6.6,266.5c-41.1,81.8-118.1,138.2-207.4,158.7c-89.4,20.5-183.1,2.8-256.1-52.5C51.8,441.1-5.3,354.7,0.4,260.4z;" />
+                          </path>
+                          <defs>
+                          	<linearGradient id="paint3_linear" x1="268.301" y1="501.492" x2="377.596" y2="-6.70937" gradientUnits="userSpaceOnUse">
+                          		<stop stop-color="#334AC0"/>
+                          		<stop offset="1" stop-color="#2AA9F0"/>
+                          	</linearGradient>
+                          </defs>
+                          </svg>
+                          <div class="inner"><img src="public/images/story4.png" alt=""></div>
+                        </div>
+                        <div class="story-content">
+                          <hgroup>
+                            <h2 class="story-title">测试</h2>
+                            <h3 class="story-subtitle">PatternGo在下服装的各大类的运算定义时，均以1000件以上数据(含各种款式及体型)作为运算基础数据。</h3>
+                          </hgroup>
+                          <p class="story-txt">由不同服装公司或测试单位，同时对相同的款式用人工及PatternGo系统分别打版并制成成品，比较其异同，不停累积修正参数，进而满足各年龄层、各区域、各盘路、甚至精细到个人体型的版型计算。 PatternGo除了可应用在不同款式设计的制版上，也可应用在不同体型的计算做订制业务。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="story-content-ctrl container">
+                  <div class="story-content-ctrl-inner">
+                    <div class="story-content-ctrl-txt"><span class="txt">1</span>/ 4</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+        <!-- main.main_content  END  !!-->
+        <!-- =========================================================================-->
+      </div>
+      <!-- =========================================================================-->
+      <!-- 頁面內容  END  !!-->
+      <!-- =========================================================================-->
+    </div>
+    <script>window.jQuery || document.write('<script src="public/js/libs/jquery.min.js"><\/script>')</script>
+    <script src="public/js/libs/plugin_mix.js"></script>
+    <!-- 動態效果-->
+    <script src="public/plugins/greensock/TweenMax.min.js"></script>
+    <script src="public/plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="public/plugins/scrollmagic/plugins/jquery.ScrollMagic.min.js"></script>
+    <script src="public/plugins/scrollmagic/plugins/debug.addIndicators.min.js"></script>
+    <script src="public/plugins/scrollmagic/plugins/animation.gsap.min.js"></script>
+    <script src="public/plugins/snap.svg.js"></script>
+    <script src="public/plugins/slick/slick.js"></script>
+    <script src="public/plugins/fullpage/fullpage.js"></script>
+    <script src="public/plugins/simplebar/simplebar.js"></script>
+    <script src="public/js/script.js?v=20200615"></script>
+    <script src="public/js/pgelm.js"></script>
+    <script src="public/js/page/home.js"></script>
+  </body>
+</html>

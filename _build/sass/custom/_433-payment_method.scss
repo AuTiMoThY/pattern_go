@@ -1,0 +1,145 @@
+
+.payment_method_list {}
+.payment_method_item {
+	margin-bottom: 20px;
+	label {
+		width: 100%;
+		height: 140px;
+		margin-bottom: 0;
+
+		cursor: pointer;
+	}
+	.inner {
+		position: relative;
+		@include wh;
+		height: 140px;
+		padding: 10px;
+		background-color: #F8F8F8;
+		border-radius: 4px;
+		border: 1px solid #E0E0E0;
+		box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+
+		cursor: pointer;
+	}
+
+	&-radio {
+		display: none;
+
+		&:checked {
+			+ .inner {
+				border-color: color("A");
+				box-shadow: inset 0 0 1px color("A");
+				.payment_method_item-choicemark {
+					background-color: color("BLUE");
+					border: 1px solid color("BLUE");
+
+					&:before {
+						transform: rotate(-45deg) translate(10% , -10%) scale(1);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	&-choicemark {
+		@include absolute(10px , 10px);
+		@include circle(20);
+		border: 1px solid color("GRAY1");
+		background-color: #fff;
+
+		&:before {
+			@include psudoClass;
+			@include absolute(0, 0, 0, 0);
+			margin: auto;
+			@include wh(60%, 40%);
+			border-bottom: 2px solid #fff;
+			border-left: 2px solid #fff;
+			transform: rotate(-45deg) translate(10% , -10%) scale(0);
+
+			opacity: 0;
+
+			transition: all 0.3s $easing3;
+		}
+	}
+
+	.third_party_payment {
+		@include absolute(50%, $L:50%);
+		transform: translate(-50%, -50%);
+		.icon {
+			position: relative;
+			@include wh(50);
+			margin-bottom: 10px;
+
+			img {
+				@include absolute(50%, $L:50%);
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		.txt {
+			text-align: center;
+		}
+	}
+
+	.icon-left {
+		@include absolute(50%, $L:10px);
+		transform: translateY(-50%);
+	}
+
+	.account_balance {
+		@include absolute($B:10px, $R:10px);
+
+		.num {
+			margin-right: 0.4rem;
+		}
+	}
+
+	.card_number {
+		@include absolute($B:12px);
+	}
+
+	&.insufficient_balance {
+		position: relative;
+	}
+
+
+}
+
+.insufficient_balance {
+	&-inner {
+		@include absolute(0, $L:0);
+		z-index: 10;
+		@include wh;
+		height: 140px;
+		padding: 0 10px;
+		border-radius: 4px;
+	}
+
+	&-bg {
+		@include wh;
+		background-color: rgba(color("BLACK"), 0.75);
+	}
+
+	&-btn {
+		@include absolute(50%, $L:50%);
+		transform: translate(-50%, -50%);
+		z-index: 2;
+		@include wh(percentage(160 / 220), 80);
+		border: 1px solid #fff;
+		text-align: center;
+		color: #fff;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		cursor: pointer;
+		transition: $transition-base;
+
+		&:hover {
+			background-color: #fff;
+			color: color("BLACK");
+		}
+	}
+}

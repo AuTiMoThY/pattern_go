@@ -1,0 +1,127 @@
+.account_mgmt_block {
+	padding: 30px 40px;
+	&-hd {
+		display: flex;
+	    align-items: center;
+	    justify-content: flex-end;
+		.pgbtn {
+			padding: 10px;
+			display: flex;
+			align-items: center;
+
+			.icon {
+				@include wh(40);
+				margin-right: 10px;
+			}
+
+			.txt {
+				position: relative;
+				&:after {
+					@include psudoClass;
+					@include absolute($B:-3px, $L:0, $R:0);
+					@include wh(0%, 1);
+					margin: auto;
+					transition: all 0.3s $easeInOutCubic;
+				}
+			}
+
+			&:hover {
+				.txt:after {
+					width: 100%;
+				}
+			}
+			&:active {
+				border: none;
+			}
+		}
+		.pgbtn-add {
+			.icon {
+				@include bg("icon-add.svg");
+			}
+			.txt {
+				&:after {
+					background-color: rgba(color("BLACK"), 0);
+				}
+			}
+			&:hover {
+				.txt {
+					&:after {
+						background-color: rgba(color("BLACK"), 1);
+					}
+				}
+			}
+		}
+		.pgbtn-del {
+			color: color("GRAY1");
+			.icon {
+				@include bg("icon-delect.svg");
+			}
+
+			.txt {
+				&:after {
+					background-color: rgba(color("GRAY1"), 0);
+				}
+			}
+			&:hover {
+				.txt {
+					&:after {
+						background-color: rgba(color("GRAY1"), 1);
+					}
+				}
+			}
+		}
+	}
+	&-bd {}
+}
+
+.mbr_admin_tabs_container {
+	> .inner {
+		position: relative;
+	}
+}
+
+.account_mgmt_list {
+	width: 100%;
+
+	&-title {
+		.title-item {
+			padding: 10px;
+			border-bottom: 1px solid color("BLACK");
+		}
+	}
+}
+
+.account_mgmt_item {
+	.title-item {
+		padding: 10px;
+		border-bottom: 1px solid #E0E0E0;
+
+		&.job, &.department {
+			padding-right: 40px;
+		}
+	}
+
+	.select_block {
+		position: relative;
+		&:after {
+			@include psudoClass;
+			@include absolute(0, 1rem, 0);
+			z-index: 1;
+			margin: auto;
+			@include triangle(bottom, color("BLACK"), 6px);
+		}
+	}
+
+	.pgselect {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		padding: 10px 15px;
+	    border: 1px solid #BDBDBD;
+		cursor: pointer;
+	}
+
+	.pgbtn-editor {
+		padding: 10px;
+	}
+}

@@ -1,0 +1,124 @@
+.department_mgmt {}
+
+.department_mgmt_block {
+	padding: 40px;
+
+	.title {
+		margin-bottom: 20px;
+		@include remCalc(font-size, 20);
+	}
+
+	&.block2 {
+		border-top: 1px solid color("GRAY1");
+	}
+}
+
+.department_mgmt_list {}
+.department_mgmt_item {
+	> .inner {
+		height: 100%;
+		border: 1px solid #E0E0E0;
+		border-radius: 7px;
+		overflow-y: hidden;
+	}
+	&-bd {
+		padding: 25px 20px;
+
+		p {
+			margin-bottom: 15px;
+			@include text_ellipsis(1, 1.5);
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&-ft {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		position: relative;
+		width: 100%;
+		height: 40px;
+		border-top: 1px solid #E0E0E0;
+
+		&:before {
+			@include psudoClass;
+			@include absolute(0, $L:50%);
+			transform: translateX(-50%);
+			@include wh(1, 100%);
+			background-color: #E0E0E0;
+		}
+
+		.pgbtn {
+			// w50%
+			height: 100%;
+			@include remCalc(font-size, 14);
+			background-color: transparent;
+			transition: $transition-base;
+
+			&-dep-editor {
+				color: color("BLUE");
+
+				&:hover {
+					background-color: darken(color("BLUE"), 5);
+					color: lighten(color("BLUE"), 50);
+				}
+			}
+			&-dep-delete {
+				color: color("GRAY1");
+				&:hover {
+					background-color: darken(color("GRAY1"), 5);
+					color: lighten(color("GRAY1"), 50);
+				}
+			}
+		}
+	}
+
+
+	&.add_department {
+		cursor: pointer;
+
+		> .inner {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-flow: column;
+			background-color: #F8F8F8;
+
+			transition: $transition-base;
+
+			&:hover {
+				background-color: darken(#F8F8F8, 10);
+			}
+		}
+
+	}
+}
+
+.add_department-block {
+	text-align: center;
+	.icon {
+		position: relative;
+		@include circle(36);
+		background-color: color("BLUE");
+		margin: 0 auto 15px;
+
+		&:before, &:after {
+			@include psudoClass;
+			@include absolute(50%, $L:50%);
+			@include wh(18, 2);
+			background-color: #fff;
+		}
+
+		&:before {
+			transform: translate(-50%, -50%);
+		}
+		&:after {
+			transform: translate(-50%, -50%) rotate(-90deg);
+		}
+	}
+
+	.txt {
+		color: color("GRAY1");
+		@include remCalc(font-size, 20);
+	}
+}

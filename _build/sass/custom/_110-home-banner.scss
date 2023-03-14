@@ -1,0 +1,241 @@
+@mixin peopleSet($w, $h, $x, $y) {
+	@include absolute(percentage($y / 650), $L:percentage($x / 1043));
+	z-index: 70;
+	@include wh($w, $h);
+
+	opacity: 0;
+}
+
+.home_section-banner {
+	position: relative;
+	background-color: #334ABF ;
+	&-bg {
+		@include absolute(0, $L:0);
+		@include wh;
+		padding-top: 75px;
+		// @include rwdBlock(1920, 1080);
+		background-position: 80% 70%;
+		background-size: cover;
+	}
+
+	.container {
+		position: relative;
+	}
+
+	&-slogan {
+		@include absolute(50%, $L:-10%);
+		transform: translateY(-50%);
+		color: #fff;
+		.title {
+			margin-bottom: 40px;
+			@include remCalc(font-size, 60);
+			line-height: 1.25;
+		}
+
+		.subtitle {
+			max-width: percentage(480 / 1270);
+			@include remCalc(font-size, 24);
+			line-height: 1.4;
+			font-weight: normal;
+			text-align: justify;
+		}
+
+		@include media-down(1660px) {
+			left: -5%;
+		}
+		@include media-down(1500px) {
+			left: 0%;
+
+			.title {
+				@include remCalc(font-size, 50);
+			}
+			.subtitle {
+				max-width: percentage(420 / 1270);
+				@include remCalc(font-size, 22);
+			}
+		}
+	}
+
+	.banner_main {
+		@include absolute(percentage(170 / 1080), $L: percentage(733 / 1920));
+		z-index: 10;
+		@include wh(1043, 650);
+
+		@include media-down(1660px) {
+			transform: scale(0.8);
+			transform-origin: 0% 50%;
+		}
+		@include media-breakpoint-down(xl) {
+			transform: scale(0.7);
+		}
+	}
+
+	.structure {
+		position: relative;
+		z-index: 20;
+		@include wh(1043, 650);
+		background-image: url(../images/structure.svg);
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+
+		opacity: 0;
+
+		// @include media-down(1660px) {
+		// 	@include wh(800, 499);
+		// 	margin: auto;
+		// }
+
+
+		&-shadow {
+			@include absolute(442px, $L:0);
+			z-index: 9;
+			@include wh(1043, 277);
+			background-image: url(../images/structure-shadow.jpg);
+			background-repeat: no-repeat;
+			background-position: 50% 0%;
+			opacity: 0;
+		}
+	}
+
+	.decoration {
+		z-index: 31;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		opacity: 0;
+		&-drawer {
+			@include absolute(percentage(304 / 650), $L:percentage(212 / 1043));
+			@include wh(123, 91);
+			background-image: url(../images/drawer.svg);
+
+		}
+
+		&-material {
+			@include absolute(percentage(329 / 650), $L:percentage(353 / 1043));
+			@include wh(118, 96);
+			background-image: url(../images/material.png );
+		}
+
+		&-bucket {
+			@include absolute(percentage(203 / 650), $L:percentage(419 / 1043));
+			@include wh(27, 44);
+			background-image: url(../images/bucket.svg );
+		}
+
+		&-armrest {
+			@include absolute(percentage(298 / 650), $L:percentage(103 / 1043));
+			z-index: 41;
+			@include wh(84, 121);
+		}
+
+		&-light {
+			@include absolute(percentage(458 / 650), $L:percentage(734 / 1043));
+			@include wh(25, 117);
+
+			svg {
+				@include wh;
+			}
+		}
+	}
+
+	.paper {
+		@include absolute(percentage(286 / 650), $L:percentage(352 / 1043));
+		z-index: 30;
+		@include wh(480, 240);
+		background-image: url(../images/paper-bg.png);
+		opacity: 0;
+	}
+
+	.painting {
+		@include absolute(percentage(42 / 240), $L:percentage(127 / 480)); 
+		@include wh(206, 144);
+	}
+
+	.controll {
+		z-index: 40;
+		&-top {
+			@include absolute(percentage(159 / 650), $L:percentage(103 / 1043)); 
+			@include wh(269, 142);
+		}
+		&-bottom {
+			@include absolute(percentage(292 / 650), $L:percentage(49 / 1043)); 
+			@include wh(81, 30);
+		}
+	}
+
+	.smoke {
+		z-index: 50;
+		@include absolute(percentage(238 / 650) * -1, $L:percentage(183 / 1043)); 
+		@include wh(884, 295);
+		opacity: 0;
+	}
+
+
+	.planet {
+		z-index: 55;
+		@include absolute(percentage(104 / 650) * -1, $L:percentage(860 / 1043));
+		@include wh(114);
+		opacity: 0;
+	}
+
+	.unknow {
+		z-index: 56;
+		@include absolute(percentage(226 / 650), $L:percentage(297 / 1043));
+		@include wh(123, 104);
+		opacity: 0;
+	}
+
+	.anibtn {
+		@include wh(103, 44);
+		z-index: 60;
+		&-import {
+			@include absolute(percentage(200 / 650), $L:percentage(832 / 1043));
+		}
+		&-export {
+			@include absolute(percentage(226 / 650), $L:percentage(922 / 1043));
+		}
+
+		svg {
+			@include absolute(0, $L:0);
+			@include wh();
+		}
+	}
+
+	.drawing {
+		z-index: 60;
+		&-in {
+			@include absolute(percentage(430 / 650), $L:percentage(778 / 1043));
+			@include wh(382, 195);
+		}
+
+		&-out {
+			@include absolute(percentage(464 / 650), $L:percentage(-20 / 1043));
+			@include wh(687, 300);
+		}
+	}
+
+	.people1 {
+		@include peopleSet(66, 146, 47, 356);
+	}
+	.people2 {
+		@include peopleSet(91, 82, 249, 317);
+	}
+	.people3 {
+		@include peopleSet(62, 94, 430, 192);
+	}
+	.people4 {
+		@include peopleSet(107, 120, 481, 299);
+	}
+	.people5 {
+		@include peopleSet(52, 110, 648, 70);
+	}
+	.people6 {
+		@include peopleSet(115, 108, 605, 366);
+	}
+	.people7 {
+		@include peopleSet(86, 119, 820, 392);
+	}
+	.people8 {
+		@include peopleSet(81, 128, 902, 284);
+	}
+}
+

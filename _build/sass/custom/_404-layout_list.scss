@@ -1,0 +1,253 @@
+$move_width: 30;
+$more_width: 55;
+$total_width: 1603;
+
+
+
+%layoutListHide {
+	display: none;
+}
+
+%layoutListShow {
+	display: flex;
+	align-items: center;
+}
+
+%layoutListCnt {
+	display: grid;
+	grid-template-columns: percentage(851 / 1603)
+	                       percentage((1041 - 851) / 1603)
+	                       percentage((1191 - 1041) / 1603)
+	                       percentage((1351 - 1191) / 1603)
+	                       percentage((1548 - 1351) / 1603)
+	                       percentage((1603 - 1548) / 1603);
+}
+
+%layoutListCntPro {
+	display: grid;
+	grid-template-columns: percentage(526 / 1603)
+	                       percentage((716 - 526) / 1603)
+	                       percentage((851 - 716) / 1603)
+	                       percentage((1001 - 851) / 1603)
+	                       percentage((1161 - 1001) / 1603)
+	                       percentage((1351 - 1161) / 1603)
+	                       percentage((1548 - 1351) / 1603)
+	                       percentage((1603 - 1548) / 1603);
+}
+
+%layoutListTrash {
+	display: grid;
+	grid-template-columns: percentage(721 / 1603)
+                           percentage((851 - 721) / 1603)
+	                       percentage((1041 - 851) / 1603)
+	                       percentage((1191 - 1041) / 1603)
+	                       percentage((1351 - 1191) / 1603)
+	                       percentage((1548 - 1351) / 1603)
+	                       percentage((1603 - 1548) / 1603);
+	// grid-template-areas: 
+}
+
+
+%layoutListCnt2 {
+	display: grid;
+	grid-template-columns: percentage(($move_width) / $total_width)
+	                       percentage((1092 - $move_width) / $total_width)
+	                       percentage((1285 - 1092) / $total_width)
+	                       percentage((1548 - 1285) / $total_width)
+	                       percentage(($total_width - 1548) / $total_width);
+	grid-template-areas: "move name num time more";
+}
+
+
+
+.layout_list {
+	&-title {
+		padding: 15px 30px;
+		display: none;
+
+
+		.mgmt_home .layout_list &, .mgmt_fav .layout_list &, .mgmt_all .layout_list &, .mgmt_archive .layout_list & {
+			@extend %layoutListCnt;
+		}
+
+		.mgmt_home.mgmt_home-pro .layout_list & {
+			@extend %layoutListCntPro;
+		}
+
+		.mgmt_trash .layout_list & {
+			@extend %layoutListTrash;
+		}
+
+		.mgmt_folder .layout_list & {
+			@extend %layoutListCnt2;
+		}
+	}
+
+	.pattern_file-content {
+		padding: 15px 30px;
+		@extend %layoutListCnt;
+		.mgmt_home {
+		}
+		.mgmt_home.mgmt_home-pro & {
+			@extend %layoutListCntPro;
+		}
+	}
+
+	.mgmt_home-pro & {
+		.pattern_file-exp_date {
+			position: static;
+		}
+
+		.pattern_file-owner, .pattern_file-folder {
+			padding-right: 1rem;
+		}
+	}
+
+
+	// .pattern_folder-list {
+	// 	display: table;
+	// 	.layout_list-title {
+	// 		display: table-row;
+	// 	}
+	// 	ul {
+	// 		display: table-row;
+	// 	}
+	// }
+	.pattern_folder-item {
+		flex: auto;
+		width: 100%;
+		height: 50px;
+		padding: 0;
+
+		> .inner {
+			padding-bottom: 0;
+			height: 100%;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.inner-bg {
+			display: none;
+		}
+
+		&-wrap {
+			position: relative;
+			@extend %layoutListCnt2;
+			padding-top: 0;
+			height: 100%;
+
+			background-color: #fff;
+			border-radius: 12px;
+			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+		}
+
+		&-bd {
+			@extend %layoutListHide;
+			// grid-area: name;
+		}
+
+		&-ft {
+			@extend %layoutListHide;
+			// grid-area: num;
+
+			// position: relative;
+			// bottom: unset;
+			// left: unset;
+
+			// > .inner {
+			// 	// position: relative;
+			// 	height: auto;
+			// 	padding-left: 0;
+			// 	padding-right: 0;
+			// }
+		}
+
+		.btn_move {
+			display: block;
+			@include absolute(0, $L:0);
+
+			@include wh(30, 50);
+			border-right: 1px solid #E0E0E0;
+
+			cursor: move;
+
+			&:before {
+				@include psudoClass;
+
+				@include absolute(50%, $L:50%);
+				transform: translate(-50%, -50%);
+				@include wh(15, 32);
+				@include bg("icon-move.svg");
+			}
+		}
+
+
+		.layout_list-name {
+			@extend %layoutListShow;
+			grid-area: name;
+
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.layout_list-filenum {
+			@extend %layoutListShow;
+			grid-area: num;
+
+			color: color("GRAY3");
+
+			padding-right: 15px;
+		}
+		.layout_list-time {
+			@extend %layoutListShow;
+			grid-area: time;
+
+			color: color("GRAY3");
+		}
+	}
+
+	.pattern_folder-item.add_folder {
+		height: auto;
+		padding-top: 30px;
+
+		> .inner {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			background-color: transparent;
+			border: none;
+		}
+
+		.add_folder-wrap {
+			position: static;
+			transform: translate(0, 0);
+		}
+	}
+
+	// .pattern_file-item-more.js-adj_pos {
+	// 	top: 50px;
+	// }
+}
+
+
+
+.mgmt_folder {
+	.layout_list-title {
+		position: relative;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		&:before {
+			@include psudoClass;
+			@include absolute(50%, $L:15px);
+			transform: translateY(-50%);
+			@include wh(30, 28);
+			@include bg("icon-sort.svg");
+		}
+
+		.name {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+
+}

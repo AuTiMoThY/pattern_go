@@ -1,0 +1,224 @@
+.pattern_folder {
+	&-list {
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-bottom: 30px;
+
+		ul {
+			display: flex;
+			flex-wrap: wrap ;
+			width: 100%;
+		}
+	}
+
+	&-item {
+		position: relative;
+		flex: 0 0 300px;
+		width: 300px;
+		padding-left: 5px;
+		padding-right: 5px;
+		margin-bottom: 10px;
+
+		> .inner {
+			// @include bg("bg-folder.png");
+			@include rwdBlock(306, 208);
+			position: relative;
+		}
+		.inner-bg {
+			// @include bg("bg-folder.png");
+			@include bgRWD('bg-folder.png', 306, 208);
+			@include absolute(0, $L:0);
+			z-index: 1;
+		}
+
+		&-wrap {
+			padding-top: 40px + 15;
+		}
+
+		&-bd {
+			position: relative;
+			z-index: 2;
+		}
+		&-ft {
+			@include absolute($B:5px, $L:0);
+			z-index: 2;
+			padding-left: 5px;
+			padding-right: 5px;
+			width: 100%;
+
+			> .inner {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				border-top: 1px solid #E0E0E0;
+
+				@include wh(100%, 40);
+				padding-left: 15px;
+				padding-right: 15px;
+
+				color: color("GRAY3");
+			}
+		}
+
+		.btn_move {
+			display: none;
+			border: none;
+			background-color: transparent;
+		}
+
+		.btn_more {
+			border: none;
+			background-color: transparent;
+
+			@include absolute(55px, 15px);
+			z-index: 30;
+			@include circle(30);
+			cursor: pointer;
+
+			transition: $transition-base;
+
+			&:hover {
+				background-color: color("GRAY3");
+
+				.svg_icon {
+					fill: #fff;
+				}
+			}
+
+			.svg_icon {
+				@include absolute(50%, $L:50%);
+				transform: translate(-50%, -50%);
+				fill: #9C9FA4;
+			}
+
+
+			.layout_list & {
+				right: 30px;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+		}
+
+		.folder-name {
+			padding-left: 15px;
+			width: 80%;
+		}
+
+		.layout_list-name {
+			@extend %layoutListHide;
+		}
+		.layout_list-filenum {
+			@extend %layoutListHide;
+		}
+		.layout_list-time {
+			@extend %layoutListHide;
+		}
+	}
+
+}
+
+
+.pattern_folder-item-more {
+	@include absolute(90px, -100px);
+	z-index: 500;
+
+	display: none;
+
+	.js-open_more & {
+		display: block;
+	}
+
+	&.js-adj_pos {
+		top: 40px;
+	}
+
+	.inner {
+		width: 145px;
+		background-color: color("BLACK");
+		padding-top: 10px;
+		padding-bottom: 10px;
+		color: #fff;
+		@include remCalc(font-size, 14);
+	}
+
+	.more-item {
+		position: relative;
+		width: 100%;
+
+		background-color: transparent;
+		transition: $transition-base;
+
+		a {
+			display: block;
+			padding: 10px 15px;
+			color: currentColor;
+		}
+
+		&:hover {
+			background-color: color("BLUE");
+
+			.more-sublist {
+				display: block;
+			}
+		}
+
+		&.has-sub {
+			&:after {
+				@include psudoClass;
+				@include absolute(50%, 15px);
+				transform: translateY(-50%);
+				@include triangle(right, #fff, 7px);
+			}
+		}
+	}
+
+	.hr {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		&:before {
+			@include psudoClass;
+			@include wh(100%, 1px);
+			background-color: #f2f2f2;
+		}
+	}
+}
+
+.pattern_folder-item.add_folder {
+	> .inner {
+		background-color: #F2F2F2;
+		border: 1px solid #FFFFFF;
+		border-radius: 7px;
+
+		cursor: pointer;
+		transition: $transition-base;
+
+		&:hover {
+			background-color: darken(#F2F2F2, 10);
+		}
+	}
+	.inner-bg {
+		display: none;
+	}
+	.icon {
+		@include circle(35);
+		@include bg('icon-add2.svg');
+		margin-bottom: 15px;
+	}
+
+	.txt {
+		@include remCalc(font-size, 20);
+	}
+
+	.add_folder-wrap {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		@include absolute(50%, $L:50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+
+

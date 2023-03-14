@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>档案管理 - 资料夹 | Pattern Go</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <!-- 讓手機不判斷它是電話號碼變顏色-->
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="https://csshake.surge.sh/csshake.min.css">
+    <link rel="stylesheet" href="public/plugins/slick/slick.css">
+    <link rel="stylesheet" href="public/plugins/fullpage/fullpage.css">
+    <link rel="stylesheet" href="public/plugins/simplebar/simplebar.css">
+    <link rel="stylesheet" href="public/css/animate.css">
+    <link rel="stylesheet" href="public/css/style.css?v=20200615">
+    <!-- js-->
+    <script src="public/js/libs/modernizr-custom.min.js"></script>
+    <script src="public/js/ModernizrAu.js"></script>
+  </head>
+  <body>
+    <!-- =========================================================================-->
+    <!-- SVG sprites  START-->
+    <div class="symbols_svg d-none">
+      <!----><?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 9.1 13.9" id="bookmark" xmlns="http://www.w3.org/2000/svg"><path d="M7.7 0H1.4C1 0 .7.1.4.4.1.7 0 1 0 1.4v11.7c0 .1 0 .3.1.4l.3.3c.1.1.2.1.4.1.1 0 .3 0 .4-.1L4.6 12 8 13.8c.1.1.3.1.4.1.1 0 .3 0 .4-.1l.3-.3c.1-.1.1-.3.1-.4V1.4c0-.4-.1-.7-.4-1C8.4.1 8 0 7.7 0zm.4 12.8l-3.2-1.7c-.1-.1-.2-.1-.4-.1-.1 0-.3 0-.4.1L.9 12.8V1.4c0-.1 0-.2.1-.3.2-.1.3-.2.4-.2h6.3c.1 0 .2 0 .3.1.1.1.1.2.1.3v11.5z"/></symbol><symbol viewBox="0 0 23 5" id="btn_more" xmlns="http://www.w3.org/2000/svg"><circle cx="2.5" cy="2.5" r="2.5"/><circle cx="11.5" cy="2.5" r="2.5"/><circle cx="20.5" cy="2.5" r="2.5"/></symbol><symbol viewBox="0 0 13.3 15.2" id="cleaner" xmlns="http://www.w3.org/2000/svg"><path d="M13.2 1.9c-.1-.1-.2-.1-.3-.1H9.5V.9c0-.2-.1-.5-.3-.7-.1-.1-.4-.2-.6-.2H4.9c-.2 0-.5.1-.6.3-.2.2-.3.4-.3.6v.8H.5c-.1 0-.2 0-.3.1-.2.2-.2.3-.2.4s0 .2.1.3c.1.1.2.1.3.1h1l.7 11.2c0 .4.2.7.4.9s.6.4 1 .4h6c.4 0 .7-.1 1-.4.3-.2.4-.6.4-.9l.7-11.2H13c.1 0 .1-.1.2-.1 0 0 .1-.1.1-.2v-.2s0-.1-.1-.2zM4.9.9h3.6v.8H4.9V.9zm5.2 12.9c0 .1-.1.2-.1.3-.1.1-.2.1-.3.1h-6c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3L2.4 2.7H10.7l-.6 11.1z"/></symbol><symbol viewBox="0 0 12 16" id="file" xmlns="http://www.w3.org/2000/svg"><path d="M11.8 4.7c0-.1-.1-.1-.1-.1-.1-.1-.1-.2-.2-.3L8.1.5C8 .4 7.9.4 7.8.3c0 0-.1-.1-.2-.1C7.4.1 7.2 0 7 0H1.5C1.1 0 .8.1.5.4s-.4.6-.4 1v13.1c0 .4.1.7.4 1 .3.3.6.4 1 .4h9.1c.4 0 .7-.1 1-.4.3-.3.4-.6.4-1V5.2c-.1-.1-.1-.3-.2-.5zm-1.4-.3h-2c-.1 0-.2 0-.3-.1-.1-.1-.2-.2-.2-.4V1.7l2.5 2.7zm.5 10.5c-.1.1-.2.1-.4.1h-9c-.1 0-.2 0-.3-.1-.2-.1-.2-.2-.2-.3V1.4c0-.1 0-.2.1-.3.1-.1.2-.1.4-.1H7v3c0 .4.1.7.4 1 .3.3.6.4 1 .4H11v9.2c0 .1 0 .2-.1.3z"/></symbol><symbol viewBox="0 0 28 24" id="hidden" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.2 4.5L1.3 1.6 2.9 0l22.6 22.4-1.7 1.6-3.7-3.7-.5-.5c-1.7.7-3.6 1.1-5.6 1.1-6.4 0-11.8-3.9-14-9.5 1-2.5 2.7-4.7 4.8-6.3l-.6-.6zm6.1 6l-2-2c-.4.8-.7 1.8-.7 2.8 0 3.5 2.9 6.3 6.4 6.3 1 0 1.9-.3 2.8-.7l-2-2c-.3.1-.5.1-.8.1-2.1 0-3.8-1.7-3.8-3.8 0-.1 0-.4.1-.7zM14 5.1c3.5 0 6.4 2.8 6.4 6.3 0 .8-.2 1.6-.5 2.3l3.7 3.7c1.9-1.6 3.4-3.7 4.4-6-2.2-5.5-7.6-9.5-14-9.5-1.8 0-3.5.3-5.1.9l2.7 2.7c.8-.3 1.6-.4 2.4-.4zm-.2 2.5l4 4v-.2c0-2.1-1.7-3.8-3.8-3.8h-.2z"/></symbol><symbol viewBox="0 0 26 26" id="layout_default" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h10v10H0zM0 16h10v10H0zM16 0h10v10H16zM16 16h10v10H16z"/></symbol><symbol viewBox="0 0 28 26" id="layout_list" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h6v6H0zM9 1h19v4H9zM0 10h6v6H0zM9 11h19v4H9zM0 20h6v6H0zM9 21h19v4H9z"/></symbol><symbol viewBox="0 0 14.2 13.2" id="library" xmlns="http://www.w3.org/2000/svg"><path d="M12.8 2.3H7.7c-.1 0-.2 0-.3-.1-.1 0-.1-.1-.2-.2L6.5.7C6.4.5 6.2.3 6 .2 5.7.1 5.5 0 5.2 0H1.5C1.1 0 .7.2.5.4.2.7 0 1.1 0 1.5v10.3c0 .4.2.8.4 1 .3.3.6.4 1 .4h11.3c.4 0 .8-.2 1-.4.3-.3.4-.6.4-1v-8c0-.4-.2-.8-.4-1-.2-.4-.5-.5-.9-.5zm.5 9.5v.2c0 .1-.1.1-.1.2 0 0-.1.1-.2.1H1.2c-.1 0-.1-.1-.2-.1s0-.2 0-.2V1.5c0-.1.1-.3.2-.4s.2-.2.4-.2h3.8c.1 0 .2 0 .3.1.1 0 .1.1.2.2l.8 1.3c-.2.2 0 .4.2.5.2.1.5.2.7.2h5.1c.1 0 .3.1.4.2.1.1.2.2.2.4v8z"/></symbol><symbol viewBox="0 0 17.2 18" id="logout" xmlns="http://www.w3.org/2000/svg"><path d="M16.7 11.7c-.4-.2-1 0-1.2.4-.6 1.2-1.5 2.2-2.6 3-1.2.7-2.5 1.1-3.9 1.1-4 0-7.2-3.2-7.2-7.2S5 1.8 9 1.8c1.4 0 2.7.4 3.9 1.1 1.1.7 2 1.8 2.6 3 .2.4.7.6 1.2.4.4-.2.6-.7.4-1.2-.7-1.5-1.8-2.8-3.3-3.7C12.4.5 10.7 0 9 0 6.6 0 4.3.9 2.6 2.6S0 6.6 0 9s.9 4.7 2.6 6.4S6.6 18 9 18c1.7 0 3.4-.5 4.9-1.4 1.4-.9 2.5-2.2 3.3-3.7.1-.5-.1-1-.5-1.2z"/><path d="M9.5 12.4c.2.2.4.3.6.3.2 0 .4-.1.6-.3l2.2-2.2c.3-.3.5-.8.5-1.2 0-.5-.2-.9-.5-1.2l-2.2-2.2c-.3-.3-.9-.3-1.2 0s-.3.9 0 1.2l1.3 1.3h-5c-.5 0-.9.4-.9.9s.4.9.9.9h5l-1.3 1.3c-.4.3-.4.9 0 1.2z"/></symbol><symbol viewBox="0 0 14.8 13.3" id="love" xmlns="http://www.w3.org/2000/svg"><path d="M10.4 0c-1.1 0-2.2.4-3 1.1C6.7.5 5.9.2 5.1 0S3.4 0 2.6.4 1.2 1.3.7 2C.2 2.8 0 3.6 0 4.5 0 8 5 12 6.6 13.1c.2.2.5.3.8.3.3 0 .6-.1.8-.3C9.8 12 14.8 8 14.8 4.5c0-1.2-.5-2.3-1.3-3.1-.8-.9-2-1.4-3.1-1.4zM7.7 12.3c-.1.1-.2.1-.3.1-.1 0-.2 0-.3-.1-1-.8-6.2-4.7-6.2-7.9 0-.9.4-1.8 1-2.5.7-.7 1.6-1 2.5-1 .5 0 1 .1 1.4.3.5.2.9.5 1.2.9l.3.4.3-.4c.3-.4.7-.6 1.2-.8.6-.3 1.1-.4 1.6-.4.9 0 1.8.4 2.5 1 .7.7 1 1.5 1 2.5 0 3.3-5.2 7.2-6.2 7.9z"/></symbol><symbol viewBox="0 0 15.9 15.6" id="pencil" xmlns="http://www.w3.org/2000/svg"><path d="M15.4 1.7L14.2.5c-.2-.2-.4-.3-.6-.4-.2 0-.4-.1-.7-.1-.2 0-.5 0-.7.1s-.4.2-.6.4l-1.3 1.3-9 9c-.2.2-.4.5-.5.8L0 15v.3c0 .1.1.2.1.2s.1.1.2.1h.3l3.5-.8c.3-.1.6-.2.9-.5l10.4-10c.3-.4.5-.8.5-1.3s-.2-.9-.5-1.3zm-1.7 2.7l-2.1-2.1.9-.9c.1-.1.3-.2.5-.2s.4.1.5.2l1.2 1.1c.1.1.1.1.1.2s.1.2.1.3 0 .2-.1.3c0 .1-.1.2-.1.2l-.3.3-.7.6zm-9.4 9.4c-.1.1-.2.2-.4.2l-2.6.6.6-2.6c0-.1.1-.2.2-.3l8.6-8.6 2.2 2.1-8.6 8.6z"/></symbol><symbol viewBox="0 0 16 16" id="recent" xmlns="http://www.w3.org/2000/svg"><path d="M12.1 8.5H8c-.1 0-.3-.1-.4-.2-.1 0-.1-.2-.1-.3V4.6c0-.1.1-.3.2-.4s.2-.1.3-.1c.1 0 .3.1.4.2s.2.2.2.4v2.9h3.6c.1 0 .3.1.4.2.1.1.2.2.2.4 0 .1-.1.3-.2.4-.2-.1-.4-.1-.5-.1z"/><path d="M8 16c-1.6 0-3.1-.5-4.4-1.3-1.3-.9-2.3-2.1-2.9-3.6C0 9.6-.2 8 .2 6.4c.3-1.6 1.1-3 2.2-4.1C3.5 1.2 4.9.4 6.5.1 8-.2 9.6 0 11.1.6c1.5.6 2.7 1.6 3.6 2.9C15.5 4.9 16 6.4 16 8c0 2.1-.8 4.2-2.3 5.7S10.1 16 8 16zM8 1c-1.4 0-2.7.4-3.9 1.2-1.1.8-2 1.9-2.5 3.1C1 6.6.9 8 1.2 9.4c.3 1.4.9 2.6 1.9 3.6 1 1 2.2 1.6 3.6 1.9 1.4.3 2.8.1 4-.4 1.3-.5 2.4-1.4 3.1-2.6S15 9.4 15 8c0-1.8-.7-3.6-2-4.9C11.6 1.8 9.8 1 8 1z"/></symbol><symbol viewBox="0 0 20 20" id="search" xmlns="http://www.w3.org/2000/svg"><path d="M19.7 18.1L16 14.7c1.2-1.5 1.9-3.5 1.9-5.6 0-5-4-9.1-9-9.1C4 0 0 4.1 0 9.1s4 9.1 9 9.1c2.1 0 4-.7 5.5-1.9l3.7 3.5c.2.2.5.3.8.3s.6-.1.8-.3c.3-.5.3-1.2-.1-1.7zm-17.5-9c0-3.8 3.1-6.9 6.8-6.9 3.8 0 6.8 3.1 6.8 6.9 0 3.8-3.1 6.9-6.8 6.9-3.8 0-6.8-3.1-6.8-6.9z"/></symbol><symbol viewBox="0 0 36 36" id="svg-close" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M26.75 11.445A1.375 1.375 0 1024.806 9.5L18 16.305 11.195 9.5a1.375 1.375 0 10-1.945 1.944l6.806 6.806-6.806 6.806a1.375 1.375 0 001.944 1.945L18 20.195 24.806 27a1.375 1.375 0 001.945-1.944l-6.806-6.806 6.805-6.805z"/></symbol></svg>
+    </div>
+    <!-- SVG sprites  END  !!-->
+    <!-- =========================================================================-->
+    <div id="top"></div>
+    <!-- =========================================================================-->
+    <!-- .body_wrap  START-->
+    <div class="body_wrap">
+      <header class="page_header mbr_header">
+        <div class="container-fluid"><a class="logo_block" href="./">
+            <div class="logo"><img src="public/images/LOGO.svg" alt="Pattern Go 版騰信息科技有限公司"></div>
+            <div class="txt"><img src="public/images/Pattern_Go.svg" alt="Pattern Go 版騰信息科技有限公司"></div></a>
+          <h1 class="mbr_header-title">档案管理</h1>
+          <nav class="user_menu">
+            <div class="member_block pgdropdown">
+              <div class="member_block-ctrl pgdropdown-ctrl">
+                <div class="user-pic">
+                  <div class="pic"><img src="public/images/user-pic.png" alt=""></div>
+                </div>
+                <div class="user-id">
+                  <div class="txt">12345678</div>
+                  <div class="user-identity">一般用戶</div>
+                </div>
+              </div>
+              <div class="member_block-menu pgdropdown-menu">
+                <ul class="cf lis-n">
+                  <li class="dropdown-item"><a class="inner" href="mbr_mgmt_home.html">檔案管理</a></li>
+                  <li class="dropdown-item"><a class="inner" href="mbr_wallet.html">我的錢包</a></li>
+                  <li class="dropdown-item"><a class="inner" href="mbr_profile.html">帳戶設定</a></li>
+                  <li class="dropdown-item"><a class="inner" href="mbr_plan.html">方案設定</a></li>
+                  <li class="dropdown-item logout"><a class="inner" href="javascript:;">登出
+                      <svg class="svg_icon icon-logout">
+                        <use xlink:href="#logout"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- header.page_header  END  !! --------------------------------------------------------------------------->
+      <!-- =========================================================================-->
+      <!-- 頁面內容  START-->
+      <!-- =========================================================================-->
+      <div class="page_main mbr_page mbr_mgmt mgmt_folder">
+        <aside class="mgmt_aside">
+          <div class="mgmt_aside-top"><a class="pgbtn pgbtn-s1 add-pattern" href="">
+              <svg class="svg_icon icon-pencil svg-pencil-dims">
+                <use xlink:href="#pencil"></use>
+              </svg><span class="txt">新增设计</span></a></div>
+          <div class="mgmt_aside-middle">
+            <nav class="mgmt_aside-nav">
+              <ul class="cf lis-n">
+                <li class="mgmt_aside-nav-item mgmt-recent"><a class="inner" href="mbr_mgmt_home.html">
+                    <div class="icon_block">
+                      <svg class="svg_icon icon-recent svg-recent-dims">
+                        <use xlink:href="#recent"></use>
+                      </svg>
+                    </div><span class="txt">最近使用</span></a></li>
+                <li class="mgmt_aside-nav-item mgmt-fav"><a class="inner" href="mbr_mgmt_fav.html">
+                    <div class="icon_block">
+                      <svg class="svg_icon icon-love svg-love-dims">
+                        <use xlink:href="#love"></use>
+                      </svg>
+                    </div><span class="txt">喜爱</span></a></li>
+                <li class="mgmt_aside-nav-item mgmt-all"><a class="inner" href="mbr_mgmt_all.html">
+                    <div class="icon_block">
+                      <svg class="svg_icon icon-file svg-file-dims">
+                        <use xlink:href="#file"></use>
+                      </svg>
+                    </div><span class="txt">全部</span></a></li>
+                <li class="mgmt_aside-nav-item mgmt-folder active"><a class="inner" href="mbr_mgmt_folder.html">
+                    <div class="icon_block">
+                      <svg class="svg_icon icon-library svg-library-dims">
+                        <use xlink:href="#library"></use>
+                      </svg>
+                    </div><span class="txt">资料夹</span></a></li>
+                <li class="mgmt_aside-nav-item mgmt-archive"><a class="inner" href="mbr_mgmt_archive.html">
+                    <div class="icon_block">
+                      <svg class="svg_icon icon-bookmark svg-bookmark-dims">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                    </div><span class="txt">封存</span></a></li>
+                <li class="mgmt_aside-nav-item mgmt-trash"><a class="inner" href="mbr_mgmt_trash.html">
+                    <div class="icon_block">
+                      <svg class="svg_icon icon-cleaner svg-cleaner-dims">
+                        <use xlink:href="#cleaner"></use>
+                      </svg>
+                    </div><span class="txt">垃圾桶</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+        <main class="main_content">
+          <header class="mgmt_topbar">
+            <div class="inner">
+              <div class="pgsort">
+                <div class="txt">排序方式</div>
+                <div class="pgsort-dropdown pgdropdown pgdropdown-s1">
+                  <div class="pgdropdown-ctrl pgsort-ctrl">
+                    <div class="pg-selects-styled ctrl-txt">选择排序方式</div>
+                  </div>
+                  <div class="pgdropdown-menu pgsort-menu pg-selects-list">
+                    <ul class="menu-list lis-n cf">
+                      <li class="menu-item pg-selects-item">按笔画排序 (中繁)</li>
+                      <li class="menu-item pg-selects-item">按字母排序 (中简 / 英文)</li>
+                      <li class="menu-item pg-selects-item">依照修改日期</li>
+                      <li class="menu-item pg-selects-item">依照生产季度</li>
+                      <li class="menu-item pg-selects-item">依照打版价格</li>
+                      <li class="menu-item pg-selects-item">依照布料特性</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="pgfilter">
+                <div class="txt">筛选条件</div>
+                <div class="pgfilter-dropdown pgdropdown pgdropdown-s1">
+                  <div class="pgdropdown-ctrl pgsort-ctrl">
+                    <div class="pg-selects-styled ctrl-txt">选择过滤条件</div>
+                  </div>
+                  <div class="pgdropdown-menu pgsort-menu pg-selects-list">
+                    <ul class="menu-list lis-n cf">
+                      <li class="menu-item pg-selects-item">依款式类别 <span class="small">(上衣/裤子/裙子...)</span></li>
+                      <li class="menu-item pg-selects-item">依标签类别 <span class="small">(喇叭裤 / 飞鼠裤 / 紧身裤...)</span></li>
+                      <li class="menu-item pg-selects-item">依打版价格 <span class="small">(设定价格区间)</span></li>
+                      <li class="menu-item pg-selects-item">依生产年度 <span class="small">(设定年分 or 季度...)</span></li>
+                      <li class="menu-item pg-selects-item">依修改次数 <span class="small">(设定次数区间)</span></li>
+                      <li class="menu-item pg-selects-item">是否媒合版师顾问</li>
+                      <li class="menu-item pg-selects-item">是否为真人打版</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="pgsearch">
+                <div class="search_block pgsearch-s1 pginput-wrap">
+                  <input class="pginput input_search" type="text" placeholder="搜寻档案名称">
+                  <button class="btn_search" type="button">
+                    <svg class="svg_icon icon-search svg-search-dims">
+                      <use xlink:href="#search"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="layout-toggle-picker">
+              <div class="btn_picker layout-toggle-default">
+                <svg class="svg_icon icon-layout_default svg-layout_default-dims">
+                  <use xlink:href="#layout_default"></use>
+                </svg>
+              </div>
+              <div class="btn_picker layout-toggle-list">
+                <svg class="svg_icon icon-layout_list svg-layout_list-dims">
+                  <use xlink:href="#layout_list"></use>
+                </svg>
+              </div>
+            </div>
+          </header>
+          <div class="content_wrap mbr_mgmt_content">
+            <div class="pattern_folder-list">
+              <div class="layout_list-title">
+                <div class="title-block move"></div>
+                <div class="title-block name">资料夹名称</div>
+                <div class="title-block num">档案数</div>
+                <div class="title-block time">上次修改时间</div>
+                <div class="title-block more"></div>
+              </div>
+              <ul class="cf lis-n">
+                <li class="pattern_folder-item">
+                  <div class="inner">
+                    <div class="inner-bg"></div>
+                    <div class="pattern_folder-item-wrap">
+                      <button class="btn_move" type="button"></button>
+                      <button class="btn_more" type="button" onclick="pgUI.openFolderMore(this);">
+                        <svg class="svg_icon icon-btn_more svg-btn_more-dims">
+                          <use xlink:href="#btn_more"></use>
+                        </svg>
+                      </button>
+                      <div class="pattern_folder-item-more">
+                        <ul class="cf lis-n inner">
+                          <li class="more-item"><a href="javascript:;">查看档案</a></li>
+                          <div class="hr"></div>
+                          <li class="more-item"><a href="javascript:;">重新命名</a></li>
+                          <li class="more-item"><a href="javascript:;">删除资料夹</a></li>
+                        </ul>
+                      </div>
+                      <div class="pattern_folder-item-bd">
+                        <div class="folder-name">某某资料夹</div>
+                      </div>
+                      <div class="pattern_folder-item-ft">
+                        <div class="inner">
+                          <div class="folder-filenum">7 个档案</div>
+                          <div class="folder-time">修改时间：上午 8:00</div>
+                        </div>
+                      </div>
+                      <div class="layout_list-name">某某资料夹</div>
+                      <div class="layout_list-filenum">7 个档案</div>
+                      <div class="layout_list-time">修改时间：上午 8:00</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="pattern_folder-item">
+                  <div class="inner">
+                    <div class="inner-bg"></div>
+                    <div class="pattern_folder-item-wrap">
+                      <button class="btn_move" type="button"></button>
+                      <button class="btn_more" type="button" onclick="pgUI.openFolderMore(this);">
+                        <svg class="svg_icon icon-btn_more svg-btn_more-dims">
+                          <use xlink:href="#btn_more"></use>
+                        </svg>
+                      </button>
+                      <div class="pattern_folder-item-more">
+                        <ul class="cf lis-n inner">
+                          <li class="more-item"><a href="javascript:;">查看档案</a></li>
+                          <div class="hr"></div>
+                          <li class="more-item"><a href="javascript:;">重新命名</a></li>
+                          <li class="more-item"><a href="javascript:;">删除资料夹</a></li>
+                        </ul>
+                      </div>
+                      <div class="pattern_folder-item-bd">
+                        <div class="folder-name">某某资料夹</div>
+                      </div>
+                      <div class="pattern_folder-item-ft">
+                        <div class="inner">
+                          <div class="folder-filenum">7 个档案</div>
+                          <div class="folder-time">修改时间：上午 8:00</div>
+                        </div>
+                      </div>
+                      <div class="layout_list-name">某某资料夹</div>
+                      <div class="layout_list-filenum">7 个档案</div>
+                      <div class="layout_list-time">修改时间：上午 8:00</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="pattern_folder-item">
+                  <div class="inner">
+                    <div class="inner-bg"></div>
+                    <div class="pattern_folder-item-wrap">
+                      <button class="btn_move" type="button"></button>
+                      <button class="btn_more" type="button" onclick="pgUI.openFolderMore(this);">
+                        <svg class="svg_icon icon-btn_more svg-btn_more-dims">
+                          <use xlink:href="#btn_more"></use>
+                        </svg>
+                      </button>
+                      <div class="pattern_folder-item-more">
+                        <ul class="cf lis-n inner">
+                          <li class="more-item"><a href="javascript:;">查看档案</a></li>
+                          <div class="hr"></div>
+                          <li class="more-item"><a href="javascript:;">重新命名</a></li>
+                          <li class="more-item"><a href="javascript:;">删除资料夹</a></li>
+                        </ul>
+                      </div>
+                      <div class="pattern_folder-item-bd">
+                        <div class="folder-name">某某资料夹</div>
+                      </div>
+                      <div class="pattern_folder-item-ft">
+                        <div class="inner">
+                          <div class="folder-filenum">7 个档案</div>
+                          <div class="folder-time">修改时间：上午 8:00</div>
+                        </div>
+                      </div>
+                      <div class="layout_list-name">某某资料夹</div>
+                      <div class="layout_list-filenum">7 个档案</div>
+                      <div class="layout_list-time">修改时间：上午 8:00</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="pattern_folder-item">
+                  <div class="inner">
+                    <div class="inner-bg"></div>
+                    <div class="pattern_folder-item-wrap">
+                      <button class="btn_move" type="button"></button>
+                      <button class="btn_more" type="button" onclick="pgUI.openFolderMore(this);">
+                        <svg class="svg_icon icon-btn_more svg-btn_more-dims">
+                          <use xlink:href="#btn_more"></use>
+                        </svg>
+                      </button>
+                      <div class="pattern_folder-item-more">
+                        <ul class="cf lis-n inner">
+                          <li class="more-item"><a href="javascript:;">查看档案</a></li>
+                          <div class="hr"></div>
+                          <li class="more-item"><a href="javascript:;">重新命名</a></li>
+                          <li class="more-item"><a href="javascript:;">删除资料夹</a></li>
+                        </ul>
+                      </div>
+                      <div class="pattern_folder-item-bd">
+                        <div class="folder-name">某某资料夹</div>
+                      </div>
+                      <div class="pattern_folder-item-ft">
+                        <div class="inner">
+                          <div class="folder-filenum">7 个档案</div>
+                          <div class="folder-time">修改时间：上午 8:00</div>
+                        </div>
+                      </div>
+                      <div class="layout_list-name">某某资料夹</div>
+                      <div class="layout_list-filenum">7 个档案</div>
+                      <div class="layout_list-time">修改时间：上午 8:00</div>
+                    </div>
+                  </div>
+                </li>
+                <li class="pattern_folder-item add_folder">
+                  <div class="inner">
+                    <div class="add_folder-wrap">
+                      <div class="icon"></div>
+                      <div class="txt">建立资料夹</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </main>
+      </div>
+      <div class="mbr_page_footer">
+        <p class="copyright">Copyright © 2020 Pattern Go All Rights Reserved | Designed by LOHAS IT</p>
+        <div class="lang">语言
+          <div class="pgselect-wrap select_block">
+            <select class="pgselect pgselect-s2">
+              <option value="0">简体中文</option>
+              <option value="1">繁體中文</option>
+              <option value="2">English</option>
+            </select>
+          </div>
+        </div>
+        <!-- main.main_content  END  !!-->
+        <!-- =========================================================================-->
+      </div>
+      <!-- =========================================================================-->
+      <!-- 頁面內容  END  !!-->
+      <!-- =========================================================================-->
+    </div>
+    <script>window.jQuery || document.write('<script src="public/js/libs/jquery.min.js"><\/script>')</script>
+    <script src="public/js/libs/plugin_mix.js"></script>
+    <!-- 動態效果-->
+    <script src="public/plugins/greensock/TweenMax.min.js"></script>
+    <script src="public/plugins/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="public/plugins/scrollmagic/plugins/jquery.ScrollMagic.min.js"></script>
+    <script src="public/plugins/scrollmagic/plugins/debug.addIndicators.min.js"></script>
+    <script src="public/plugins/scrollmagic/plugins/animation.gsap.min.js"></script>
+    <script src="public/plugins/snap.svg.js"></script>
+    <script src="public/plugins/slick/slick.js"></script>
+    <script src="public/plugins/fullpage/fullpage.js"></script>
+    <script src="public/plugins/simplebar/simplebar.js"></script>
+    <script src="public/js/script.js?v=20200615"></script>
+    <script src="public/js/pgelm.js"></script>
+    <script src="public/js/page/mbr_mgmt.js"></script>
+  </body>
+</html>

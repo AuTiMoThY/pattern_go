@@ -1,0 +1,56 @@
+
+.accountInfo_frm {
+	.form-group {
+		margin-bottom: 30px;
+	}
+
+	.nationality_code {
+		@extend %nationalityCode;
+	}
+
+	&-check {
+		padding: 15px 30px;
+		background-color: color("A");
+		text-align: center;
+		color: #fff;
+
+		transition: background-color 0.3s ease-in-out;
+		cursor: pointer;
+
+		&:hover {
+			background-color: darken(color("A"), 10);
+		}
+
+		&:active {
+			transform: translate(-1px, -1px);
+		}
+	}
+
+	&-email {
+		.pgfrm-field {
+			margin-bottom: 10px;
+		}
+	}
+
+	&-pw {
+		.pgfrm-field {
+			position: relative;
+		}
+		.is_hidden {
+			@extend %isHidden;
+		}
+	}
+
+	&-btns {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 30px;
+	}
+
+	.more_link {
+		a {
+			@include hover_line(2, color("BLUE"));
+		}
+	}
+
+}

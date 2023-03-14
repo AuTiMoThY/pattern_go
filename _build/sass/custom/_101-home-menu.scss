@@ -1,0 +1,23 @@
+.home_menu {
+	@include fixed(50%, 1rem);
+	z-index: 10;
+	transform: translateY(-50%);
+	&-item {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		.inner {
+			display: block;
+			@include circle(16);
+			background-color: rgba(#fff, 0.8);
+			border: 1px solid #9C9FA4;
+
+			transition: $transition-base;
+		}
+
+		&.active {
+			.inner {
+				background-color: color("A");
+			}
+		}
+	}
+}

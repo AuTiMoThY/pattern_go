@@ -1,0 +1,421 @@
+extends _layout.pug
+block vars
+	//- - var login = 1;
+	- var page_class = "index_page";
+	- var page_title = "首頁";
+	- var no_login = 1;
+
+
+block pluginStyle
+	//- link(rel="stylesheet", href="dist/plugin/swiper/swiper.min.css")
+
+block popup
+	//- .pgpopup.js-show.pgpopup_signup
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-close
+				svg.svg_icon.icon-svg-close
+					use(xlink:href="#svg-close")
+			#popupLogin.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-hd
+						h1.pgpopup-title 快速注册
+						.fast_login
+							ul.cf.lis-n
+								li.fast_login-item.fast_login-QQ
+									a(href="javascript:;", target="_blank").inner
+										.fast_login-logo.QQ-logo
+											img(src="public/images/QQ-logo.png", alt="QQ")
+										.txt QQ
+								li.fast_login-item.fast_login-wechat
+									a(href="javascript:;", target="_blank").inner
+										.fast_login-logo.wechat-logo
+											img(src="public/images/wechat-logo.png", alt="微信")
+										.txt 微信
+					.pgpopup-bd
+						.signup_tabs
+							ul.cf.lis-n
+								li.signup_tabs-item.tabs_item(data-showcnt="PersonalUser") 个人用户
+								li.signup_tabs-item.tabs_item(data-showcnt="BusinessUsers") 企业用户
+						.signup_tabs_container.tabs_container
+							.inner
+								section#PersonalUser.tab_content
+									.signup_frm.personal
+										form(action="")
+											.form-group.signup_frm-username
+												label.pgfrm-label(for="PU_UserName") 使用者名称
+												.pgfrm-field
+													input#PU_UserName.pgfrm-input(type="text", name="PU_UserName", placeholder="请输入全名")
+											.form-group.signup_frm-email
+												label.pgfrm-label(for="PU_Email") Email 帳號
+												.pgfrm-field.input-group
+													input#PU_Email.pgfrm-input(type="email", name="PU_Email", placeholder="service@ai-pattern.com")
+													span.signup_frm-change.input-group-append.to-phone 手機登入
+											.form-group.signup_frm-phone
+												label.pgfrm-label(for="PU_Phone") 手机号码
+												.pgfrm-field.input-group
+													span.nationality_code.input-group-prepend 国籍码
+													input#PU_Phone.pgfrm-input(type="phone", name="PU_Phone", placeholder="手机号码")
+													span.signup_frm-change.input-group-append.to-email 信箱登入
+											.form-group.signup_frm-pw
+												label.pgfrm-label(for="PU_Password") 密碼
+												.pgfrm-field
+													.is_hidden
+														svg.svg_icon.icon-hidden
+															use(xlink:href="#hidden")
+													input#PU_Password.pgfrm-input(type="password", name="PU_Password", placeholder="请输入密碼")
+											.form-group.signup_frm-inc_code
+												label.pgfrm-label(for="PU_InvCode") 邀請碼
+												.pgfrm-field
+													input#PU_InvCode.pgfrm-input(type="text", name="PU_InvCode", placeholder="請輸入邀請碼 (可不填)")
+											.form-group.signup_frm-btns
+												button.pgfrm-btn.pgbtn.pgbtn-s2(type="button") 登入
+											.form-group.signup_frm-other
+												a(href="javascript:;").other-link.text-center.txt-r02 已經有帳號了？去登入
+								section#BusinessUsers.tab_content
+									.signup_frm.business
+										form(action="")
+											.form-group.signup_frm-country
+												.txt 國籍
+												select.country_select
+													option(value="001") 中國1
+													option(value="002") 中國2
+													option(value="003") 中國3
+													option(value="004") 中國4
+													option(value="005") 中國5
+											.form-group.signup_frm-email
+												label.pgfrm-label(for="BU_compName") 公司名
+												.pgfrm-field
+													input#BU_compName.pgfrm-input(type="text", name="BU_compName", placeholder="請輸入全名")
+											.form-group.signup_frm-email
+												label.pgfrm-label(for="BU_CreditCode") 統一社會信用代碼
+												.pgfrm-field
+													input#BU_CreditCode.pgfrm-input(type="text", name="BU_CreditCode", placeholder="91350100M000100Y43")
+											.form-group.signup_frm-email
+												label.pgfrm-label(for="PU_Email") Email 帳號
+												.pgfrm-field.input-group
+													input#PU_Email.pgfrm-input(type="email", name="PU_Email", placeholder="service@ai-pattern.com")
+													span.signup_frm-change.input-group-append.to-phone 手機登入
+											.form-group.signup_frm-phone
+												label.pgfrm-label(for="PU_Phone") 手机号码
+												.pgfrm-field.input-group
+													span.nationality_code.input-group-prepend 国籍码
+													input#PU_Phone.pgfrm-input(type="phone", name="PU_Phone", placeholder="手机号码")
+													span.signup_frm-change.input-group-append.to-email 信箱登入
+											.form-group.signup_frm-pw
+												label.pgfrm-label(for="PU_Password") 密碼
+												.pgfrm-field
+													.is_hidden
+														svg.svg_icon.icon-hidden
+															use(xlink:href="#hidden")
+													input#PU_Password.pgfrm-input(type="password", name="PU_Password", placeholder="请输入密碼")
+											.form-group.signup_frm-inc_code
+												label.pgfrm-label(for="PU_InvCode") 邀請碼
+												.pgfrm-field
+													input#PU_InvCode.pgfrm-input(type="text", name="PU_InvCode", placeholder="請輸入邀請碼 (可不填)")
+											.form-group.signup_frm-btns
+												button.pgfrm-btn.pgbtn.pgbtn-s2(type="button") 登入
+											.form-group.signup_frm-other
+												a(href="javascript:;").other-link.text-center.txt-r02 已經有帳號了？去登入
+
+	//- .pgpopup.js-show
+		.pgpopup-bg
+		.pgpopup-wrap
+			#popupLogin.pgpopup-container
+				.pgpopup-close
+					svg.svg_icon.icon-svg-close
+						use(xlink:href="#svg-close")
+				.inner(data-simplebar data-simplebar-auto-hide="false")
+					.pgpopup-hd
+						h1.pgpopup-title 快速登入
+						.fast_login
+							ul.cf.lis-n
+								li.fast_login-item.fast_login-QQ
+									a(href="javascript:;").inner
+										.fast_login-logo.QQ-logo
+											img(src="public/images/QQ-logo.png", alt="")
+										.txt QQ
+								li.fast_login-item.fast_login-wechat
+									a(href="javascript:;").inner
+										.fast_login-logo.wechat-logo
+											img(src="public/images/wechat-logo.png", alt="")
+										.txt 微信
+					.pgpopup-bd
+						h1.pgpopup-title 一般登入
+						.login_frm.pgfrm
+							form(action="")
+								.form-group.login_frm-email
+									label.pgfrm-label(for="Email") Email 帳號
+									.pgfrm-field.input-group
+										input#Email.pgfrm-input(type="email", name="Email", placeholder="service@ai-pattern.com")
+										span.login_frm-change.input-group-append.to-phone 手機登入
+								.form-group.login_frm-pw
+									label.pgfrm-label(for="Password") 密碼
+									.pgfrm-field
+										.is_hidden
+											svg.svg_icon.icon-hidden
+												use(xlink:href="#hidden")
+										input#Password.pgfrm-input(type="password", name="Password", placeholder="哩ㄟ密碼底加")
+								.form-group.login_frm-remember
+									.au_radiocheckbox
+										label.au_radiocheckbox-label(for="rememberMee")
+											input.au_radiocheckbox-input#rememberMee(type="checkbox", name="rememberMee")
+											.choicemark
+												.choicemark-bg
+											.txt 記住我
+								.form-group.login_frm-btns
+									button.pgfrm-btn.pgbtn.pgbtn-s2(type="button") 登入
+								.form-group.login_frm-other
+									a(href="javascript:;").other-link.left.txt-r02 還沒有帳戶？去註冊
+									a(href="javascript:;").other-link.right.txt-gray4 忘記密碼?
+						.forget_pw
+							h1.pgpopup-title 忘記密碼
+							.forget_frm.pgfrm
+								form(action="")
+									.form-group.forget_frm-email
+										label.pgfrm-label(for="ForgetPW") 發送Email確認信
+										.pgfrm-field
+											input#ForgetPW.pgfrm-input(type="email", name="ForgetPW", placeholder="請輸入註冊時的電子信箱")
+									.form-group.login_frm-btns
+										button.pgfrm-btn.pgbtn.pgbtn-s3(type="button") 發送認證信
+
+
+	//- .pgpopup.pgdialog.js-show
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container
+				.inner
+					p.pgdialog-msg 已寄送驗證連結至信箱
+					button.pgbtn.pgbtn-s2(type="button") OK
+
+	//- .pgpopup.pgdialog.js-show.dialog-verification_code
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container
+				.container-inner
+					form(action="")
+						p.pgdialog-msg 请输入验证码
+						.verification_code
+							.time_left 剩餘時間 <span id="countdownTime"></span>
+							input.pgfrm-input.pginput(type="text", placeholder="01234567")
+						button.pgbtn.pgbtn-s2(type="button") 確認
+						a.other-link.text-center.txt-b01.sendToEmail-re(href="javascript:;") 沒有收到驗證碼? 重新發送
+
+
+
+
+block content
+	.mobile_main.d-sm-none
+	.page_main.d-none.d-sm-block(class=page_class)
+		main.main_content
+			.home_menu
+				ul.cf.lis-n.home_menu-list#menu
+					li.home_menu-item(data-menuanchor="banner")
+						a.inner(href="#banner")
+					li.home_menu-item(data-menuanchor="how_to_use")
+						a.inner(href="#how_to_use")
+					li.home_menu-item(data-menuanchor="why")
+						a.inner(href="#why")
+					li.home_menu-item(data-menuanchor="story")
+						a.inner(href="#story")
+			.content_wrap.home_wrap#fullpage
+				section.section.home_section-banner(data-anchor="banner")
+					#homeBanner.home_section-banner-bg
+						svg#cloud0
+						svg#cloud1
+						svg#cloud4
+						svg#cloud5
+						svg#cloud7
+						main.banner_main
+							svg#cloud2
+							svg#cloud3
+							svg#cloud6
+							svg#cloud8
+							.structure-shadow
+							.structure
+							.decoration.decoration-drawer
+							.decoration.decoration-material
+							.decoration.decoration-bucket
+							.decoration.decoration-armrest
+							#light.decoration.decoration-light
+							.paper
+								svg#painting.painting
+							#controllTop.controll.controll-top
+							#controllBottom.controll.controll-bottom
+							#smoke.smoke
+							#planet.planet
+							#unknow.decoration.unknow
+							#anibtnImport.anibtn.anibtn-import
+							#anibtnExport.anibtn.anibtn-export
+							#drawingIn.drawing.drawing-in
+							#drawingOut.drawing.drawing-out
+							//- .structure-1f
+							//- .structure-2f
+							//- .structure-3f
+					//- .home_section-banner-bg(style="background-image:url("+PATH_IMG+"banner-bg.jpg)")
+					.container
+						hgroup.home_section-banner-slogan
+							h1.title 工作效率提高十倍<br>一秒取得打版纸样
+							h2.subtitle Pattern Go 是一个线上自动打版系统，可将您的设计图透过系统，自动演算制版，用超过10倍的速度，低于 1/10 的价格，完成您的打版工作
+						.scroll
+				section.section.home_section-how_to_use(data-anchor="how_to_use")
+					.container
+						h1.title 如何使用？
+						.home_section-how_to_use-block
+							.inner
+								img(src=PATH_IMG + "how_to_use.jpg", alt="")
+				section.section.home_section-why(data-anchor="why")
+					.container
+						h1.title 为何选择 Pattern Go？
+						.home_section-why-content
+							.why_list
+								ul.cf.lis-n
+									li.why_item
+										.pic
+											img(src=PATH_IMG + "why1.png", alt="价格实惠")
+										.cnt
+											h2.why_item-title 价格实惠
+											p.why_item-txt 用 1/10 的价格<br>让您取得优质的打版纸样
+									li.why_item
+										.pic
+											img(src=PATH_IMG + "why2.png", alt="版型更优")
+										.cnt
+											h2.why_item-title 版型更优
+											p.why_item-txt 汇总高端版型演算技术<br>加上个人化参数调整<br>版型品质稳定又符合所需
+									li.why_item
+										.pic
+											img(src=PATH_IMG + "why3.png", alt="高效工作")
+										.cnt
+											h2.why_item-title 高效工作
+											p.why_item-txt 只需一秒的时间<br>快速取得版型加速工作流程
+									li.why_item
+										.pic
+											img(src=PATH_IMG + "why4.png", alt="自由设计")
+										.cnt
+											h2.why_item-title 自由设计
+											p.why_item-txt 各种设计工具<br>自由创作服装款式
+							.Lima_shi_shi
+								a(href="javascript:;").pgbtn.pgbtn-s1.pgbtn-link 马上试试
+				section.section.home_section-story(data-anchor="story")
+					h1.title 產品故事
+					.home_section-story-content
+						.story-content-slick
+							.slick-item(data-anchor="slide1")
+								.container
+									.story-slide.slide1
+										.story-pic.story1
+											.story-pic-bg1
+											svg.svg_ani#svgStory1
+											| <svg class="svg_ani bg" viewBox="0 0 627 627" fill="none" xmlns="http://www.w3.org/2000/svg">
+											| <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint0_linear)">
+											| <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M24.1138 187.257C63.8302 105.912 155.098 72.5405 242.806 50.1388C331.135 27.5786 426.901 13.909 502.325 65.1166C582.123 119.294 631.969 214.279 626.394 310.57C621.22 399.937 549.079 465 476.167 516.935C411.558 562.956 335.583 585.613 257.18 573.558C172.871 560.594 91.1729 523.998 47.1078 450.962C-0.848128 371.476 -16.6152 270.677 24.1138 187.257Z;
+											| M17.2,137c39.7-81.3,149.3-57.6,237-80C342.5,34.5,411.5-24.7,487,26.5c79.8,54.2,144.2,157.8,138.6,254.1 C620.4,370,547.1,391.1,474.2,443c-64.6,46-139.4,112.6-217.8,100.6c-84.3-13-129.1-72.5-173.2-145.6 C35.2,318.6-23.5,220.5,17.2,137z;
+											| M24.1138 187.257C63.8302 105.912 155.098 72.5405 242.806 50.1388C331.135 27.5786 426.901 13.909 502.325 65.1166C582.123 119.294 631.969 214.279 626.394 310.57C621.22 399.937 549.079 465 476.167 516.935C411.558 562.956 335.583 585.613 257.18 573.558C172.871 560.594 91.1729 523.998 47.1078 450.962C-0.848128 371.476 -16.6152 270.677 24.1138 187.257Z;" />
+											| </path>
+											| <defs>
+											| 	<linearGradient id="paint0_linear" x1="131.665" y1="103.589" x2="490.206" y2="505.6" gradientUnits="userSpaceOnUse">
+											| 		<stop stop-color="#334AC0"/>
+											| 		<stop offset="1" stop-color="#24B6AD"/>
+											| 	</linearGradient>
+											| </defs>
+											| </svg>
+											.inner
+												img(src=PATH_IMG + "story1.png", alt="")
+										.story-content
+											hgroup
+												h2.story-title 背景
+												h3.story-subtitle 在服装快时尚的发展以及讲求个人独特性的风潮下，人们都希望能穿上最流行，却又具有个人特色的款式。
+											p.story-txt 因此服装产业势必得用更快的速度来推出新款，但目前服装产业已面临版师稀缺及断层的状态。我们不断思考如何借助科技的力量来减少版师重复劳动的工作，进而解决人手不足的问题，因此诞生了Pattern Go！
+							.slick-item(data-anchor="slide2")
+								.container
+									.story-slide.slide2
+										.story-pic.story2
+											.story-pic-bg2
+											svg.svg_ani#svgStory2
+											| <svg class="svg_ani bg" viewBox="0 0 627 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+											| <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint1_linear)">
+											| <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M626.615 299.114C621.262 388.737 547.393 453.373 473.378 504.105C407.395 549.331 330.383 568.755 251.382 556.308C163.735 542.499 72.6845 511.913 29.7403 434.208C-15.5583 352.243 -5.69929 250.888 36.3398 167.201C77.4839 85.2963 154.422 28.7433 243.707 8.26735C333.093 -12.2318 426.803 5.41851 499.849 60.9031C575.183 118.124 632.258 204.633 626.615 299.114Z;
+											| M621,234c15,81-30,258.6-104,309.3c-66,45.2-163-49.9-242-62.3c-87.6-13.8-210.1-13.3-253-91 c-45.3-82,12-141.3,54-225c41.1-81.9,41.7-130.5,131-151c89.4-20.5,195,11.5,268,67C550.3,138.2,606,153,621,234z;
+											| M626.615 299.114C621.262 388.737 547.393 453.373 473.378 504.105C407.395 549.331 330.383 568.755 251.382 556.308C163.735 542.499 72.6845 511.913 29.7403 434.208C-15.5583 352.243 -5.69929 250.888 36.3398 167.201C77.4839 85.2963 154.422 28.7433 243.707 8.26735C333.093 -12.2318 426.803 5.41851 499.849 60.9031C575.183 118.124 632.258 204.633 626.615 299.114Z;" />
+											| </path>
+											| <defs>
+											| 	<linearGradient id="paint1_linear" x1="358.699" y1="57.6104" x2="249.03" y2="566.641" gradientUnits="userSpaceOnUse">
+											| 		<stop stop-color="#334AC0"/>
+											| 		<stop offset="1" stop-color="#F9694A"/>
+											| 	</linearGradient>
+											| </defs>
+											| </svg>
+
+											.inner
+												img(src=PATH_IMG + "story2.png", alt="")
+										.story-content
+											hgroup
+												h2.story-title 功能
+												h3.story-subtitle Pattern Go提供一个操作简易的服装设计线上打版系统，以往服装设计师须透过版师才能取得版型。但现在，Pattern Go系统让服装设计师可以更快速直觉的使用服装绘图工具。
+											p.story-txt 从绘制服装设计稿到取得系统自动计算的版型，只需1秒的时间，大幅度的缩短打版的时间，真正改善人手不足及时程的问题。并且Pattern Go还能根据客户反馈，修改系统的打版数据，为服装公司或客户自动订制一套专属的演算参数，就像是一位为您服务了20年的老版师在您身边24小时待命。我们期待Pattern Go能为合作伙伴带来更快速的打版体验及更全面的版型管理！
+							.slick-item(data-anchor="slide3")
+								.container
+									.story-slide.slide3
+										.story-pic.story3
+											.story-pic-bg3
+											svg.svg_ani#svgStory3
+											| <svg class="svg_ani bg" viewBox="0 0 625.6 554.7" fill="none" xmlns="http://www.w3.org/2000/svg">
+											| <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint2_linear)">
+											| <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M13.8,194.5c31.1-85,118.3-127.6,203.2-159c85.5-31.6,179.3-55.1,259.6-12c85,45.6,144.4,134.9,148.8,231.2 c4.1,89.4-60.9,161.6-128,220.7c-59.5,52.5-132.7,82.9-211.9,79c-85.2-4.2-170.2-32.1-221.6-100.1C8,380.2-18.1,281.7,13.8,194.5z;
+											| M14,113c31.1-85,167.1-3.6,252-35c85.5-31.6,195.7-96.1,276-53c85,45.6,42.6,121.7,47,218 c4.1,89.4,27.1,205.9-40,265c-59.5,52.5-184.3,50.3-263.5,46.4C200.3,550.2,148.4,498,97,430C41.1,355.9-17.9,200.2,14,113z;
+											| M13.8,194.5c31.1-85,118.3-127.6,203.2-159c85.5-31.6,179.3-55.1,259.6-12c85,45.6,144.4,134.9,148.8,231.2 c4.1,89.4-60.9,161.6-128,220.7c-59.5,52.5-132.7,82.9-211.9,79c-85.2-4.2-170.2-32.1-221.6-100.1C8,380.2-18.1,281.7,13.8,194.5z;" />
+											| </path>
+											| <defs>
+											| <linearGradient id="paint2_linear" gradientUnits="userSpaceOnUse" x1="116.309" y1="448.1866" x2="514.451" y2="85.6506" gradientTransform="matrix(1 0 0 -1 0 543.6592)">
+											| 	<stop  offset="0" style="stop-color:#334AC0"/>
+											| 	<stop  offset="1" style="stop-color:#B9378D"/>
+											| </linearGradient>
+											| </defs>
+											| </svg>
+											.inner
+												img(src=PATH_IMG + "story3.png", alt="")
+										.story-content
+											hgroup
+												h2.story-title 技术
+												h3.story-subtitle PatternGo的打版演算系统，是由百余名专家及业界资深版师，通过上万种款式及上千余种面料的打版测试运算。经过长达两年的努力，归纳整理出制版逻辑及条件运算的程式。
+											p.story-txt 除此之外，PatternGo简易图像式的绘制工具，将3D体型尺寸经由人体曲线计算，以2D平面线条绘出，在不改变服装设计师的使用习惯下，帮助设计师快速的绘制出比例正确的标准平面机械图，提高设计师的工作效率！
+							.slick-item(data-anchor="slide4")
+								.container
+									.story-slide.slide4
+										.story-pic.story4
+											.story-pic-bg4
+											svg.svg_ani#svgStory4
+											| <svg class="svg_ani bg" width="627" height="559" viewBox="0 0 627 559" fill="none" xmlns="http://www.w3.org/2000/svg">
+											| <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint3_linear)">
+											| <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M0.4,260.4c5.4-89.5,79.2-154,153.2-204.6c66-45.1,143-64.5,222-52.1C463.3,17.5,554.3,48,597.3,125.6c45.3,81.8,35.4,183-6.6,266.5c-41.1,81.8-118.1,138.2-207.4,158.7c-89.4,20.5-183.1,2.8-256.1-52.5C51.8,441.1-5.3,354.7,0.4,260.4z;
+											| M28,255C33.4,165.5,7,98.6,81,48C147,2.9,296,9.6,375,22 c87.6,13.8,164.1,33.4,207,111c45.3,81.8,58,215.5,16,299c-41.1,81.8-155.7,86.6-245,107c-89.4,20.5-180,30.4-253-25 C24.7,456.9,22.4,349.3,28,255z;
+											| M0.4,260.4c5.4-89.5,79.2-154,153.2-204.6c66-45.1,143-64.5,222-52.1C463.3,17.5,554.3,48,597.3,125.6c45.3,81.8,35.4,183-6.6,266.5c-41.1,81.8-118.1,138.2-207.4,158.7c-89.4,20.5-183.1,2.8-256.1-52.5C51.8,441.1-5.3,354.7,0.4,260.4z;" />
+											| </path>
+											| <defs>
+											| 	<linearGradient id="paint3_linear" x1="268.301" y1="501.492" x2="377.596" y2="-6.70937" gradientUnits="userSpaceOnUse">
+											| 		<stop stop-color="#334AC0"/>
+											| 		<stop offset="1" stop-color="#2AA9F0"/>
+											| 	</linearGradient>
+											| </defs>
+											| </svg>
+
+											.inner
+												img(src=PATH_IMG + "story4.png", alt="")
+										.story-content
+											hgroup
+												h2.story-title 测试
+												h3.story-subtitle PatternGo在下服装的各大类的运算定义时，均以1000件以上数据(含各种款式及体型)作为运算基础数据。
+											p.story-txt 由不同服装公司或测试单位，同时对相同的款式用人工及PatternGo系统分别打版并制成成品，比较其异同，不停累积修正参数，进而满足各年龄层、各区域、各盘路、甚至精细到个人体型的版型计算。 PatternGo除了可应用在不同款式设计的制版上，也可应用在不同体型的计算做订制业务。
+						.story-content-ctrl.container
+							.story-content-ctrl-inner
+								//- .ctrl-arrow.arrow-prev
+								.story-content-ctrl-txt
+									span.txt 1
+									| / 4
+								//- .ctrl-arrow.arrow-next
+		// main.main_content  END  !!
+		// =========================================================================
+
+block page_script
+	script(src="public/js/page/home.js")
+

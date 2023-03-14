@@ -1,0 +1,421 @@
+extends _layout.pug
+block vars
+	//- - var login = 1;
+	- var page_class = "mbr_page mbr_wallet";
+	- var page_title = "我的钱包";
+	- var mbr_header = 1;
+	- var mbr_header_title = "我的钱包";
+
+
+block pluginStyle
+	//- link(rel="stylesheet", href="dist/plugin/swiper/swiper.min.css")
+
+block popup
+	// =========================================================================
+	// 一堆燈箱在這
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 信用卡欄位  START
+	#popupCreditCardSetting.pgpopup.pgpopup_credit_card_setting
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						h1.pgpopup-title 填写信用卡资讯
+						.point_txt
+							.imgsvg_icon.icon-bells
+							.txt 当你进行信用卡验证时，我们会先向发卡银行授权$1元，并在5天内退还给您
+						.pgfrm.credit_card_setting_frm
+							form(action="")
+								.form-group.credit_card_setting_frm-name
+									label.pgfrm-label(for="CCSF-Name") 持卡人姓名
+									.pgfrm-field
+										input#CCSF-Name.pgfrm-input(type="text", name="CCSF-Name", placeholder="输入真实姓名")
+								.form-group.row.credit_card_setting_frm-number
+									label.col-12.pgfrm-label(for="CCSF-Number") 信用卡号
+									.col-8.pgfrm-field
+										input#CCSF-Number.pgfrm-input(type="text", name="CCSF-Number", placeholder="0123-4567-8901-2345")
+									.col-4.card_association
+										.pic
+											img(src="public/visa2.jpg", alt="")
+										.pic
+											img(src="public/mastercard2.jpg", alt="")
+										.pic
+											img(src="public/jcb2.jpg", alt="")
+								.form-group.row
+									.col-8.credit_card_setting_frm-due_date
+										.row
+											label.col-12.pgfrm-label(for="CCSF-DueDate-MM") 到期日
+											.col-6.pgfrm-field
+												input#CCSF-DueDate-MM.pgfrm-input(type="number", name="CCSF-DueDate-MM", placeholder="MM")
+											.col-6.pgfrm-field
+												input#CCSF-DueDate-YYYY.pgfrm-input(type="number", name="CCSF-DueDate-YYYY", placeholder="YYYY")
+									.col-4.credit_card_setting_frm-security_code
+										label.pgfrm-label(for="CCSF-SecurityCode") 安全码
+										.pgfrm-field
+											input#CCSF-SecurityCode.pgfrm-input(type="number", name="CCSF-SecurityCode", placeholder="000")
+								.form-group.credit_card_setting_frm-bill_addr
+									label.pgfrm-label(for="CCSF-Addr") v
+									.pgfrm-field
+										input#CCSF-Addr.pgfrm-input(type="text", name="CCSF-Addr", placeholder="输入帐单寄送地址")
+								.form-group.credit_card_setting_frm-btns
+									button.pgbtn.pgbtn-s6.pgbtn-cancel.js-cancel(type="button") 取消
+									button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 确认
+	// 燈箱 - 信用卡欄位  END  !!
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 新增成功  START
+	#popupCreditCardSuccess.pgpopup.pgpopup_credit_card_success
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						.icon-success
+						p.txt 新增成功
+						button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 确认
+	// 燈箱 - 新增成功  END  !!
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 儲值  START
+	#popupDeposit.pgpopup.pgpopup_deposit
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-close
+				svg.svg_icon.icon-svg-close
+					use(xlink:href="#svg-close")
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						.pgpopup_deposit-title
+							.txt 当前余额：
+							.num_rmb 6,000 RMB
+						.pgfrm.deposit_frm
+							form(action="")
+								.form-group.deposit_frm-money
+									label.pgfrm-label(for="Deposit-money") 储值金额
+									.pgfrm-field
+										input#Deposit-money.pgfrm-input(type="text", name="Deposit-money", placeholder="输入金额")
+								.form-group.deposit_frm-btns
+									button.pgbtn.pgbtn-s6.pgbtn-cancel.js-cancel(type="button") 取消
+									button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 确认
+	// 燈箱 - 儲值  END  !!
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 領紅包  START
+	#popupReceive.pgpopup.pgpopup_receive
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-close
+				svg.svg_icon.icon-svg-close
+					use(xlink:href="#svg-close")
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						article.receive_list.inner-table
+							section.receive_list-title.inner-tablerow
+								.title-item.inner-tablecell.target 受送者
+								.title-item.inner-tablecell.money 赠送金额
+								.title-item.inner-tablecell.date 时间
+								.title-item.inner-tablecell.status 领取状态
+							section.receive_item.inner-tablerow
+								.receive_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.receive_item-money.inner-tablecell 500 RMB
+								.receive_item-date.inner-tablecell 2020/02/21
+								.receive_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status(type="button") 领取
+							section.receive_item.inner-tablerow
+								.receive_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.receive_item-money.inner-tablecell 500 RMB
+								.receive_item-date.inner-tablecell 2020/02/21
+								.receive_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status(type="button") 领取
+							section.receive_item.inner-tablerow
+								.receive_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.receive_item-money.inner-tablecell 500 RMB
+								.receive_item-date.inner-tablecell 2020/02/21
+								.receive_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status(type="button") 领取
+							section.receive_item.inner-tablerow
+								.receive_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.receive_item-money.inner-tablecell 500 RMB
+								.receive_item-date.inner-tablecell 2020/02/21
+								.receive_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status(type="button", disabled) 已领取
+							section.receive_item.inner-tablerow
+								.receive_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.receive_item-money.inner-tablecell 500 RMB
+								.receive_item-date.inner-tablecell 2020/02/21
+								.receive_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status(type="button", disabled) 已领取
+	// 燈箱 - 領紅包  END  !!
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 發紅包  START
+	#popupGive.pgpopup.pgpopup_give
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-close
+				svg.svg_icon.icon-svg-close
+					use(xlink:href="#svg-close")
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						.pgpopup_give-title
+							.txt 您的餘額：
+							.num_rmb 6,000 RMB
+						.pgfrm.give_frm
+							form(action="")
+								.form-group.give_frm-money
+									label.pgfrm-label(for="Give-money") 发放总金额
+									.pgfrm-field
+										input#Give-money.pgfrm-input(type="text", name="Give-money", placeholder="最低发放金额为 10 RMB")
+								.form-group.give_frm-target
+									label.pgfrm-label(for="Give-target") 受赠者
+									.pgfrm-field
+										select#Give-target.pgfrm-select(name="")
+											option(value="") 选择用户(可一次赠与多人)
+											option(value="user1") 用戶1
+											option(value="user2") 用戶2
+											option(value="user3") 用戶3
+											option(value="user4") 用戶4
+									a.more_link(href="javascript:;") 查询已发放清单
+								.form-group.give_frm-btns
+									button.pgbtn.pgbtn-s6.pgbtn-cancel.js-cancel(type="button") 取消
+									button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 确认
+	// 燈箱 - 發紅包  END  !!
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 發紅包 - 發送清單  START
+	#popupGiveList.pgpopup.pgpopup_give_list
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-close
+				svg.svg_icon.icon-svg-close
+					use(xlink:href="#svg-close")
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						button.pgbtn.pgbtn-goback(type="button")
+						article.give_list.inner-table
+							section.give_list-title.inner-tablerow
+								.title-item.inner-tablecell.target 受送者
+								.title-item.inner-tablecell.money 贈送金額
+								.title-item.inner-tablecell.date 時間
+								.title-item.inner-tablecell.status 领取狀態
+							section.give_item.inner-tablerow
+								.give_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.give_item-money.inner-tablecell 500 RMB
+								.give_item-date.inner-tablecell 2020/02/21
+								.give_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status(type="button") 收回
+							section.give_item.inner-tablerow
+								.give_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.give_item-money.inner-tablecell 500 RMB
+								.give_item-date.inner-tablecell 2020/02/21
+								.give_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status(type="button") 收回
+							section.give_item.inner-tablerow
+								.give_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.give_item-money.inner-tablecell 500 RMB
+								.give_item-date.inner-tablecell 2020/02/21
+								.give_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status.recovered(type="button", disabled) 已收回
+							section.give_item.inner-tablerow
+								.give_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.give_item-money.inner-tablecell 500 RMB
+								.give_item-date.inner-tablecell 2020/02/21
+								.give_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status(type="button", disabled) 已领取
+							section.give_item.inner-tablerow
+								.give_item-target.inner-tablecell
+									.inner
+										.pic
+											img(src="public/images/user-photo1.jpg", alt="")
+										.name AmyLin
+								.give_item-money.inner-tablecell 500 RMB
+								.give_item-date.inner-tablecell 2020/02/21
+								.give_item-status.inner-tablecell
+									button.pgbtn.pgbtn-s2.pgbtn-status(type="button", disabled) 已领取
+
+	// 燈箱 - 發紅包 - 發送清單  END  !!
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 方案  START
+	#popupPlan.pgpopup.pgpopup_plan
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-close
+				svg.svg_icon.icon-svg-close
+					use(xlink:href="#svg-close")
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						hgroup
+							h1.pgpopup_plan-title 选择方案
+							h2.pgpopup_plan-subtitle 找到最适合你的方案
+						.pgpopup_plan-list
+							section.pgpopup_plan-item.plan1
+								.project_block
+									.project_block-hd
+										h3.title 方案一
+									.project_block-rmb
+										.num 12,000
+										.txt RMB
+									.project_block-bd.text-center
+										p.txt 平均可打版
+										p.txt <span class="strong">200</span>件
+										p.txt 一个版型最低只要 40 RMB
+										// 使用中，class 加 "using"；attribute 加 "disabled"
+										button.pgbtn.pgbtn-s2.pgbtn-status.using(type="button", disabled) 使用中
+								p.plan-expiry_date 方案到期日：2021/01/01
+							section.pgpopup_plan-item.plan2
+								.project_block
+									.project_block-hd
+										h3.title 方案二
+									.project_block-rmb
+										.num 20,000
+										.txt RMB
+									.project_block-bd.text-center
+										p.txt 平均可打版
+										p.txt <span class="strong">400</span>件
+										p.txt 一个版型最低只要 33 RMB
+										button.pgbtn.pgbtn-s2.pgbtn-status(type="button") 升級
+								// p.plan-expiry_date 方案到期日：2021/01/01
+							section.pgpopup_plan-item.plan3
+								.project_block
+									.project_block-hd
+										h3.title 方案三
+									.project_block-rmb
+										.num 30,000
+										.txt RMB
+									.project_block-bd.text-center
+										p.txt 平均可打版
+										p.txt <span class="strong">800</span>件
+										p.txt 一个版型最低只要 <span class="highlight_block">25 RMB</span>
+										button.pgbtn.pgbtn-s2.pgbtn-status(type="button") 升級
+								// p.plan-expiry_date 方案到期日：2021/01/01
+
+	// 燈箱 - 方案  END  !!
+	// =========================================================================
+
+block content
+	.page_main(class=page_class)
+
+		main.main_content
+			.content_wrap.container
+				aside.wallet-aside
+					.current_project.pgpannel
+						h2.pgpannel-title 目前方案
+						.project_block
+							.project_block-hd
+								h3.title 方案一
+							.project_block-rmb
+								.num 12,000
+								.txt RMB
+							.project_block-bd.text-center
+								p.txt 平均可打版
+								p.txt <span class="strong">200</span>件
+								p.txt 一个版型最低只要 40 RMB
+								// data-popup 對應到將開啟的燈箱ID
+								button.pgbtn.pgbtn-s2.pgbtn-status.js-open_popup(type="button", data-popup="popupPlan") 升級
+						p.current_project-expiry_date 方案到期日：2021/01/01
+				.wallet-main
+					.account_info.pgpannel
+						.row
+							.col-6.account_info-balance
+								h2.pgpannel-title 帐户余额
+								.rmb
+									.rmb-num 6,000
+									.rmb-txt RMB
+								.deposit
+									// data-popup 對應到將開啟的燈箱ID
+									button.pgbtn.pgbtn-s2.pgbtn-deposit.js-open_popup(type="button", data-popup="popupDeposit") 储値去
+							.col-6.account_info-bonus
+								h2.pgpannel-title
+									| 我的红利
+									a.more_link(href="javascript:;") 说明
+								.point
+									.point-num 20
+									.point-txt points
+								.bonus-btns
+									// data-popup 對應到將開啟的燈箱ID
+									button.pgbtn.pgbtn-s4.pgbtn-receive_red_env.js-open_popup(type="button", data-popup="popupReceive")
+										span.highlight
+										| 领红包
+									button.pgbtn.pgbtn-s4.pgbtn-give_red_en.js-open_popup(type="button", data-popup="popupGive") 发红包
+					.credit_card_setting.pgpannel
+						h2.pgpannel-title 信用卡 / 银行卡设定
+						.credit_card_list
+							h3.title
+								| 我的卡片
+								// data-popup 對應到將開啟的燈箱ID
+								button.pgbtn.pgbtn-s5.add_credit_card.js-open_popup(type="button", data-popup="popupCreditCardSetting") +新增卡片
+							ul.cf.lis-n.inner-table
+								li.credit_card_item.inner-tablerow
+									.pic.inner-tablecell
+										img(src="public/visa.jpg", alt="")
+									.name.inner-tablecell 第一银行名称
+									.num.inner-tablecell
+										span ＊＊＊＊
+										span ＊＊＊＊
+										span ＊＊＊＊
+										span 1234
+									.eidtor.inner-tablecell
+										button.pgbtn.pgbtn-delete(type="button") 刪除
+							p.txt 如果要使用行动支付，请直接前往结帐页面即可结帐
+
+
+	.mbr_page_footer
+		p.copyright Copyright © 2020 Pattern Go All Rights Reserved | Designed by LOHAS IT
+		.lang
+			| 语言
+			.pgselect-wrap.select_block
+				select.pgselect.pgselect-s2
+					option(value="0") 简体中文
+					option(value="1") 繁體中文
+					option(value="2") English
+
+
+		// main.main_content  END  !!
+		// =========================================================================
+
+block page_script
+	script(src="public/js/page/mbr_wallet.js")

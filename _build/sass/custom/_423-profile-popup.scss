@@ -1,0 +1,58 @@
+.pgpopup_change_photo {
+	.container-inner {
+		padding: 30px;
+	}
+}
+
+.pgpopup_change_email {
+	.container-inner {
+		padding: 30px 60px;
+	}
+	.pgpopup-title {
+		font-weight: normal;
+	}
+}
+
+
+.pgpopup_change_photo_frm {
+	&-pic {
+		margin-bottom: 40px;
+		.pic {
+			position: relative;
+			margin-bottom: 10px;
+			@include rwdBlock(506, 338);
+
+			img {
+				@include absolute(50%, $L:50%);
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		.txt {
+
+		}
+	}
+
+	.update_pic {
+		margin-bottom: 0;
+		text-align: center;
+
+		input {
+			display: none;
+		}
+	}
+
+	&-btns {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 40px;
+	}
+}
+
+.pgpopup_change_email_frm {
+
+}
+
+.pgpopup_check_code {
+
+}

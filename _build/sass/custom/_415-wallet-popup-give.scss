@@ -1,0 +1,67 @@
+.pgpopup_give {
+	.pgpopup-bd {
+		padding: 40px 30px 30px;
+	}
+
+	&-title {
+		display: flex;
+		align-items: center;
+		margin-bottom: 45px;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #000;
+		@include remCalc(font-size, 20);
+
+		.txt {
+			color: color("GRAY1");
+		}
+	}
+}
+
+.give_frm {
+	.pgfrm-select {
+		width: 100%;
+		border: 1px solid #E0E0E0;
+		padding: 15px;
+	}
+
+	&-target {
+		margin-bottom: 60px;
+		.pgfrm-field {
+			position: relative;
+			margin-bottom: 10px;
+
+			&:after {
+				@include psudoClass;
+				@include absolute(0, 1rem, 0);
+				margin: auto;
+				@include triangle(bottom, color("BLACK"), 6px);
+			}
+		}
+		.pgfrm-select {
+		}
+		.more_link {
+			position: relative;
+			padding-right: 16px;
+			color: color("BLACK");
+			@include remCalc(font-size, 14);
+			@include hover_line(2, color("BLACK"));
+			float: right;
+			&:before {
+				@include absolute(0, 0, 0);
+				margin: auto;
+				@include psudoClass;
+				@include wh(11, 8);
+				background-image: image-url("arrow-right.svg");
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		}
+	}
+
+	&-btns {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 40px;
+	}
+}

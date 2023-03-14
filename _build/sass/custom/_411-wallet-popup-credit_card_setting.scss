@@ -1,0 +1,72 @@
+.pgpopup_credit_card_setting {
+	.pgpopup-bd {
+		padding: 40px 30px;
+	}
+
+	.point_txt {
+		margin-bottom: 25px;
+		padding: 1rem;
+		background-color: #FFFCF3;
+		border: 1px solid color("YELLOW");
+		color: #4F4F4F;
+
+		display: flex;
+		// align-items: 
+
+		.imgsvg_icon {
+
+		}
+		.txt {
+			padding-left: 10px;
+		}
+
+		.icon-bells {
+			flex: 0 0 20px;
+		}
+	}
+
+	.pgfrm-input {
+		width: 100%;
+	}
+}
+
+.credit_card_setting_frm {
+	.form-group {
+
+		&:not(.credit_card_setting_frm-btns) {
+			margin-bottom: 30px;
+		}
+	}
+	&-number {
+		.pgfrm-input {
+			// width: auto;
+			// margin-right: 1rem;
+		}
+
+		.card_association {
+			display: flex;
+			align-items: center;
+		}
+		.pic {
+			// @include wh(50, 36);
+			flex: 33.33%;
+		}
+	}
+
+	&-btns {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 40px;
+
+		.pgbtn {
+			// width: 50%;
+		}
+	}
+}
+
+
+
+
+
+

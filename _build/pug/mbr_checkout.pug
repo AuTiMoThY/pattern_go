@@ -1,0 +1,66 @@
+extends _layout.pug
+block vars
+	//- - var login = 1;
+	- var page_class = "mbr_page mbr_plan plan_checkout";
+	- var page_title = "第三方支付画面";
+	- var mbr_header = 1;
+	- var mbr_header_title = "第三方支付画面";
+
+
+block pluginStyle
+	//- link(rel="stylesheet", href="dist/plugin/swiper/swiper.min.css")
+
+block popup
+	// =========================================================================
+	// 燈箱 - 支付成功  START
+	#popupPaymentSuccess.pgpopup.pgpopup_payment_success
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						.icon-success
+						p.txt 支付成功
+						.hr
+						p.payment_cnt
+							span.title 交易内容：
+							span.txt.trans_content 储值
+						p.payment_cnt
+							span.title 交易金额：
+							span.txt.trans_amount 12,000
+						p.payment_cnt
+							span.title 交易时间：
+							span.txt.trans_datetime 2020年04月20日
+						button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 确认
+	// 燈箱 - 支付成功  END  !!
+	// =========================================================================
+block content
+	.page_main(class=page_class)
+
+		main.main_content
+			.content_wrap.container
+				article.plan_checkout-block
+					hgroup.text-center
+						h1.pgpopup_plan-title 第三方支付画面
+					.third_party_payment
+					button.pgbtn.pgbtn-s2.js-open_popup.pgbtn-confirm_payment(type="button" data-popup="popupPaymentSuccess") 确认付款
+
+
+
+	.mbr_page_footer
+		p.copyright Copyright © 2020 Pattern Go All Rights Reserved | Designed by LOHAS IT
+		.lang
+			| 语言
+			.pgselect-wrap.select_block
+				select.pgselect.pgselect-s2
+					option(value="0") 简体中文
+					option(value="1") 繁體中文
+					option(value="2") English
+
+
+		// main.main_content  END  !!
+		// =========================================================================
+
+block page_script
+	script(src="public/plugins/multiple-select.js")
+	script(src="public/js/page/mbr_checkout.js")

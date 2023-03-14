@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="controll-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 269.5 142.7" enable-background="new 0 0 269.5 142.7" xml:space="preserve">
+    <line id="rangeLine1" fill="none" stroke="#BCBCBC" stroke-width="0.9663" stroke-miterlimit="10" x1="23.4" y1="98.5" x2="131.7" y2="129" />
+    <g id="rangeCircle1">
+        <ellipse transform="matrix(0.9435 -0.3314 0.3314 0.9435 -31.3362 13.6164)" fill="#FFFFFF" cx="24.3" cy="98.7" rx="8.2" ry="3.8" />
+        <ellipse transform="matrix(0.9435 -0.3314 0.3314 0.9435 -31.3362 13.6164)" fill="none" stroke="#BCBCBC" stroke-width="0.9663" stroke-miterlimit="10" cx="24.3" cy="98.7" rx="8.2" ry="3.8" />
+    </g>
+    <line id="rangeLine2" fill="none" stroke="#BCBCBC" stroke-width="0.9663" stroke-miterlimit="10" x1="0.1" y1="110.4" x2="112.9" y2="142.2" />
+    <g id="rangeCircle2">
+        <ellipse transform="matrix(0.9435 -0.3314 0.3314 0.9435 -39.8308 39.7796)" fill="#FFFFFF" cx="96.7" cy="136.7" rx="8.2" ry="3.8" />
+        <ellipse transform="matrix(0.9435 -0.3314 0.3314 0.9435 -39.8308 39.7796)" fill="none" stroke="#BCBCBC" stroke-width="0.9663" stroke-miterlimit="10" cx="96.7" cy="136.7" rx="8.2" ry="3.8" />
+    </g>
+    <g>
+        <g>
+            <polygon fill="#FFFFFF" points="148.9,117.2 35.7,85.6 53.8,72.5 167,104 		" />
+            <polygon fill="none" stroke="#BCBCBC" stroke-width="0.9663" stroke-miterlimit="10" points="148.9,117.2 35.7,85.6 53.8,72.5 
+			167,104 		" />
+        </g>
+        <polyline fill="none" stroke="#BCBCBC" stroke-width="0.9663" stroke-miterlimit="10" points="141.1,103.2 140.9,107.7 
+		149.7,105.7 	" />
+    </g>
+    <g>
+        <g>
+            <polygon fill="#FFFFFF" points="176,98 62.8,66.5 80.9,53.3 194.1,84.9 		" />
+            <polygon fill="none" stroke="#BCBCBC" stroke-width="0.9663" stroke-miterlimit="10" points="176,98 62.8,66.5 80.9,53.3 
+			194.1,84.9 		" />
+        </g>
+        <polyline fill="none" stroke="#BCBCBC" stroke-width="0.9663" stroke-miterlimit="10" points="168.2,84.1 168,88.5 176.8,86.5 	" />
+    </g>
+    <g>
+        <g>
+            <polygon fill="#F0F0F0" points="206.7,76 194.3,72.6 210,61.3 222.3,64.7 		" />
+            <polygon fill="#505050" points="213.5,65 207.1,66.7 212.9,68.3 		" />
+            <polygon fill="#505050" points="203.2,72.4 209.6,70.6 203.8,69 		" />
+        </g>
+        <polygon fill="#F0F0F0" points="93.6,44.5 151.6,60.7 167.3,49.4 109.3,33.3 	" />
+    </g>
+    <g>
+        <g>
+            <polygon fill="#F0F0F0" points="230.9,58.9 218.5,55.5 234.2,44.2 246.5,47.6 		" />
+            <polygon fill="#505050" points="237.6,47.9 231.3,49.6 237,51.2 		" />
+            <polygon fill="#505050" points="227.4,55.2 233.8,53.5 228,51.9 		" />
+        </g>
+        <polygon fill="#F0F0F0" points="117.8,27.4 175.8,43.6 191.4,32.3 133.5,16.1 	" />
+    </g>
+    <g>
+        <g>
+            <polygon fill="#F0F0F0" points="253.8,42.8 241.5,39.3 257.1,28.1 269.5,31.5 		" />
+            <polygon fill="#505050" points="260.6,31.7 254.2,33.4 260,35 		" />
+            <polygon fill="#505050" points="250.3,39.1 256.7,37.4 250.9,35.8 		" />
+        </g>
+        <polygon fill="#F0F0F0" points="140.8,11.3 198.7,27.4 214.4,16.1 156.4,0 	" />
+    </g>
+</svg>

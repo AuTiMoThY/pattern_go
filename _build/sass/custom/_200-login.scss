@@ -1,0 +1,89 @@
+.fast_login {
+	display: table;
+	margin: auto;
+
+	ul {
+		margin-left: -20px;
+		margin-right: -20px;
+
+		display: flex;
+	}
+
+	&-item {
+		padding-left: 20px;
+		padding-right: 20px;
+		// width: 60px;
+		a {
+			color: color("BLACK");
+		}
+	}
+
+	&-logo {
+		@include circle(60);
+	}
+}
+
+
+.login_frm {
+	@include padding('x', 60px);
+	padding-bottom: 1.5rem;
+	&-change {
+		@extend %changeInputBtn;  //  003
+	}
+
+	&-email {}
+	&-phone {display: none;}
+
+	&-remember {
+		color: color("GRAY3");
+	}
+
+	&-pw {
+		.pgfrm-field {
+			position: relative;
+		}
+
+		.is_hidden {
+			@extend %isHidden;
+		}
+	}
+
+	&-other {
+		@include cf;
+
+		.left {
+			float: left;
+		}
+
+		.right {
+			float: right;
+		}
+
+		.txt-r02 {
+			@include hover_line(2, color("r02"));
+			&:hover {
+				color: color("r02");
+			}
+		}
+
+		.txt-gray4 {
+			@include hover_line(2, color("GRAY4"));
+			&:hover {
+				color: color("GRAY4");
+			}
+		}
+
+		.other-link {
+		}
+	}
+
+	&-btns {
+		padding-top: 0.25rem;
+	}
+
+	.nationality_code {
+		@extend %nationalityCode;
+	}
+
+}
+

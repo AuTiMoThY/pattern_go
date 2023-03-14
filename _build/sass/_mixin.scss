@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+//------------------------------------*\
+//		AuTiMoThY
+//		V 6.0.1
+//------------------------------------*/
+@mixin bg($name, $bgpx:0, $bgpy:0, $repeat:no-repeat) {
+	// $name: unquote($name);
+	$repeat: unquote($repeat);
+	@if type-of($name) == number {
+		//  background-position
+		$bgpxx: $name;
+		$bgpy: $bgpx;
+		@if (unitless($bgpxx)) {
+			$bgpxx: $bgpxx * 1px;
+		}
+		@if (unitless($bgpy)) {
+			$bgpy: $bgpy * 1px;
+		}
+		background-position: $bgpxx $bgpy;
+	}
+	@else if type-of($name) == color {
+		//  background-color
+		background-color: $name;
+	}
+	@else if $name == "fixed" or $name == "scroll" {
+		$atta: $name;
+		background-attachment: $atta;
+	}
+	@else if $name == "none"{
+		background-image: none;
+	}
+	@else {
+		background: image-url(#{$name}) $bgpx $bgpy $repeat;
+		background-size: cover;
+	}
+}
+
+
+
+@import "mixin/_element_selector";
+@import "mixin/_hover";
+@import "mixin/_position";
+@import "mixin/_psudoClass";
+@import "mixin/_shape";
+@import "mixin/_text";
+@import "mixin/_wh";
+@import "mixin/_rem";
+@import "mixin/_gradient";
+@import "mixin/_media";
+@import "mixin/_rwd";
+@import "mixin/_spaing";
+@import "mixin/_clearfix";
+
+
+
+
+
+@mixin hoverEffect() {
+	background-color: darken(theme-color('primary1'), 5);
+	color: lighten(theme-color('primary1'), 50);
+}

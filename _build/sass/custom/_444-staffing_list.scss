@@ -1,0 +1,133 @@
+.staffing_list {
+
+}
+
+.staffing_item {
+	> .inner {
+
+		box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+		border-radius: 7px;
+		border: 1px solid #E0E0E0;
+	}
+
+	&-hd {
+		display: flex;
+		align-items: center;
+	    justify-content: space-between;
+		padding: 0px 20px;
+	}
+
+
+	.name {
+		@include remCalc(font-size, 20);
+	}
+	.ctrl {
+		display: flex;
+	}
+}
+
+
+.toggle_edit_mode {
+	padding: 15px 30px;
+	color: color("BLUE");
+
+	cursor: pointer;
+}
+
+.accordion-ctrl {
+	position: relative;
+	padding: 15px 30px;
+
+	cursor: pointer;
+
+	&:after {
+		@include absolute(0, 5px, 0);
+		margin: auto;
+		@include triangle(bottom, color("BLACK"), 8px);
+
+		.js-open & {
+			transform: scaleY(-1);
+		}
+	}
+}
+
+.staffing_item-bd {
+	display: none;
+	padding: 20px;
+	.js-open & {
+		display: block;
+	}
+	.member_list {
+		display: flex;
+		align-items: center;
+	}
+	.member_item {
+		position: relative;
+		padding: 10px 15px;
+		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0);
+		border-radius: 7px;
+		border: 1px solid transparent;
+		// box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+		// border: 1px solid #BDBDBD;
+
+		display: flex;
+		align-items: center;
+
+		&-pic {
+			position: relative;
+			@include circle(40);
+			margin-right: 10px;
+			overflow-y: hidden;
+			img {
+				@include absolute(50%, $L:50%);
+				transform: translate(-50%, -50%)
+			}
+		}
+
+		&-name {
+
+		}
+
+		&-delect {
+			@include absolute(-11px, -11px);
+			@include circle(22);
+			background-color: color("RED");
+
+			cursor: pointer;
+
+			display: none;
+
+
+			&:before, &:after {
+				@include psudoClass;
+				@include absolute(50%, $L:50%);
+				z-index: 10;
+				@include wh(13, 3);
+				background-color: #fff;
+			}
+
+			&:before {
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+			&:after {
+				transform: translate(-50%, -50%) rotate(-135deg);
+			}
+
+		}
+	}
+}
+
+.js-edit_mode {
+	.toggle_edit_mode {
+		color: color("BLACK");
+	}
+	.staffing_item-bd {
+		.member_item {
+			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+			border: 1px solid #BDBDBD;
+		}
+		.member_item-delect {
+			display: block;
+		}
+	}
+}

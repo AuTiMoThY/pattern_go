@@ -1,0 +1,77 @@
+.pgpopup_account_editor {
+	.container-inner {
+		padding: 40px;
+	}
+
+	.pgpopup-wrap {
+		width: 780px;
+	}
+	.pgpopup-bd {
+		padding: 0;
+	}
+}
+
+.account_editor_frm, .account_add_frm {
+	.nationality_code {
+		@extend %nationalityCode;
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 50px;
+	}
+
+	.pgfrm-input {
+		height: 50px;
+		line-height: 50px;
+		padding: 0 15px;
+	}
+
+	&-identity, &-department {
+		.pgfrm-select {
+			position: relative;
+			width: 100%;
+			height: 50px;
+			padding: 0 15px;
+			border: 1px solid #e0e0e0;
+
+			&:after {
+				@include psudoClass;
+				@include absolute(0, 1rem, 0);
+				z-index: 10;
+				margin: auto;
+				@include triangle(bottom, color("BLACK"), 6px);
+			}
+
+			.ms-choice {
+				position: relative;
+				z-index: 11;
+				line-height: 50px;
+			}
+		}
+	}
+
+	&-activation {
+		display: flex;
+		align-items: center;
+
+		.title {
+			margin-right: 15px;
+		}
+
+		.method-1 {
+			margin-right: 20px;
+		}
+	}
+	&-btns {
+		padding-top: 40px;
+		display: flex;
+		justify-content: flex-end;
+		.pgbtn {
+			min-width: 80px;
+			width: auto;
+			padding: 10px;
+			margin-left: 18px;
+		}
+	}
+
+
+}

@@ -1,0 +1,31 @@
+.pgpopup_deposit {
+	.pgpopup-bd {
+		padding: 40px 30px 30px;
+	}
+
+	&-title {
+		display: flex;
+		align-items: center;
+		margin-bottom: 45px;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #000;
+		@include remCalc(font-size, 20);
+
+		.txt {
+			color: color("GRAY1");
+		}
+	}
+}
+
+.deposit_frm {
+
+	&-money {
+		margin-bottom: 40px;
+	}
+	&-btns {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 40px;
+	}
+}

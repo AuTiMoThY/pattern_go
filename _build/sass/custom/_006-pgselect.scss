@@ -1,0 +1,40 @@
+.select_block {
+	position: relative;
+	cursor: pointer;
+
+
+	select {
+		border: none;
+		background-color: transparent;
+	}
+}
+
+.pgselect {
+	&-s1 {
+		min-width: 200px;
+		border: 1px solid #BDBDBD;
+		border-radius: 30px;
+		// &:after {
+		// 	@include psudoClass;
+		// 	@include absolute(50%, 10px);
+		// 	margin-top: (5 * 1.2) / 2 * -1px;
+		// 	@include triangle(bottom, #2B2A35, 5px);
+		// }
+
+		select {
+			min-width: 100%;
+			height: 40px;
+			padding: 0 15px;
+		}
+	}
+}
+
+.pg-selects-item {
+	&:not(:first-of-type) {
+		border-top: 1px solid #E0E0E0;
+	}
+
+	.small {
+
+	}
+}

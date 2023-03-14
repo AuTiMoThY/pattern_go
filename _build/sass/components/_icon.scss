@@ -1,0 +1,38 @@
+.svg_icon {
+	fill: currentColor;
+}
+
+.icon-logout {
+	@include wh(17, 18);
+	fill: color("BLACK");
+}
+
+.icon-bells {
+	@include wh(20);
+	background-image: image-url("bells.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.icon-highlight {
+	display: block;
+	@include circle(20);
+	background-color: #fff;
+	background-image: image-url("exclamation_mark.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.icon-success {
+	@include circle(120);
+	background-image: image-url("check-blue.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.icon-account {
+	@include wh(50);
+	@include bg("icon-account.svg");
+}

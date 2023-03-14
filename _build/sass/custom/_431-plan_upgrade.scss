@@ -1,0 +1,194 @@
+.plan_upgrade {
+	&-aside {
+		.pgbtn-status {
+			width: 100%;
+			padding: 15px;
+		}
+		// transition: top 0.3s ease-in-out;
+	}
+}
+
+.plan_upgrade_frm {
+	.pgfrm-input {
+		width: 100%;
+	}
+	.hr {
+		margin-top: 0;
+		margin-bottom: 0;
+		@include wh(100%, 1);
+		background-color: #E0E0E0;
+	}
+
+
+	&-fieldset {
+		padding: 40px;
+
+		.form-group {
+			margin-bottom: 30px;
+		}
+	}
+	&-step1 {
+	}
+	&-step2 {
+		.form-group {
+			// width: 100%;
+		}
+	}
+
+	&-final {
+		padding: 20px 40px;
+
+		> .inner {
+			position: relative;
+		}
+	}
+
+	&-title {
+		position: relative;
+		padding-left: 40px;
+		margin-bottom: 40px;
+		color: color("BLUE");
+		@include remCalc(font-size, 20);
+
+		font-weight: normal;
+		// float: left;
+		// width: 100%;
+		.no {
+			@include absolute(50%, $L:0);
+			transform: translateY(-50%);
+			@include circle(28);
+			@include remCalc(font-size, 18);
+			background-color: color("BLUE");
+			color: #fff;
+
+			text-align: center;
+			line-height: 28px;
+		}
+	}
+}
+
+.other_ccard {
+	border-top: 1px solid #E0E0E0;
+
+	&-top {
+		position: relative;
+		padding-top: 40px;
+		margin-bottom: 30px;
+		@extend .cf;
+
+		.is_add {
+			@include absolute(36px, 0);
+			height: 35px;
+
+			.au_radiocheckbox-label {
+				padding: 0;
+			}
+		}
+	}
+
+	&-title {
+		@include remCalc(font-size, 20);
+	}
+
+	.card_association {
+		display: flex;
+		align-items: center;
+		height: 100%;
+
+		.pic {
+			flex: 33.33%;
+		}
+	}
+}
+
+
+.plan_upgrade_frm-final {
+	.plan_upgrade_frm-title {
+		margin-bottom: 0;
+		padding: 0;
+
+		color: color("RED");
+	}
+	.amount_rmb {
+		@include absolute(50%, (90 + 40) * 1px);
+		transform: translateY(-50%);
+
+		@include remCalc(font-size, 20);
+		font-weight: bolder;
+		color: color("A");
+	}
+
+	.pgbtn {
+		@include absolute(50%, 0);
+		transform: translateY(-50%);
+		width: 90px;
+		height: 40px;
+		padding: 10px;
+	}
+}
+
+
+.pgpopup_third_party {
+	.container-inner {
+		padding: 60px;
+	}
+	.pgpopup-bd {
+		padding: 0;
+	}
+	.title {
+		text-align: center;
+		font-weight: normal;
+	}
+
+	.third_party-qrcode {
+		@include wh(300);
+		margin: auto;
+		padding: 30px;
+	}
+
+	.icon {
+		@include wh(65);
+		margin: 0 auto 20px;
+	}
+
+	.txt {
+		text-align: center;
+	}
+}
+
+.pgpopup_payment_success {
+	.container-inner {
+		padding: 60px;
+	}
+	.pgpopup-bd {
+		padding: 0;
+		max-width: 370px;
+		margin: auto;
+	}
+
+	.icon-success {
+		margin: 0 auto 20px;
+
+		+ .txt {
+			margin-bottom: 40px;
+			@include remCalc(font-size, 28);
+			text-align: center;
+		}
+	}
+
+	.hr {
+		@include wh(100%, 1);
+		margin-bottom: 40px;
+		background-color: color("GRAY1");
+	}
+
+	.payment_cnt {
+		.txt {
+			@include remCalc(font-size, 20);
+		}
+	}
+
+	.pgbtn {
+		margin-top: 50px;
+	}
+}

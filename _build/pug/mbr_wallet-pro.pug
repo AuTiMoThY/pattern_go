@@ -1,0 +1,123 @@
+extends _layout.pug
+block vars
+	//- - var login = 1;
+	- var page_class = "mbr_page mbr_wallet mbr_wallet-pro";
+	- var page_title = "我的钱包";
+	- var mbr_header = 1;
+	- var isPro = 1;
+	- var mbr_header_title = "我的钱包";
+
+
+block pluginStyle
+	//- link(rel="stylesheet", href="dist/plugin/swiper/swiper.min.css")
+
+block popup
+
+block content
+	.page_main(class=page_class)
+
+		main.main_content
+			.content_wrap.container
+				aside.wallet-aside
+					.current_project.pgpannel
+						h2.pgpannel-title 目前方案
+						.project_block
+							.project_block-hd
+								h3.title 方案一
+							.project_block-rmb
+								.num 12,000
+								.txt RMB
+							.project_block-bd.text-center
+								p.txt 平均可打版
+								p.txt <span class="strong">200</span>件
+								p.txt 一个版型最低只要 40 RMB
+								// data-popup 對應到將開啟的燈箱ID
+								button.pgbtn.pgbtn-s2.pgbtn-status.js-open_popup(type="button", data-popup="popupPlan") 升級
+						p.current_project-expiry_date 方案到期日：2021/01/01
+				.wallet-main
+					.account_info.pgpannel
+						.row
+							.col-6.account_info-balance
+								h2.pgpannel-title 帐户余额
+								.rmb
+									.rmb-num 6,000
+									.rmb-txt RMB
+								.deposit
+									// data-popup 對應到將開啟的燈箱ID
+									button.pgbtn.pgbtn-s2.pgbtn-deposit.js-open_popup(type="button", data-popup="popupDeposit") 储値去
+							.col-6.account_info-bonus
+								h2.pgpannel-title
+									| 我的红利
+									a.more_link(href="javascript:;") 说明
+								.point
+									.point-num 20
+									.point-txt points
+								.bonus-btns
+									// data-popup 對應到將開啟的燈箱ID
+									button.pgbtn.pgbtn-s4.pgbtn-receive_red_env.js-open_popup(type="button", data-popup="popupReceive")
+										span.highlight
+										| 领红包
+									button.pgbtn.pgbtn-s4.pgbtn-give_red_en.js-open_popup(type="button", data-popup="popupGive") 发红包
+					.department_amount.pgpannel
+						.department_amount-hd
+							h2.pgpannel-title 部门金额分配
+							.department_amount-ctrl_group
+								ul.cf.lis-n
+									li.ctrl_group-item
+										button.pgbtn.pgbtn-empty(type="button") 清空帐户余额
+									li.ctrl_group-item
+										button.pgbtn.pgbtn-grant(type="button") 发放金额
+									li.ctrl_group-item
+										button.pgbtn.pgbtn-open(type="button") 查看
+						.department_amount-bd
+							article.department_amount_list.inner-table
+								section.account_mgmt_list-title.inner-tablerow
+									.item_title.inner-tablecell.name 部门名称
+										//- .check_member.au_radiocheckbox.style2
+											// label for 要對應 input id
+											label.au_radiocheckbox-label(for="checkMember-all")
+												input#checkMember-all.au_radiocheckbox-input(type="checkbox", name="checkMember")
+												.choicemark
+													.choicemark-bg
+												.txt 姓名
+									.item_title.inner-tablecell.balance 余额
+									.item_title.inner-tablecell.cost 累积花费
+									.item_title.inner-tablecell.principal 负责人
+									.item_title.inner-tablecell.recent_time 最近支出时间
+									.item_title.inner-tablecell.more 清单
+
+								section.department_amount_item.inner-tablerow#DepartmentIndex-1
+									.item_cnt.inner-tablecell.name
+										.check_member.au_radiocheckbox.style2
+											// label for 要對應 input id
+											label.au_radiocheckbox-label(for="checkMember-1")
+												input#checkMember-1.au_radiocheckbox-input(type="checkbox", name="checkMember")
+												.choicemark
+													.choicemark-bg
+												.txt 部门名称
+									.item_cnt.inner-tablecell.balance 50 RMB
+									.item_cnt.inner-tablecell.cost 300 RMB
+									.item_cnt.inner-tablecell.principal AmyLin
+									.item_cnt.inner-tablecell.recent_time 2020/02/21-16:00
+									.item_cnt.inner-tablecell.more
+										button.pgbtn.pgbtn-s2.pgbtn-view(type="button" data-popup="popup") 查看
+								// ----------  .department_amount_item  END!! --------------------------------------------------------------
+
+
+
+	.mbr_page_footer
+		p.copyright Copyright © 2020 Pattern Go All Rights Reserved | Designed by LOHAS IT
+		.lang
+			| 语言
+			.pgselect-wrap.select_block
+				select.pgselect.pgselect-s2
+					option(value="0") 简体中文
+					option(value="1") 繁體中文
+					option(value="2") English
+
+
+		// main.main_content  END  !!
+		// =========================================================================
+
+block page_script
+	script(src="public/js/page/mbr_wallet_pro.js")

@@ -1,0 +1,40 @@
+header.page_header.mbr_header
+	.container-fluid
+		a(href="./").logo_block
+			.logo
+				img(src="public/images/LOGO.svg", alt="Pattern Go 版騰信息科技有限公司")
+			.txt
+				img(src="public/images/Pattern_Go.svg", alt="Pattern Go 版騰信息科技有限公司")
+		h1.mbr_header-title #{mbr_header_title}
+		nav.user_menu
+			.member_block.pgdropdown
+				.member_block-ctrl.pgdropdown-ctrl
+					.user-pic
+						.pic
+							img(src="public/images/user-pic.png", alt="")
+					.user-id
+						.txt User ID
+						.user-identity 企業-管理員
+				.member_block-menu.pgdropdown-menu
+					ul.cf.lis-n
+						li.dropdown-item
+							a(href="mbr_mgmt_home.html").inner 檔案管理
+						li.dropdown-item
+							a(href="mbr_wallet.html").inner 我的錢包
+						li.dropdown-item
+							a(href="mbr_profile.html").inner 帳戶設定
+						li.dropdown-item
+							a(href="mbr_plan.html").inner 方案設定
+						li.dropdown-item.logout
+							a(href="javascript:;").inner
+								| 登出
+								svg.svg_icon.icon-logout
+									use(xlink:href="#logout")
+	if page_class == 'mbr_page mbr_mgmt mgmt_home mgmt_home-pro'
+		// 切換至一般用戶版頁面
+		.switch_member_level.current-pro(data-href="mbr_mgmt_home.html" data-explanation="去看一般用戶版頁面") 一般
+	else if page_class == "mbr_page mbr_wallet mbr_wallet-pro"
+		// 切換至企業版頁面
+		.switch_member_level.current-pro(data-href="mbr_wallet.html" data-explanation="去看一般用戶版頁面") 一般
+
+// header.page_header  END  !! -------------------------------------------------------------------------

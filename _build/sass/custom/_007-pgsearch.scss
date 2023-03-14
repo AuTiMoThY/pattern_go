@@ -1,0 +1,38 @@
+.search_block {
+	position: relative;
+}
+
+.pgsearch {
+	&-s1 {
+		border: 1px solid #BDBDBD;
+		border-radius: 30px;
+		input, button {
+			border: none;
+			background-color: transparent;
+		}
+
+		.input_search {
+			height: 40px;
+			padding: 0 15px;
+		}
+
+		.btn_search {
+			@include absolute(0, 0);
+			@include circle(40);
+			background-color: color("BLUE");
+			cursor: pointer;
+
+			transition: $transition-base;
+
+			&:hover {
+				background-color: darken(color("BLUE"), 7.5);
+			}
+
+			.svg_icon {
+				@include absolute(50%, $L:50%);
+				transform: translate(-50%, -50%);
+				fill: #fff;
+			}
+		}
+	}
+}

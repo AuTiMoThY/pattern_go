@@ -1,0 +1,67 @@
+.home_section-why {
+	> .container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.title {
+		margin-bottom: 60px;
+		color: color("BLACK");
+		@include remCalc(font-size, 48);
+		font-weight: bold;
+		text-align: center;
+
+		@media screen and (max-height: 800px) {
+			margin-bottom: 40px;
+			@include remCalc(font-size, 36);
+		}
+		@media screen and (max-height: 700px) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&-content {
+		ul {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-column-gap: 80px;
+		}
+
+		.why_list {
+			padding-bottom: 100px;
+
+			@media screen and (max-height: 800px) {
+				padding-bottom: 60px;
+			}
+			@media screen and (max-height: 700px) {
+				padding-bottom: 40px;
+			}
+		}
+
+		.why_item {
+			text-align: center;
+			color: color("BLACK");
+			.pic {
+				@include rwdBlock(270, 270);
+			}
+
+			&-title {
+				@include remCalc(font-size, 24);
+				letter-spacing: 1px;
+			}
+
+			&-txt {
+				@include remCalc(font-size, 18);
+				letter-spacing: 1px;
+			}
+		}
+
+		.Lima_shi_shi {
+			display: table;
+			margin: auto;
+		}
+	}
+}

@@ -1,0 +1,193 @@
+
+$field_height: 40px !default;
+$max_height: 500px !default;
+$list_min_width: 200px !default;
+
+// color
+$defaultColor    : color("BLACK") !default;
+
+$triangleColor   : $defaultColor !default;
+$errorColor      : color("RED") !default;
+$noSelectedColor : color("GRAY1") !default;
+$hasSelectedColor: $defaultColor !default;
+$itemColor       : $defaultColor !default;
+$itemHoverColor  : color("GRAY2") !default;
+$itemSelectedColor: () !default;
+$itemSelectedColor: map-merge((
+	"txt": #fff,
+	"bg": color("BLUE")
+                               ), $itemSelectedColor);
+
+$listStyle: () !default;
+$listStyle: map-merge((
+                       "bxsh": 4px 4px 8px rgba(0, 0, 0, 0.25),
+                       "bdru": 4px
+                       ), $listStyle);
+
+
+
+select.dummy {
+	height: $field_height;
+}
+
+.pg-selects {
+	position: relative;
+	// width: 110px;
+	min-height: 100%;
+	height: $field_height;
+	// border-radius: 3px;
+	// border: 1px solid theme-color("df-grey");
+
+
+	&:after {
+		@include psudoClass;
+		@include absolute(0, 15px, 0);
+		margin: auto;
+		@include triBtm($triangleColor, 6px, 6px);
+		transition: all 0.3s ease-in-out;
+	}
+
+	&.js-open {
+		&:after {
+			transform: rotate(-180deg);
+		}
+	}
+
+	.error & {
+		border-color: $errorColor;
+	}
+
+	&-hidden {
+		display: none;
+		visibility: hidden;
+	}
+
+	&-styled {
+		@include wh;
+		padding: 0 15px;
+		padding-right: 30px;
+		line-height: $field_height;
+		color: $noSelectedColor;
+		// @include remCalc(font-size, 14);
+
+		cursor: pointer;
+
+		&.js-hasSelected {
+			color: $hasSelectedColor;
+			// color: #161616;
+			@include ellipsis(90%);
+			display: block;
+		}
+
+		&:empty {
+			min-height: 24px;
+		}
+
+	}
+
+	&-list {
+		// display: none;
+		z-index: 20;
+
+		// z-index: -1;
+		// opacity: 0;
+
+		@include absolute($field_height + 10, $L:0);
+		min-width: $list_min_width;
+		// width: 100%;
+		// margin-top: 10px;
+
+		background-color: #fff;
+		border-radius: map-get($listStyle, "bdru");
+		box-shadow: map-get($listStyle, "bxsh");
+
+		max-height: 0;
+		overflow: hidden;
+
+		transition: max-height 0.5s ease-in-out;
+
+		// ul {
+		// 	width: 100%;
+		// 	border-radius: 3px;
+		// 	background-color: #fff;
+		// 	box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.5);
+
+		// 	max-height: 0;
+		// 	overflow: hidden;
+
+		// 	transition: max-height 0.5s ease-in-out;
+		// }
+
+		.js-open & {
+			// display: block;
+			// z-index: 10;
+			// opacity: 1;
+
+			// ul {
+			// 	max-height: 200px;
+			// 	overflow-y: auto;
+			// }
+
+			max-height: $max_height;
+			// overflow-y: auto;
+		}
+
+		&.dir_up {
+			top: inherit;
+			bottom: 60px
+		}
+	}
+
+	&-item {
+		// width: 100%;
+		padding: 10px 15px;
+		cursor: pointer;
+
+		color: $itemColor;
+
+		word-break: keep-all;
+	    white-space: nowrap;
+		// @include remCalc(font-size, 14);
+
+		// @include ellipsis();
+
+		&:hover {
+			background-color: $itemHoverColor;
+		}
+
+		&.js-selected {
+			background-color: map-get($itemSelectedColor, "bg");
+			color: map-get($itemSelectedColor, "txt");
+		}
+
+		&:empty {
+			padding: 0;
+		}
+	}
+}
+
+
+.extra-wrapper {
+	position: relative;
+	height: 38px;
+	.pg-selects-styled:empty {
+		display: none;
+	}
+
+	&:after {
+		@include psudoClass;
+		@include absolute(0, 15px, 0);
+		margin: auto;
+		@include triBtm(theme-color("df-grey"), 6px, 6px);
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+
+.js-completeTxt {
+	padding: 10px 15px;
+	color: #fff;
+	background-color: theme-color("primary1");
+
+	pointer-events:none
+}

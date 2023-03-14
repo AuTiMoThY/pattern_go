@@ -1,0 +1,25 @@
+.pgpopup_delect_success {
+	.container-inner {
+		padding: 50px;
+	}
+
+	.pgpopup-wrap {
+		width: 275px;
+	}
+	.pgpopup-bd {
+		padding: 0;
+	}
+
+	p {
+		margin-bottom: 30px;
+		@include remCalc(font-size, 28);
+		text-align: center;
+	}
+
+	.pgbtn {
+		display: block;
+		width: 130px;
+		padding: 15px;
+		margin: auto;
+	}
+}

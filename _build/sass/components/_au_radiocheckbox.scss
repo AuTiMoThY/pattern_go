@@ -1,0 +1,77 @@
+.au_radiocheckbox {
+	display: flex;
+	// width: 100%;
+	height: 100%;
+	align-items: center;
+	&-label {
+
+		// margin-right: 1.2rem;
+		margin-bottom: 0;
+		padding: 0.25rem 0rem;
+		border-radius: 5px;
+		cursor: pointer;
+		.choicemark {
+			position: relative;
+			display: inline-block;
+			vertical-align: -0.8ex;
+			@include wh(20);
+			// border-radius: 5px;
+			border: 1px solid color("GRAY3");
+
+			margin-right: 0.4rem;
+			transition: all 0.3s ease-in-out;
+
+			&:before {
+				@include psudoClass;
+				@include absolute(0, 0, 0, 0);
+				margin: auto;
+				@include wh(60%, 40%);
+				border-bottom: 2px solid #fff;
+				border-left: 2px solid #fff;
+				transform: rotate(-45deg) translate(10% , -10%) scale(0);
+
+				opacity: 0;
+
+				transition: all 0.3s $easing3;
+			}
+		}
+
+		.txt {
+			display: inline-block;
+			vertical-align: middle;
+			color: currentColor;
+		}
+	}
+
+	&-input {
+		opacity: 0;
+		display: none;
+
+		&:checked {
+			+ .choicemark {
+				background-color: color("GRAY3");
+				&:before {
+					transform: rotate(-45deg) translate(10% , -10%) scale(1);
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+
+	&.style2 {
+		.au_radiocheckbox-label {
+			.choicemark {
+				border: 1px solid color("BLUE");
+			}
+		}
+
+		.au_radiocheckbox-input {
+			&:checked {
+				+ .choicemark {
+					background-color: color("BLUE");
+				}
+			}
+		}
+	}
+}

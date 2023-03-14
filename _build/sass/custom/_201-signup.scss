@@ -1,0 +1,109 @@
+
+
+.pgpopup_signup {
+	.container-inner {
+		padding: 30px;
+		background-color: #F2F2F2;
+	}
+
+	.pgpopup-hd {
+		background-color: #fff;
+		border-bottom: none;
+		margin-bottom: 20px;
+	}
+	.pgpopup-bd {
+		background-color: #fff;
+		padding-top: 0;
+	}
+}
+
+
+.signup_frm {
+	padding: 30px;
+
+	&-country {
+		display: flex;
+	    justify-content: flex-end;
+		align-items: center;
+		.txt {
+			margin-right: 0.6rem;
+		}
+		.country_select {
+			padding: 10px 15px;
+			border: 1px solid #E0E0E0;
+			min-width: 105px;
+		}
+	}
+	&-change {
+		@extend %changeInputBtn;  //  003
+	}
+
+	&-email {}
+	&-phone {display: none;}
+
+
+	.nationality_code {
+		@extend %nationalityCode;
+	}
+
+	&-pw {
+		.pgfrm-field {
+			position: relative;
+		}
+
+		.is_hidden {
+			@extend %isHidden;
+		}
+	}
+
+
+	&-other {
+		text-align: center;
+
+		.txt-r02 {
+			@include hover_line(2, color("r02"));
+			&:hover {
+				color: color("r02");
+			}
+		}
+	}
+}
+
+
+.signup_tabs {
+	border-bottom: 1px solid #E0E0E0;
+	&-item {
+		position: relative;
+		float: left;
+		width: 50%;
+		padding: 10px 0;
+		text-align: center;
+		@include remCalc(font-size, 20);
+
+		cursor: pointer;
+
+		&:after {
+			@include psudoClass;
+			@include absolute($L:0, $B:-1px);
+			@include wh(100%, 0px);
+			background-color: color("BLUE");
+
+			opacity: 0;
+			transition: $transition-base;
+		}
+
+		&.js-active {
+			&:after {
+				height: 5px;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+.signup_tabs_container {
+	position: relative;
+}
+
+

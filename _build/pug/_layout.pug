@@ -1,0 +1,112 @@
+doctype html
+html(class="no-js" lang="zh")
+	- var current_active = "";
+	- var version = "20200615";
+	- var PATH_IMG = "public/images/";
+	- var isPro = 0;
+	- var page_class = "";
+	block vars
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		block title
+			title #{page_title} | Pattern Go
+		meta(name="keywords", content="")
+		meta(name="description", content="")
+		meta(name="robots", content="index,follow")
+		meta(name="viewport", content="width=device-width, user-scalable=no")
+
+		// 讓手機不判斷它是電話號碼變顏色
+		meta(name="format-detection", content="telephone=no")
+
+		//- include _favicon.html
+
+		//- // reset
+		//- link(rel="stylesheet", href="public/css/reset.css")
+
+		//- // Font Awesome
+		//- link(rel="stylesheet", href="public/fontawesome/css/fa-svg-with-js.css")
+		//- script(src="public/fontawesome/js/fontawesome-all.js")
+
+		block pluginStyle
+
+		//- // style
+		//- <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+
+		link(rel="stylesheet", href="https://csshake.surge.sh/csshake.min.css")
+		//- link(rel="stylesheet", href="public/plugins/swiper/swiper.min.css")
+		link(rel="stylesheet", href="public/plugins/slick/slick.css")
+		link(rel="stylesheet", href="public/plugins/fullpage/fullpage.css")
+		link(rel="stylesheet", href="public/plugins/simplebar/simplebar.css")
+		//- link(rel="stylesheet", href="public/plugins/mCustomScrollbar/jquery.mCustomScrollbar.min.css")
+		link(rel="stylesheet", href="public/css/animate.css")
+		link(rel="stylesheet", href="public/css/style.css?v=" + version)
+
+		// js
+		script(src="public/js/libs/modernizr-custom.min.js")
+		script(src="public/js/ModernizrAu.js")
+
+
+	body
+		// =========================================================================
+		// SVG sprites  START
+		.symbols_svg.d-none
+			//
+			include ../symbol/svg/sprite.symbol.svg
+		// SVG sprites  END  !!
+		// =========================================================================
+		#top
+		//- #goTop
+			a(href="#top")
+				svg.svg_icon.icon-top
+					use(xlink:href="#top")
+
+		// =========================================================================
+		// .body_wrap  START
+		.body_wrap
+			if mbr_header == 1
+				if isPro == 1
+					include _mbr-header-pro.pug
+				else
+					include _mbr-header.pug
+			else if no_login == 1
+				include _header-no_login.pug
+			else
+				include _header.pug
+			// =========================================================================
+			// 頁面內容  START
+			// =========================================================================
+			block content
+			// =========================================================================
+			// 頁面內容  END  !!
+			// =========================================================================
+			//- include _footer.pug
+		block popup
+
+
+
+		//- script(src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+		script window.jQuery || document.write('<script src="public/js/libs/jquery.min.js"><\/script>')
+		//-
+
+		script(src="public/js/libs/plugin_mix.js")
+		//- script(src="public/plugin/autosize.min.js")
+		//- script(src="public/plugin/multiple-select.js")
+
+		// 動態效果
+		script(src="public/plugins/greensock/TweenMax.min.js")
+		script(src="public/plugins/scrollmagic/ScrollMagic.min.js")
+		script(src="public/plugins/scrollmagic/plugins/jquery.ScrollMagic.min.js")
+		script(src="public/plugins/scrollmagic/plugins/debug.addIndicators.min.js")
+		script(src="public/plugins/scrollmagic/plugins/animation.gsap.min.js")
+		script(src="public/plugins/snap.svg.js")
+
+		script(src="public/plugins/slick/slick.js")
+		script(src="public/plugins/fullpage/fullpage.js")
+		script(src="public/plugins/simplebar/simplebar.js")
+		//- script(src="public/plugins/fullpage/fullpage.extensions.min.js")
+		//- script(src="public/plugins/swiper/swiper.js")
+		//- script(src="public/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js")
+		script(src="public/js/script.js?v=" + version)
+		script(src="public/js/pgelm.js")
+		block page_script

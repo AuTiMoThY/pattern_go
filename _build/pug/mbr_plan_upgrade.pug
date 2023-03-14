@@ -1,0 +1,313 @@
+extends _layout.pug
+block vars
+	//- - var login = 1;
+	- var page_class = "mbr_page mbr_plan plan_upgrade";
+	- var page_title = "方案設定";
+	- var mbr_header = 1;
+	- var mbr_header_title = "方案設定";
+
+
+block pluginStyle
+	//- link(rel="stylesheet", href="dist/plugin/swiper/swiper.min.css")
+
+block popup
+	// =========================================================================
+	// 燈箱 - 方案  START
+	#popupPlan.pgpopup.pgpopup_plan
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-close
+				svg.svg_icon.icon-svg-close
+					use(xlink:href="#svg-close")
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						hgroup
+							h1.pgpopup_plan-title 选择方案
+							h2.pgpopup_plan-subtitle 找到最适合你的方案
+						.pgpopup_plan-list
+							section.pgpopup_plan-item.plan1
+								.project_block
+									.project_block-hd
+										h3.title 方案一
+									.project_block-rmb
+										.num 12,000
+										.txt RMB
+									.project_block-bd.text-center
+										p.txt 平均可打版
+										p.txt <span class="strong">200</span>件
+										p.txt 一个版型最低只要 40 RMB
+										button.pgbtn.pgbtn-s2.pgbtn-status.using(type="button", disabled) 使用中
+								p.plan-expiry_date 方案到期日：2021/01/01
+							section.pgpopup_plan-item.plan2
+								.project_block
+									.project_block-hd
+										h3.title 方案二
+									.project_block-rmb
+										.num 20,000
+										.txt RMB
+									.project_block-bd.text-center
+										p.txt 平均可打版
+										p.txt <span class="strong">400</span>件
+										p.txt 一个版型最低只要 33 RMB
+										a.pgbtn.pgbtn-s2.pgbtn-status(type="button" href="mbr_plan_upgrade.html") 升級
+								// p.plan-expiry_date 方案到期日：2021/01/01
+							section.pgpopup_plan-item.plan3
+								.project_block
+									.project_block-hd
+										h3.title 方案三
+									.project_block-rmb
+										.num 30,000
+										.txt RMB
+									.project_block-bd.text-center
+										p.txt 平均可打版
+										p.txt <span class="strong">800</span>件
+										p.txt 一个版型最低只要 <span class="highlight_block">25 RMB</span>
+										a.pgbtn.pgbtn-s2.pgbtn-status(type="button" href="mbr_plan_upgrade.html") 升級
+								// p.plan-expiry_date 方案到期日：2021/01/01
+
+	// 燈箱 - 方案  END  !!
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 微信支付  START
+	#popupThirdParty-wechat.pgpopup.pgpopup_third_party
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						h2.title 微信支付
+						.third_party-qrcode
+							img(src="public/images/qrcode-wechat.jpg", alt="")
+						.icon
+							img(src="public/wechat-logo2.png", alt="")
+						.txt 请开启手机微信软件，扫描上方QRcode
+	// 燈箱 - 微信支付  END  !!
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 支付宝  START
+	#popupThirdParty-alipay.pgpopup.pgpopup_third_party
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						h2.title 支付宝
+						.third_party-qrcode
+							img(src="public/images/qrcode-wechat.jpg", alt="")
+						.icon
+							img(src="public/alipay-logo-2.png", alt="")
+						.txt 请开启手机支付宝软件，扫描上方QRcode
+	// 燈箱 - 支付宝  END  !!
+	// =========================================================================
+	// =========================================================================
+	// 燈箱 - 支付成功  START
+	#popupPaymentSuccess.pgpopup.pgpopup_payment_success
+		.pgpopup-bg
+		.pgpopup-wrap
+			.pgpopup-container(data-simplebar data-simplebar-auto-hide="false")
+				.container-inner
+					.pgpopup-bd
+						.icon-success
+						p.txt 支付成功
+						.hr
+						p.payment_cnt
+							span.title 交易内容：
+							span.txt.trans_content 储值
+						p.payment_cnt
+							span.title 交易金额：
+							span.txt.trans_amount 12,000
+						p.payment_cnt
+							span.title 交易时间：
+							span.txt.trans_datetime 2020年04月20日
+						button.pgbtn.pgbtn-s2.pgbtn-submit(type="button") 确认
+	// 燈箱 - 支付成功  END  !!
+	// =========================================================================
+block content
+	.page_main(class=page_class)
+
+		main.main_content
+			.content_wrap.container
+				aside.plan_upgrade-aside
+					.current_project.pgpannel
+						h2.pgpannel-title 您选择升级的方案
+						.project_block
+							.project_block-hd
+								h3.title 方案一
+							.project_block-rmb
+								.num 12,000
+								.txt RMB
+							.project_block-bd.text-center
+								p.txt 平均可打版
+								p.txt <span class="strong">200</span>件
+								p.txt 一个版型最低只要 40 RMB
+								button.pgbtn.pgbtn-bdr-gr1.pgbtn-status.js-openPopupPlan.js-open_popup(type="button", data-popup="popupPlan") 选择其他方案
+						p.current_project-expiry_date 方案到期日：2021/01/01
+				// ----------  aside.plan_upgrade-aside  END!! --------------------------------------------------------------
+				article.plan_upgrade-main
+					.pgpannel.plan_upgrade_frm
+						form(action="")
+							// ----------  核對訂購人資料 .plan_upgrade_frm-step1  START --------------------------------------------------------------
+							fieldset.plan_upgrade_frm-fieldset.plan_upgrade_frm-step1
+								h2.plan_upgrade_frm-title
+									span.no 1
+									span.txt 核对订购人资料
+								.form-group.row
+									.col-6.plan_upgrade_frm-UserName
+										label.pgfrm-label(for="PUF-UserName") 使用者名称
+										.pgfrm-field
+											input#PUF-UserName.pgfrm-input(type="text", name="PUF-UserName", placeholder="输入使用者名称", value="ElaineChen")
+									.col-6.plan_upgrade_frm-UserId
+										label.pgfrm-label(for="PUF-UserId") 使用者ID
+										.pgfrm-field
+											input#PUF-UserId.pgfrm-input(type="text", name="PUF-UserId", placeholder="长度不超过20个字元", maxlength="20")
+								.form-group.row
+									.col-6.plan_upgrade_frm-CompName
+										label.pgfrm-label(for="PUF-CompName") 公司名称
+										.pgfrm-field
+											input#PUF-CompName.pgfrm-input(type="text", name="PUF-CompName", placeholder="输入公司名称", value="Pattern Go")
+									.col-6.plan_upgrade_frm-CreditCode
+										label.pgfrm-label(for="PUF-CreditCode") 统一社会信用代码
+										.pgfrm-field
+											input#PUF-CreditCode.pgfrm-input(type="text", name="PUF-CreditCode", placeholder="输入统一社会信用代码", value="91350100M000100Y43")
+								.form-group.row
+									.col-6.plan_upgrade_frm-Phone
+										label.pgfrm-label(for="PUF-Phone") 连络电话
+										.pgfrm-field
+											input#PUF-Phone.pgfrm-input(type="tel", name="PUF-Phone", placeholder="手机号码", value="")
+									.col-6.plan_upgrade_frm-Email
+										label.pgfrm-label(for="PUF-Email") E-mail
+										.pgfrm-field
+											input#PUF-Email.pgfrm-input(type="text", name="PUF-Email", placeholder="输入E-mail", value="service@ai-pattern.com")
+								.form-group.row
+									.col-12.plan_upgrade_frm-CompAddr
+										label.pgfrm-label(for="PUF-CompAddr") 公司地址
+										.pgfrm-field
+											input#PUF-CompAddr.pgfrm-input(type="tel", name="PUF-CompAddr", placeholder="请输入公司地址", value="")
+							// ----------  核對訂購人資料 .plan_upgrade_frm-step1  END!! --------------------------------------------------------------
+							.hr
+							// ----------  選擇支付方式 .plan_upgrade_frm-step2  START --------------------------------------------------------------
+							fieldset.plan_upgrade_frm-fieldset.plan_upgrade_frm-step2
+								h2.plan_upgrade_frm-title
+									span.no 2
+									span.txt 选择支付方式
+								.form-group.row.gutter-10.payment_method_list
+									section.col-4.payment_method_item
+										input#Payment-1.payment_method_item-radio(type="checkbox", name="PaymentMethod", value="PaymentMethod-balance")
+										.inner
+											.payment_method_item-choicemark
+											.title.title-left_top 帐户余额
+											.icon.icon-left.icon-account
+											.account_balance <span class="num">6,000</span>RMB
+									// ----------  帳戶餘額  END!! --------------------------------------------------------------
+									// 餘額不足狀態 ↓↓↓
+									section.col-4.payment_method_item.insufficient_balance
+										.insufficient_balance-inner
+											.insufficient_balance-bg
+											a(href="mbr_wallet_stored.html").insufficient_balance-btn 余额不足<br>请前往储值
+										input#Payment-1.payment_method_item-radio(type="checkbox", name="PaymentMethod", value="PaymentMethod-balance")
+										.inner
+											.payment_method_item-choicemark
+											.title.title-left_top 帐户余额
+											.icon.icon-left.icon-account
+											.account_balance <span class="num">6,000</span>RMB
+									// ----------  帳戶餘額-餘額不足狀態  END!! --------------------------------------------------------------
+									section.col-4.payment_method_item
+										input#Payment-2.payment_method_item-radio(type="checkbox", name="PaymentMethod", value="PaymentMethod-wechat")
+										.inner
+											.payment_method_item-choicemark
+											.third_party_payment
+												.icon
+													img(src="public/wechat-logo2.png", alt="")
+												.txt 微信
+									// ----------  微信  END!! --------------------------------------------------------------
+									section.col-4.payment_method_item
+										input#Payment-3.payment_method_item-radio(type="checkbox", name="PaymentMethod", value="PaymentMethod-alipay")
+										.inner
+											.payment_method_item-choicemark
+											.third_party_payment
+												.icon
+													img(src="public/alipay-logo-2.png", alt="")
+												.txt 支付宝
+									// ----------  支付寶  END!! --------------------------------------------------------------
+									section.col-4.payment_method_item
+										input#Payment-4.payment_method_item-radio(type="checkbox", name="PaymentMethod", value="PaymentMethod-card1")
+										.inner
+											.payment_method_item-choicemark
+											.title.title-left_top 第一银行名称
+											.icon.icon-left.icon-card_association
+												img(src="public/visa.jpg", alt="")
+											.card_number ✱✱✱✱  ✱✱✱✱  ✱✱✱✱  1234
+									// ----------  銀行  END!! --------------------------------------------------------------
+								.other_ccard
+									.other_ccard-top
+										.other_ccard-title 填写卡片信息
+										.is_add.au_radiocheckbox.style2
+											label.au_radiocheckbox-label(for="isAdd")
+												input#isAdd.au_radiocheckbox-input(type="checkbox", name="isAdd")
+												.choicemark
+													.choicemark-bg
+												.txt 新增卡片
+									.other_ccard-mid
+										.form-group.row
+											.col-6.other_ccard-Name
+												label.pgfrm-label(for="CCard-Name") 持卡人姓名
+												.pgfrm-field
+													input#CCard-Name.pgfrm-input(type="tel", name="CCard-Name", placeholder="輸入真實姓名", value="")
+											.col-6.other_ccard-Number
+												label.pgfrm-label(for="CCard-Number") 信用卡号
+												.pgfrm-field
+													input#CCard-Number.pgfrm-input(type="text", name="CCard-Number", placeholder="0123-4567-8901-2345", value="")
+										.form-group.row
+											.col-6.other_ccard-DueDate
+												.row
+													label.col-12.pgfrm-label(for="CCard-DueDate-MM") 到期日
+													.col-6
+														.pgfrm-field
+															input#CCard-DueDate-MM.pgfrm-input(type="number", name="CCard-DueDate-MM", placeholder="MM")
+													.col-6
+														.pgfrm-field
+															input#CCard-DueDate-YYYY.pgfrm-input(type="number", name="CCard-DueDate-YYYY", placeholder="YYYY")
+											.col-6.other_ccard-SecurityCode
+												.row
+													label.col-12.pgfrm-label(for="CCard-SecurityCode") 安全码
+													.col-6
+														.pgfrm-field
+															input#CCard-SecurityCode.pgfrm-input(type="number", name="CCard-SecurityCode", placeholder="000")
+													.col-6
+														.card_association
+															.pic
+																img(src="public/visa2.jpg", alt="")
+															.pic
+																img(src="public/mastercard2.jpg", alt="")
+															.pic
+																img(src="public/jcb2.jpg", alt="")
+							// ----------  選擇支付方式 .plan_upgrade_frm-step2  END!! --------------------------------------------------------------
+							.hr
+							fieldset.plan_upgrade_frm-fieldset.plan_upgrade_frm-final
+								.inner.cf
+									h2.plan_upgrade_frm-title 结帐金额
+									.amount_rmb <span class="txt">12,000</span> RMB
+									button.pgbtn.pgbtn-s2.plan_upgrade_frm-submit(type="button") 去结帐
+
+
+				// ----------  article.plan_upgrade-main  END!! --------------------------------------------------------------
+
+
+	.mbr_page_footer
+		p.copyright Copyright © 2020 Pattern Go All Rights Reserved | Designed by LOHAS IT
+		.lang
+			| 语言
+			.pgselect-wrap.select_block
+				select.pgselect.pgselect-s2
+					option(value="0") 简体中文
+					option(value="1") 繁體中文
+					option(value="2") English
+
+
+		// main.main_content  END  !!
+		// =========================================================================
+
+block page_script
+	script(src="public/plugins/multiple-select.js")
+	script(src="public/js/page/mbr_plan.js")

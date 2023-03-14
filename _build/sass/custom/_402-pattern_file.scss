@@ -1,0 +1,292 @@
+
+
+.pattern_file {
+	&-list {
+		margin-left: -15px;
+		margin-right: -15px;
+		.layout_list & {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		> ul {
+			// display: grid;
+			// grid-template-columns: repeat(5, 20%);
+			// // grid-template-rows: auto;
+
+			// .layout_list & {
+			// 	grid-template-columns: 1fr;
+			// }
+		}
+	}
+	&-item {
+		float: left;
+		width: 20%;
+		padding: 0 15px;
+		margin-bottom: 30px;
+		.layout_list & {
+			width: 100%;
+			padding: 0;
+			margin-bottom: 10px;
+		}
+
+		> .inner {
+			position: relative;
+			background-color: #fff;
+			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+			border-radius: 12px;
+			// overflow: hidden;
+		}
+
+		.btn_more {
+			border: none;
+			background-color: transparent;
+
+			@include absolute(5px, 5px);
+			z-index: 30;
+			@include circle(30);
+			cursor: pointer;
+
+			transition: $transition-base;
+
+			&:hover {
+				background-color: color("GRAY3");
+
+				.svg_icon {
+					fill: #fff;
+				}
+			}
+
+			.svg_icon {
+				@include absolute(50%, $L:50%);
+				transform: translate(-50%, -50%);
+				fill: #9C9FA4;
+			}
+
+
+			.layout_list & {
+				right: 30px;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+		}
+	}
+
+	&-pic {
+		position: relative;
+
+		.pic {
+			position: relative;
+			border-top-right-radius: 12px;
+			border-top-left-radius: 12px;
+			background-color: color("GRAY2");
+			@include rwdBlock(297, 198);
+		}
+
+		img {
+			@include absolute(50%, $L:50%);
+			transform: translate(-50%, -50%);
+		}
+
+		.layout_list & {
+			@extend %layoutListHide;
+		}
+	}
+
+	&-content {
+		padding: 10px 15px;
+		border-top: 1px solid #E0E0E0;
+
+		&-txt {
+			margin-bottom: 5px;
+			@include remCalc(font-size, 14);
+			.layout_list & {
+				margin-bottom: 0;
+
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		.pattern_file-name {
+			@include remCalc(font-size, 16);
+		}
+
+		.pattern_file-exp_date {
+			@include absolute($B:84px, $R:15px);
+		}
+
+		.title {
+			.layout_list & {
+				@extend %layoutListHide;
+			}
+		}
+
+		// .layout_list & {
+		// 	padding: 15px 30px;
+		// 	@extend %layoutListCnt;
+		// }
+
+		.mgmt_trash .layout_list & {
+			@extend %layoutListTrash;
+		}
+	}
+
+	&-name {
+		margin-bottom: 10px;
+	}
+
+	&-folder, &-owner {
+		display: flex;
+		align-items: center;
+
+		.folder-dropdown {
+			flex: auto;
+			min-width: 0;
+			margin-left: 10px;
+
+			.layout_list & {
+				margin-left: 0;
+			}
+		}
+		.folder-ctrl {
+			line-height: 30px;
+
+			.ctrl-txt {
+				padding-left: 10px;
+				padding-right: 10px;
+				color: color("BLACK");
+			}
+		}
+
+		.txt {
+			flex: 0 0 50px;
+		}
+
+		.pgdropdown-menu {
+			top: 100%;
+		}
+
+		.pg-selects-list {
+			min-width: 0;
+			width: 100%;
+			background-color: transparent;
+			padding-top: 3px;
+		}
+
+		.menu-list {
+			background-color: #fff;
+			border-radius: 4px;
+		}
+
+		.menu-item {
+			padding: 10px;
+		}
+
+
+	}
+}
+
+
+
+.trash_day {
+	@include absolute(10px, $L:10px);
+
+	.mgmt_trash .layout_list & {
+		position: static;
+		top: 0;
+		left: 0;
+		color: color("GRAY1");
+	}
+}
+
+.pattern_file-item-more {
+	@include absolute(35px, -105px);
+	z-index: 500;
+
+	display: none;
+
+	.js-open_more & {
+		display: block;
+	}
+
+	&.js-adj_pos {
+		top: 50px;
+		.more-sublist {
+			right: unset;
+			left: -145px;
+		}
+	}
+
+	.inner {
+		width: 145px;
+		background-color: color("BLACK");
+		padding-top: 10px;
+		padding-bottom: 10px;
+		color: #fff;
+		@include remCalc(font-size, 14);
+	}
+
+	.more-item {
+		position: relative;
+		width: 100%;
+
+		background-color: transparent;
+		transition: $transition-base;
+
+		a {
+			display: block;
+			padding: 10px 15px;
+			color: currentColor;
+		}
+
+		&:hover {
+			background-color: color("BLUE");
+
+			.more-sublist {
+				display: block;
+			}
+		}
+
+		&.has-sub {
+			&:after {
+				@include psudoClass;
+				@include absolute(50%, 15px);
+				transform: translateY(-50%);
+				@include triangle(right, #fff, 7px);
+			}
+		}
+	}
+
+	.hr {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		&:before {
+			@include psudoClass;
+			@include wh(100%, 1px);
+			background-color: #f2f2f2;
+		}
+	}
+
+	.more-sublist {
+		display: none;
+		@include absolute(0, -145px);
+		width: 145px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: color("BLACK");
+	}
+
+	.more-subitem {
+		background-color: transparent;
+		transition: $transition-base;
+		a {
+			display: block;
+			padding: 10px 15px;
+		}
+		&:hover {
+			background-color: color("BLUE");
+		}
+	}
+}
+

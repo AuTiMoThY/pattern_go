@@ -1,0 +1,162 @@
+.pgfrm {
+
+	&-label {
+		color: color("BLACK");
+	}
+	&-field {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+	}
+
+	&-input {
+		border: none;
+		transition: $transition-base;
+
+		box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+		background-color: #F8F8F8;
+		padding: 1rem;
+
+		flex: 1 1 auto;
+		.input-group & {
+		}
+
+		.js-error & {
+			border: 2px solid color("RED");
+
+			&.js-notErr {
+				border: none;
+			}
+		}
+	}
+
+	&-select {
+		&.error-highlight {
+			border: 2px solid color("RED") !important;
+		}
+	}
+	&-btn {
+		// border: none;
+		// background-color: transparent;
+		// cursor: pointer;
+		// transition: $transition-base;
+
+
+	}
+
+}
+
+
+
+
+.form-group {
+	&.js-error {
+		position: relative;
+
+		.error-msg {
+			@include absolute(2px, 0);
+			color: color("RED");
+			@include remCalc(font-size, 14);
+			text-align: right;
+		}
+	}
+	&.signup_frm-country.js-error {
+		.error-msg {
+			top: -18px;
+		}
+	}
+}
+
+
+.input-group {
+	&-append {
+		display: flex;
+		align-items: center;
+	}
+
+	.pgfrm-input {
+		flex: auto;
+		width: auto;
+	}
+}
+
+
+
+.forget_pw {
+	display: none;
+	padding: 30px 60px;
+	border-top: 1px solid color("GRAY1");
+	background-color: color("GRAY2");
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+
+%changeInputBtn {
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: color("B");
+	color: #fff;
+
+	cursor: pointer;
+	transition: $transition-base;
+
+	// @include glow();
+	display: flex;
+
+	&:hover {
+		background-color: darken(color("B"), 7.5);
+	}
+
+	&.to-email {
+		background-color: color("A");
+		&:hover {
+			background-color: darken(color("A"), 7.5);
+		}
+	}
+}
+
+%nationalityCode {
+	padding: 15px 30px 15px 15px;
+	border: 1px solid #E0E0E0;
+	background-color: transparent;
+	/* Positions background arrow image */
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+	background-repeat: no-repeat;
+	background-position: 95% center;
+
+	cursor: pointer;
+
+	transition: $transition-base;
+
+	&:hover {
+		background-color: #f0f0f0 ;
+	}
+}
+
+%isHidden {
+	@include absolute(50%, 1rem);
+	z-index: 10;
+	margin-top: #{image-height("hidden.png") / 2 * -1};
+	// transform: translate(0, -50%);
+	@include wh(image-width("hidden.png"), image-height("hidden.png"));
+	// @extend %hidden-png;
+
+	// @include hardwareAccel();
+
+	cursor: pointer;
+
+	&:hover,
+	&:focus,
+	&:active {
+		animation-name: hvr-pop;
+		animation-duration: $mediumDuration;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+
+	.svg_icon {
+		@include wh;
+		fill: currentColor;
+	}
+}

@@ -1,0 +1,11 @@
+.pginput {
+	&:focus {
+		outline: none;
+	}
+
+	&-wrap {
+		&.js-focus {
+			border-color: color("BLUE");
+		}
+	}
+}
